@@ -39,7 +39,7 @@ function Kates() {
         <Row>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>All Entries That Exist in the Kates collection in the NightInDB</h1>
+              <h5>The name of our mongo database is nightindb. In this version the data we are using is coming from a collection called kates. This is the result of a find all on that collection. The Kate collection is purely a test for connecting to a db and returning records from a collection.</h5>
             </Jumbotron>
             {kates.length ? (
               <List>
