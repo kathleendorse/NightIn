@@ -4,7 +4,7 @@ import Kates from "./pages/Kates";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-//import "./App.css";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -17,6 +17,9 @@ function App() {
           </Route>
           <Route exact path="/kates/:id">
             <Detail />
+          </Route>
+          <Route exact path="/login">
+            <Login />
           </Route>
           <Route>
             <NoMatch />
