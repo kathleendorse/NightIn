@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import "./Login.css";
 import Axios from "axios";
 
-export default function Login() {
+export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -15,8 +15,7 @@ export default function Login() {
   function handleSubmit(event) {
     event.preventDefault();
   }
-
-  const login = () => {
+  const register = () => {
     Axios({
       method: "POST",
       data: {
@@ -24,17 +23,8 @@ export default function Login() {
         password: password,
       },
       withCredentials: true,
-      url: "http://localhost:3000/login",
-    }).then(
-      (res) => {
-        if (res.data === "success") {
-          window.location.href = "/";
-        }
-      },
-      () => {
-        console.log("Failure");
-      }
-    );
+      url: "http://localhost:3000/register",
+    }).then((res) => console.log(res));
   };
 
   return (
@@ -61,10 +51,10 @@ export default function Login() {
           block
           size="lg"
           type="submit"
+          onClick={register}
           disabled={!validateForm()}
-          onClick={login}
         >
-          Login
+          Sign Up
         </Button>
       </Form>
     </div>
