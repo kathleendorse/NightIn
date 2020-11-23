@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Kates from "./pages/Kates";
+import Nightin from "./pages/Nightin";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
-//import "./App.css";
+import Login from "./pages/Login";
+import Signup from "./pages/Register";
 
 function App() {
   return (
@@ -12,11 +13,17 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route exact path={["/", "/kates"]}>
-            <Kates />
+          <Route exact path={["/", "/nightin"]}>
+            <Nightin />
           </Route>
-          <Route exact path="/kates/:id">
+          <Route exact path="/nightin/:id">
             <Detail />
+          </Route>
+          <Route exact path="/register">
+            <Signup />
+          </Route>
+          <Route exact path="/login">
+            <Login />
           </Route>
           <Route>
             <NoMatch />

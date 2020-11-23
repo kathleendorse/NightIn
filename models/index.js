@@ -1,3 +1,4 @@
 module.exports = {
-  Kate: require("./kate")
+  Night: require("./night"),
+  User: require("./user"),
 };

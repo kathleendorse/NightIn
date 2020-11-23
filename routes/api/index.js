@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const kateRoutes = require("./kates");
+const nightRoutes = require("./nightin");
 
 // Book routes
-router.use("/kates", kateRoutes);
+router.use("/nightin", nightRoutes);
 
 module.exports = router;
