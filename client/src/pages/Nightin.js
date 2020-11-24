@@ -45,9 +45,9 @@ function Nightin() {
           {nightin.length ? (
             <List>
               {nightin.map((night) => (
-                <ListItem key={nightin._id}>
+                <ListItem key={night._id}>
                   <Link to={"/nightin/" + night._id}>
-                    <strong>{night.title}</strong>
+                    <strong>{night.name}</strong>
                   </Link>
                   <DeleteBtn onClick={() => deleteNight(night._id)} />
                 </ListItem>

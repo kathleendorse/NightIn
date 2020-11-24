@@ -1,6 +1,6 @@
 import React, {
   createContext,
-  PropsWithChildren,
+//  PropsWithChildren,
   useEffect,
   useState,
 } from "react";
@@ -15,7 +15,8 @@ export default function Context(props) {
         setUser(res.data);
       }
     );
-  }, []);
+  }, [user]);
+  //updated second argument from [] to [user so that whenever this state changes, this will run again]
 
   return <myContext.Provider value={user}>{props.children}</myContext.Provider>;
 }

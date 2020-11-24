@@ -31,7 +31,7 @@ function Detail(props) {
             <h1>ID</h1>
             <p>{night._id}</p>
             <h1>TITLE</h1>
-            <p>{night.title}</p>
+            <p>{night.name}</p>
             <h1>DATE</h1>
             <p>{night.date}</p>
           </article>
