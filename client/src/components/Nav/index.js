@@ -14,6 +14,11 @@ function Nav() {
       <Link to={"/login"}>
         <strong>Log In</strong>
       </Link>
+      <span className="nav-item">
+        <a className="nav-link" href="/home">
+          Home
+        </a>
+      </span>
     </nav>
   );
 }
