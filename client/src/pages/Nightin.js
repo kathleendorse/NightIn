@@ -5,6 +5,10 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
+//ADDED--------------
+import Input from "../components/Input";
+import SearchBtn from "../components/SearchBtn";
+//------------------
 
 function Nightin() {
   // Setting our component's initial state
@@ -42,6 +46,40 @@ function Nightin() {
               records from a collection.
             </h5>
           </Jumbotron>
+        </Col>
+      </Row>
+      <Row>
+        <Col size="md-6 sm-12">
+          <form>
+            <Container fluid>
+              <Row>
+                <Col size="md-6 sm-12">
+                  <Input
+                    name="RecipeSearch"
+                    // value={recipeSearch}
+                    value = "placeholder"
+                    // onChange={handleInputChange}
+                    onChange = {()=>{}}
+                    placeholder="Search For a Recipe"
+                  />
+                </Col>
+                <Col size="xs-3 sm-2">
+                  <SearchBtn
+                    // onClick={handleFormSubmit}
+                    onClick={()=>{}}
+                    type="success"
+                    className="input-lg"
+                  >
+                      Search
+                  </SearchBtn>
+                </Col>
+              </Row>
+            </Container>
+          </form>
+        </Col>
+      </Row>
+      <Row>
+        <Col size="md-6 sm-12">        
           {nightin.length ? (
             <List>
               {nightin.map((night) => (
