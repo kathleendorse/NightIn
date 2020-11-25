@@ -43,16 +43,13 @@ function Detail(props) {
             2. create and bring in components to replace the html elements */}
 
           <article>
-            <p>
-              (Link currently redirects to root. Update to send to wine suggestions page. 
-              onClick callback currently empty. Update to trigger a submit/add recipe to DB.) 
+
             <p>
               {/* Link belongs to react-router dom. We want this to go to the suggested wine pairings page*/}
-              <Link to="/">
+              <Link to="/wine">
                 {/* AddRecipeBtn accepts props. We want the onClick callback tosave the users recipe selection*/}
                 <AddRecipeBtn onClick={()=>{}}></AddRecipeBtn>
               </Link>
-            </p>
             </p>
             <h1>ID</h1>
             <p>{night._id}</p>
