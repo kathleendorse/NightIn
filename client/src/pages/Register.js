@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Login.css";
-import Axios from "axios";
+import API from "../utils/API";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -16,14 +16,9 @@ export default function Register() {
     event.preventDefault();
   }
   const register = () => {
-    Axios({
-      method: "POST",
-      data: {
-        email: email,
-        password: password,
-      },
-      withCredentials: true,
-      url: "http://localhost:3001/api/user/register",
+    API.userRegister({
+      email: email,
+      password: password,
     }).then((res) => (window.location.href = "/"));
   };
 

@@ -34,7 +34,10 @@ router.route("/register").post(async (req, res) => {
 });
 
 router.route("/login").post(passport.authenticate("local"), (req, res) => {
-  res.send("Successfully Authenticated!");
+  res.json({
+    email: req.user.email,
+    id: req.user.id,
+  });
 });
 
 router.route("/user").get((req, res) => {
