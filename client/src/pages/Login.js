@@ -24,7 +24,7 @@ export default function Login() {
         password: password,
       },
       withCredentials: true,
-      url: "http://localhost:3001/login",
+      url: "http://localhost:3001/api/user/login",
     }).then(
       (res) => {
         if (res.data === "success") {

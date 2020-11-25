@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require("../../passport");
 const db = require("../../models");
 const User = require("../../models/user");
+const bcrypt = require("bcryptjs");
 // const userController = require("../../controllers/userController");
 
 router.route("/register").post(async (req, res) => {
@@ -33,7 +34,7 @@ router.route("/register").post(async (req, res) => {
 });
 
 router.route("/login").post(passport.authenticate("local"), (req, res) => {
-  res.send("success");
+  res.send("Successfully Authenticated!");
 });
 
 router.route("/user").get((req, res) => {

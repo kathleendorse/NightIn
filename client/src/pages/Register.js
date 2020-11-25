@@ -23,8 +23,8 @@ export default function Register() {
         password: password,
       },
       withCredentials: true,
-      url: "http://localhost:3001/register",
-    }).then((res) => console.log("maybe registered?"));
+      url: "http://localhost:3001/api/user/register",
+    }).then((res) => (window.location.href = "/"));
   };
 
   return (
