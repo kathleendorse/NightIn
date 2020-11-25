@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
+
+
 // This file empties the Nightin collection and inserts the nightin below
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nightindb");
@@ -907,8 +909,8 @@ db.Night.remove({})
     process.exit(1);
   });
 
-// Same cod as directly above, except with "Wine" swapped in for "Night".
-  db.Wine.remove({})
+
+db.Wine.remove({})
   .then(() => db.Wine.collection.insertMany(wineSeed))
   .then((data) => {
     console.log(data.result.n + " records inserted!");
@@ -918,3 +920,4 @@ db.Night.remove({})
     console.error(err);
     process.exit(1);
   });
+
