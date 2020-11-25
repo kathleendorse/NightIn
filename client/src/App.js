@@ -20,8 +20,8 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route exact path={["/", "/nightin"]}> 
-            <Nightin />
+          <Route exact path={["/", "/home"]}> 
+            <Home />
           </Route>
           <Route exact path="/nightin/:id">
             <Detail />
@@ -32,8 +32,8 @@ function App() {
           <Route exact path="/login">
             <Login />
           </Route>
-          <Route exact path="/home">
-            <Home />
+          <Route exact path="/nightin">
+            <Nightin />
           </Route>
           <Route>
             <NoMatch />
