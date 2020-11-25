@@ -1,8 +1,18 @@
+//bringing in our Collection from the model directory
 const db = require("../models");
 
-// Defining methods for the nightinController
+//Defining methods for querying the NightIn collection
+
+//this gets sent to routes>api>nightin.js 
+//which will assign these queries to different routes 
+
 module.exports = {
   findAll: function (req, res) {
+    db.Night.find(req.query)
+      .sort({ date: -1 })
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(422).json(err));
+  },function (req, res) {
     db.Night.find(req.query)
       .sort({ date: -1 })
       .then((dbModel) => res.json(dbModel))
@@ -18,13 +28,11 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  //note being used by the app currently-----------
   update: function (req, res) {
     db.Night.findOneAndUpdate({ _id: req.params.id }, req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  //-------------------------------------
   remove: function (req, res) {
     db.Night.findById({ _id: req.params.id })
       .then((dbModel) => dbModel.remove())

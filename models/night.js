@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+//creating the structure of the schema  
 const nightSchema = new Schema({
   name: { type: String, required: true },
   type: { type: String, required: true },
@@ -11,10 +12,8 @@ const nightSchema = new Schema({
   directions: { type: Array, required: true }
 });
 
-
-
+//creating a collection called Night that uses the nightSchema
 const Night = mongoose.model("Night", nightSchema);
-
 
 module.exports = Night;
 

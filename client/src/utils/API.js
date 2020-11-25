@@ -1,3 +1,4 @@
+//importing axios to make our ajax calls
 import axios from "axios";
 
 export default {
@@ -14,3 +15,9 @@ export default {
     return axios.delete("/api/nightin/" + id);
   },
 };
+
+ //these methods return the results of making an ajax call 
+ //to a route back to wherever they are called from in the front end
+
+ //**curently this file only includes ajax calls to nightin APi routes 
+ //but will be expanded to include ajax calls to routes for other collections
