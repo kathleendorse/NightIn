@@ -19,6 +19,9 @@ function Nav() {
           Home
         </a>
       </span>
+      <Link to={"/favorites"}>
+        <strong>Favorites</strong>
+      </Link>
     </nav>
   );
 }

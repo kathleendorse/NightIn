@@ -7,6 +7,7 @@ import Nav from "./components/Nav";
 import Login from "./pages/Login";
 import Signup from "./pages/Register";
 import Home from "./pages/Home";
+import Favorites from "./pages/Favorites";
 
 // inside the router we render a nav component
 //for each route path we render a different component
@@ -20,7 +21,7 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route exact path={["/", "/nightin"]}> 
+          <Route exact path={["/", "/nightin"]}>
             <Nightin />
           </Route>
           <Route exact path="/nightin/:id">
@@ -34,6 +35,9 @@ function App() {
           </Route>
           <Route exact path="/home">
             <Home />
+          </Route>
+          <Route exact path="/favorites">
+            <Favorites />
           </Route>
           <Route>
             <NoMatch />
