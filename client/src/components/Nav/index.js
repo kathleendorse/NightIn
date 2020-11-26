@@ -6,18 +6,30 @@ function Nav() {
     <nav className="navbar navbar-expand-lg navbar-dark">
       {/* <a className="navbar-brand" href="/"> */}
       <a href="/">Night In</a>
+
       <span className="nav-item">
         <a className="nav-link" href="/register">
           Sign Up
         </a>
       </span>
-      <Link to={"/login"}>
+
+      <span className="nav-item">
+        <a className="nav-link" href="/login">
+          <strong>Log In</strong>          
+        </a>
+      {/* <Link to={"/login"}>
         <strong>Log In</strong>
-      </Link>
+      </Link> */}
       </span>
-      <Link to={"/favorites"}>
+
+      <span className="nav-item">
+        <a className="nav-link" href="/favorites">
+          <strong>Favorites</strong>          
+        </a>
+      {/* <Link to={"/favorites"}>
         <strong>Favorites</strong>
-      </Link>
+      </Link> */}
+      </span>
     </nav>
   );
 }
