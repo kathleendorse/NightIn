@@ -12,11 +12,13 @@ module.exports = {
       .sort({ date: -1 })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
-  },function (req, res) {
-    db.Night.find(req.query)
-      .sort({ date: -1 })
-      .then((dbModel) => res.json(dbModel))
-      .catch((err) => res.status(422).json(err));
+  },
+  //returns results based on search term 
+  find: function(req, res){
+    db.Night.find({ name: { $regex: new RegExp(req.query.q, 'i')} })
+    .then((dbModel)=>{res.json(dbModel)})
+    .catch(err => res.status(422).json(err));
+
   },
   findById: function (req, res) {
     db.Night.findById(req.params.id)
@@ -39,4 +41,5 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
+
 };

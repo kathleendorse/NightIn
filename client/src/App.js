@@ -8,6 +8,8 @@ import Login from "./pages/Login";
 import Signup from "./pages/Register";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
+import Wine from "./pages/Wine";
+//import SelectionContext from "./utils/SelectionContext";
 
 // inside the router we render a nav component
 //for each route path we render a different component
@@ -16,13 +18,31 @@ import Favorites from "./pages/Favorites";
 //the NoMatch component will render if a route other than the ones listed is hit by some means
 
 function App() {
+
+  //test
+  // const [selectionState, setSelectionState] = useState({
+  //   recipeSelection: {},
+  //   mealSelection: {}
+  // });
+
+  // function changeRecipe(recipeSelection){
+  //   setSelectionState({
+  //     ...selectionState, 
+  //     recipeSelection
+  //   });
+  // }
+
+
+
+  //--------------------------------
+
   return (
     <Router>
       <div>
         <Nav />
         <Switch>
-          <Route exact path={["/", "/nightin"]}>
-            <Nightin />
+          <Route exact path={["/", "/home"]}> 
+            <Home />
           </Route>
           <Route exact path="/nightin/:id">
             <Detail />
@@ -33,8 +53,12 @@ function App() {
           <Route exact path="/login">
             <Login />
           </Route>
-          <Route exact path="/home">
-            <Home />
+          <Route exact path="/nightin">
+            <Nightin />
+          </Route>
+          {/* added */}
+          <Route exact path="/wine">
+            <Wine />
           </Route>
           <Route exact path="/favorites">
             <Favorites />

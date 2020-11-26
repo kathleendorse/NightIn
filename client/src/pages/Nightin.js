@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import DeleteBtn from "../components/DeleteBtn";
+import React, { useState} from "react";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
@@ -10,41 +9,26 @@ import Input from "../components/Input";
 import SearchBtn from "../components/SearchBtn";
 
 function Nightin() {
-  // Setting our component's initial state
-  //the state for this component is "nightin". by default it is an empty array
-  //setNightin is how we manage/update it
+
+  // Using the useState hook [nameOfState, methodForUpdatingState] = useState( setInitalValueofState )
+  //recipe results
   const [nightin, setNightin] = useState([]);
+  //search term
+  const [nightinSearch, setNightinSearch] = useState(""); //ADDED
 
-  // when the component mounts we invoke the loadNightin function
-  //because [] is empty, useEffect will only run the one time
-  useEffect(() => {
-    loadNightin();
-  }, []);
-
-  //invokes API's getNightin method that returns all the entries in the night collection
-  function loadNightin() {
-    API.getNightin()
-      .then((res) => setNightin(res.data))
-      .catch((err) => console.log(err));
+    //when the input value changes we update the nightinSearch value
+  const handleInputChange = event => {
+    const { value } = event.target;
+    setNightinSearch(value);
   }
 
-  //THIS WILL BE REMOVED BUT SOMETHING SIMILAR WILL BE USED IN THE FAVORITES PAGE
-  //invokes API's deletenight method that takes in an id
-  //removes it from the collection
-  //then reloads calls the loadNightin function to return an updated list
-  function deleteNight(id) {
-    API.deleteNight(id)
-      .then((res) => loadNightin())
-      .catch((err) => console.log(err));
+  //when the form is submitted we use the getNightin method from the API to find recipes and update the nightinState
+  const handleFormSubmit = event => {
+    event.preventDefault();
+    API.getNightin(nightinSearch)
+      .then(res => setNightin(res.data)) 
+      .catch(err => console.log(err));
   }
-
-  //LOAD NIGHT WILL NEED TO BE REMOVED BECAUSE WE DON'T WANT ALL THE RESULT TO APPEAR WHEN THE PAGE LOADS
-  //HERE'S WE ACTUALLY NEED FUNCTIONS FOR:
-  //-SAVING THE INPUT VALUE ONCHANGE
-  //-PASSING THE INPUT AS A QUERY PARAMETER TO A HANDLESUBMIT FUNCTION THAT
-  //FINDS RECIPES WITH THE INPUT VALUE SOMEWHERE IN THE RECIPE TITLE
-  //& DISPLAY LIST ITEMS FOR EACH OF THOSE RESULTS
-
   return (
     //Container & Col accepts props to use for their attributes
     //Jumbotron uses props.children to have an h5 nested
@@ -54,34 +38,34 @@ function Nightin() {
           <Jumbotron>
             <h5>
               The name of our mongo database is nightindb. In this version the
-              data we are using is coming from a collection called nightin. This
-              is the result of a find all on that collection. The Night
-              collection is purely a test for connecting to a db and returning
-              records from a collection.
+              data we are using is coming from a collection called nightin. 
+              When the user enters a term and clicks the search button, recipes containing that term appear below.
             </h5>
           </Jumbotron>
         </Col>
       </Row>
+
       <Row>
         <Col size="md-6 sm-12">
-          {/* currently this form does nothing */}
+
           <form>
             <Container fluid>
               <Row>
                 <Col size="md-6 sm-12">
                   <Input
-                    name="RecipeSearch"
-                    // value={recipeSearch}
-                    value="placeholder"
-                    // onChange={handleInputChange}
-                    onChange={() => {}}
+    
+                    name="NightinSearch"
+                    //assigning the search term to the input value
+                    value={nightinSearch}
+                    //update the search term when the input changes
+                    onChange={handleInputChange}
                     placeholder="Search For a Recipe"
                   />
                 </Col>
                 <Col size="xs-3 sm-2">
                   <SearchBtn
-                    // onClick={handleFormSubmit}
-                    onClick={() => {}}
+                    //make the API call when the button is clicked
+                    onClick={handleFormSubmit}
                     type="success"
                     className="input-lg"
                   >
@@ -95,15 +79,18 @@ function Nightin() {
       </Row>
 
       <Row>
-        <Col size="md-6 sm-12">
+        <Col size="md-6 sm-12">    
+          {/* ternary operator - show no results if the nightin state is empty*/}
           {nightin.length ? (
             <List>
+              {/* maping over the array in nightin state. for each index we do the following*/}
               {nightin.map((night) => (
+                // create a list item with a key equal to the index's id **react requires a unique KEY to use for arrays indexes. here we assign it the id of the recipe object
                 <ListItem key={night._id}>
+                  {/* link to a detailed view of that recipe */}
                   <Link to={"/nightin/" + night._id}>
                     <strong>{night.name}</strong>
                   </Link>
-                  <DeleteBtn onClick={() => deleteNight(night._id)} />
                 </ListItem>
               ))}
             </List>
