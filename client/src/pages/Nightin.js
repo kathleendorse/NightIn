@@ -8,7 +8,6 @@ import { List, ListItem } from "../components/List";
 import Input from "../components/Input";
 import SearchBtn from "../components/SearchBtn";
 
-
 function Nightin() {
 
   // Using the useState hook [nameOfState, methodForUpdatingState] = useState( setInitalValueofState )
@@ -17,8 +16,7 @@ function Nightin() {
   //search term
   const [nightinSearch, setNightinSearch] = useState(""); //ADDED
 
-
-  //when the input value changes we update the nightinSearch value
+    //when the input value changes we update the nightinSearch value
   const handleInputChange = event => {
     const { value } = event.target;
     setNightinSearch(value);
@@ -31,7 +29,6 @@ function Nightin() {
       .then(res => setNightin(res.data)) 
       .catch(err => console.log(err));
   }
-
   return (
     //Container & Col accepts props to use for their attributes
     //Jumbotron uses props.children to have an h5 nested
@@ -50,17 +47,18 @@ function Nightin() {
 
       <Row>
         <Col size="md-6 sm-12">
+
           <form>
             <Container fluid>
               <Row>
                 <Col size="md-6 sm-12">
                   <Input
+    
                     name="NightinSearch"
                     //assigning the search term to the input value
                     value={nightinSearch}
                     //update the search term when the input changes
                     onChange={handleInputChange}
-                    //onChange = {()=>{}}
                     placeholder="Search For a Recipe"
                   />
                 </Col>
@@ -68,11 +66,10 @@ function Nightin() {
                   <SearchBtn
                     //make the API call when the button is clicked
                     onClick={handleFormSubmit}
-                    //onClick={()=>{}}
                     type="success"
                     className="input-lg"
                   >
-                      Search
+                    Search
                   </SearchBtn>
                 </Col>
               </Row>
@@ -83,7 +80,6 @@ function Nightin() {
 
       <Row>
         <Col size="md-6 sm-12">    
-
           {/* ternary operator - show no results if the nightin state is empty*/}
           {nightin.length ? (
             <List>

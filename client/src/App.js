@@ -7,7 +7,7 @@ import Nav from "./components/Nav";
 import Login from "./pages/Login";
 import Signup from "./pages/Register";
 import Home from "./pages/Home";
-//added
+import Favorites from "./pages/Favorites";
 import Wine from "./pages/Wine";
 //import SelectionContext from "./utils/SelectionContext";
 
@@ -60,7 +60,9 @@ function App() {
           <Route exact path="/wine">
             <Wine />
           </Route>
-          {/* ------------ */}
+          <Route exact path="/favorites">
+            <Favorites />
+          </Route>
           <Route>
             <NoMatch />
           </Route>

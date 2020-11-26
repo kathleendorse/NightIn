@@ -2,6 +2,23 @@
 import axios from "axios";
 
 export default {
+  // user login
+  userLogin: function (userObj) {
+    return axios.post("/api/user/login", userObj);
+  },
+  userRegister: function (userObj) {
+    return axios({
+      method: "POST",
+      data: userObj,
+      withCredentials: true,
+      url: "http://localhost:3001/api/user/register",
+    });
+  },
+
+  //Finds recipes with the provided query term
+  getNightin: function (query){
+    return axios.get("/api/nightin", { params: { q: query } }) 
+  },  
   //Finds a recipe with the provided id 
   getNight: function (id) {
     return axios.get("/api/nightin/" + id);
@@ -10,14 +27,9 @@ export default {
   deleteNight: function (id) {
     return axios.delete("/api/nightin/" + id);
   },
-  //Finds recipes with the provided query term
-  getNightin: function (query){
-    return axios.get("/api/nightin", { params: { q: query } }) 
-  },
 };
-
+  
  //these methods return the results of making an ajax call 
  //back to wherever they are called from in the front end
 
- //**curently this file only includes ajax calls to nightin APi routes 
- //but will be expanded to include ajax calls to routes for other collections
+

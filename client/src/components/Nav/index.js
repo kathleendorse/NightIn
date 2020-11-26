@@ -14,6 +14,10 @@ function Nav() {
       <Link to={"/login"}>
         <strong>Log In</strong>
       </Link>
+      </span>
+      <Link to={"/favorites"}>
+        <strong>Favorites</strong>
+      </Link>
     </nav>
   );
 }
