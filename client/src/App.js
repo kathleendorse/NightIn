@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nightin from "./pages/Nightin";
-import Detail from "./pages/Detail";
+import RecipeDetail from "./pages/RecipeDetail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Login from "./pages/Login";
@@ -9,7 +9,7 @@ import Signup from "./pages/Register";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Wine from "./pages/Wine";
-//import SelectionContext from "./utils/SelectionContext";
+import WineDetail from "./pages/WineDetail";
 
 // inside the router we render a nav component
 //for each route path we render a different component
@@ -44,24 +44,26 @@ function App() {
           <Route exact path={["/", "/home"]}> 
             <Home />
           </Route>
-          <Route exact path="/nightin/:id">
-            <Detail />
-          </Route>
           <Route exact path="/register">
             <Signup />
           </Route>
           <Route exact path="/login">
             <Login />
           </Route>
+          <Route exact path="/favorites">
+            <Favorites />
+          </Route>
           <Route exact path="/nightin">
             <Nightin />
           </Route>
-          {/* added */}
+          <Route exact path="/nightin/:id">
+            <RecipeDetail />
+          </Route>
           <Route exact path="/wine">
             <Wine />
           </Route>
-          <Route exact path="/favorites">
-            <Favorites />
+          <Route exact path="/wine/:id">
+            <WineDetail />
           </Route>
           <Route>
             <NoMatch />

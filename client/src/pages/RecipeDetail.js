@@ -7,7 +7,7 @@ import RecipeImg from "../components/RecipeImg";
 import API from "../utils/API";
 
 //when this component is instantiated it will be passed a "prop" 
-function Detail(props) {
+function RecipeDetail(props) {
 
   //we use the useState hook to create: 
   //a state object for this component called "night" that is an empty object by default
@@ -30,7 +30,7 @@ function Detail(props) {
         <Col size="md-12">
           {/* Jumbotron accepts props.children thats why we can include an <h1> */}
           <Jumbotron>
-            <h1>DETAIL OF SPECIFIC RECORD IN COLLECTION</h1>
+            <h1>DETAIL OF SPECIFIC RECIPE RECORD IN COLLECTION</h1>
           </Jumbotron>
         </Col>
       </Row>
@@ -53,7 +53,7 @@ function Detail(props) {
             </p>
             <h1>ID</h1>
             <p>{night._id}</p>
-            <h1>TITLE</h1>
+            <h1>NAME</h1>
             <p>{night.name}</p>
             <h1>INGREDIENTS</h1>
             <p>(need means of providing key for indexes of ingredients array)</p>
@@ -74,11 +74,11 @@ function Detail(props) {
       </Row>
       <Row>
         <Col size="md-2">
-          <Link to="/">← Back to Main Page</Link>
+          <Link to="/nightin">← Back to Recipe List</Link>
         </Col>
       </Row>
     </Container>
   );
 }
 
-export default Detail;
+export default RecipeDetail;

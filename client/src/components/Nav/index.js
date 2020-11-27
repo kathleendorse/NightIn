@@ -8,7 +8,7 @@ function Nav() {
       {/* <a className="navbar-brand" href="/"> */}
         Night In
       </span>
-      <span class= "nav-item nav-link">
+      <span className= "nav-item nav-link">
         <Link to={"/"}>
           <strong>Home</strong>
         </Link>
