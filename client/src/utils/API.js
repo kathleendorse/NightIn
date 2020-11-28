@@ -27,6 +27,14 @@ export default {
   deleteNight: function (id) {
     return axios.delete("/api/nightin/" + id);
   },
+
+  //TESTING
+  getWines: function (){
+    return axios.get("/api/wine")
+  },
+  getWine: function (id) {
+    return axios.get("/api/wine/" + id);
+  }
 };
   
  //these methods return the results of making an ajax call 
