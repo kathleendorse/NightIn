@@ -47,7 +47,7 @@ const nightSeed = [
       {id: 5, ing: "2 ounces tequila (optional)"},
       {id: 6, ing: "paprika, to taste"},
       {id: 7, ing: "garlic powder, to taste"},
-      {id: 8, ing: "cayene powder, to taste"}
+      {id: 8, ing: "cayene powder, to taste"},
       {id: 9, ing: "oregeno, to taste"},
       {id: 10, ing: "2 bays leaves"},
       {id: 11, ing: "2 cups chicken stock"},
@@ -249,7 +249,7 @@ const nightSeed = [
       {id: 5, ing: "1 tablespoon grated fresh ginger (about 1 inch, peeled)"},
       {id: 6, ing: "1 tablespoon soy sauce"},
       {id: 7, ing: "1 large carrot, shredded"},
-      {id: 8, ing: "1 medium cucumber, sliced"}
+      {id: 8, ing: "1 medium cucumber, sliced"},
       {id: 9, ing: "1/3 cup each fresh basil, parsely and mint"},
       {id: 10, ing: "1 cup dried jasmine rice, to serve"},
       {id: 11, ing: "1 lime, sliced, to serve"},
@@ -311,7 +311,7 @@ const nightSeed = [
       {id: 9, ing: "2 tablespoons chopped fresh chives"},
       {id: 10, ing: "1/3 cup red-wine vinegar"},
       {id: 11, ing: "1 tablespoon Dijon-style mustard"},
-      {id: 12, ing: "1-2 teaspoons sugar"}
+      {id: 12, ing: "1-2 teaspoons sugar"},
       {id: 13, ing: "Salt and pepper, to taste"},
       {id: 14, ing: "2/3 cup extra virgin olive oil"},
       {id: 15, ing: "1/2 cup finely grated Roquefort"}
@@ -339,7 +339,7 @@ const nightSeed = [
       {id: 5, ing: "2 teaspoons sugar"},
       {id: 6, ing: "1/2 cup canola oil"},
       {id: 7, ing: "2 packages (5 ounces each) spring mix salad greens"},
-      {id: 8, ing: "2 medium tart apples, thinly sliced"}
+      {id: 8, ing: "2 medium tart apples, thinly sliced"},
       {id: 9, ing: "1 cup dried cherries"},
       {id: 10, ing: "1 cup pecan halves"},
       {id: 11, ing: "1/4 cup thinly sliced red onion"}
@@ -384,7 +384,7 @@ const nightSeed = [
       {id: 3, ing: "1 red pepper"},
       {id: 4, ing: "2 green onions"},
       {id: 5, ing: "2 tablespoons cilantro"},
-      {id: 6, ing: "⅓ cup Sesame Ginger Dressing"}
+      {id: 6, ing: "⅓ cup Sesame Ginger Dressing"},
       {id: 7, ing: "1 teaspoon sesame oil"},
       {id: 8, ing: "¼ cup almonds"},
       {id: 9, ing: "1 tablespoon sesame seeds"}
