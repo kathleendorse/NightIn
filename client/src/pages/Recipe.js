@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Input from "../components/Input";
-import SearchBtn from "../components/SearchBtn";
+import Butt from"../components/Butt";
 
 function Recipe() {
 
@@ -63,14 +63,14 @@ function Recipe() {
                   />
                 </Col>
                 <Col size="xs-3 sm-2">
-                  <SearchBtn
+                  <Butt
                     //make the API call when the button is clicked
                     onClick={handleFormSubmit}
                     type="success"
-                    className="input-lg"
+                    className="input-lg btn-lg"
                   >
                     Search
-                  </SearchBtn>
+                  </Butt>
                 </Col>
               </Row>
             </Container>

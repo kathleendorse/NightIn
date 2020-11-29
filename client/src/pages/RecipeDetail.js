@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-import AddRecipeBtn from "../components/AddRecipeBtn";
+import Butt from "../components/Butt";
 import RecipeImg from "../components/RecipeImg";
 import API from "../utils/API";
+
 
 //when this component is instantiated it will be passed a "prop" 
 function RecipeDetail(props) {
@@ -37,18 +38,25 @@ function RecipeDetail(props) {
       <Row>
         {/* Col accepts props for it's attributes that's how we set the size */}
         <Col size="md-10 md-offset-1">
-
-          {/* All of this is just a placeholder for now until we: 
-            1. decide how the page should be styled 
-            2. create and bring in components to replace the html elements */}
-
           <article>
 
             <p>
-              {/* Link belongs to react-router dom. We want this to go to the suggested wine pairings page*/}
+              <Link to="/recipe">
+                <Butt 
+                  onClick={()=>{}}
+                  type="success"
+                  className="input-lg btn-lg"
+                >
+                  ← Back
+                </Butt>
+              </Link>
               <Link to="/wine">
-                {/* AddRecipeBtn accepts props. We want the onClick callback tosave the users recipe selection*/}
-                <AddRecipeBtn onClick={()=>{}}></AddRecipeBtn>
+                <Butt 
+                  type="success"
+                  className="input-lg btn-lg"
+                >
+                  + Select Recipe
+                </Butt>
               </Link>
             </p>
             <h1>ID</h1>
@@ -66,15 +74,7 @@ function RecipeDetail(props) {
             <p>{recipe.type}</p>
             <h1>SUGGESTED WINE PAIRING</h1>
             <p>{recipe.wine} - {recipe.subwine}</p>
-
-            
-            
           </article>
-        </Col>
-      </Row>
-      <Row>
-        <Col size="md-2">
-          <Link to="/recipe">← Back to Recipe List</Link>
         </Col>
       </Row>
     </Container>

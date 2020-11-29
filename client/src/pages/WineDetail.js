@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-//import AddRecipeBtn from "../components/AddRecipeBtn";
+import Butt from "../components/Butt";
 //import RecipeImg from "../components/RecipeImg";
 import API from "../utils/API";
 
@@ -30,11 +30,25 @@ function WineDetail(props){
             <Row>
                 <Col size="md-10 md-offset-1">
                     <article>
-                        {/* <p>
-                            <Link to="/home">
-
+                        <p>
+                            <Link to="/wine">
+                            <Butt 
+                                onClick={()=>{}}
+                                type="success"
+                                className="input-lg btn-lg"
+                                >
+                                ← Back
+                            </Butt>
                             </Link>
-                        </p> */}
+                            <Link to="/favorites">
+                                <Butt 
+                                type="success"
+                                className="input-lg btn-lg"
+                                >
+                                + Select Wine
+                                </Butt>
+                            </Link>    
+                        </p>
                         <h1>ID</h1>
                         <p>{wine._id}</p>
                         <h1>NAME</h1>
@@ -42,11 +56,6 @@ function WineDetail(props){
                         <h1>TYPE</h1>
                         <p>{wine.type}</p>
                     </article>
-                </Col>
-            </Row>
-            <Row>
-                <Col size="md-2">
-                    <Link to="/wine">← Back to Wine List</Link>
                 </Col>
             </Row>
         </Container>
