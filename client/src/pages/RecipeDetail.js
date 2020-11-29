@@ -12,14 +12,14 @@ function RecipeDetail(props) {
   //we use the useState hook to create: 
   //a state object for this component called "night" that is an empty object by default
   //a method for managing/updating this state called "setNight"
-  const [night, setNight] = useState({});
+  const [recipe, setRecipe] = useState({});
 
   // When this component mounts, it invoke API's getNight method that takes in an id and returns its details
   // if the id changes, run this function again
   const { id } = useParams();
   useEffect(() => {
-    API.getNight(id)
-      .then((res) => setNight(res.data))
+    API.getRecipe(id)
+      .then((res) => setRecipe(res.data))
       .catch((err) => console.log(err));
   }, [id]);
 
@@ -52,20 +52,20 @@ function RecipeDetail(props) {
               </Link>
             </p>
             <h1>ID</h1>
-            <p>{night._id}</p>
+            <p>{recipe._id}</p>
             <h1>NAME</h1>
-            <p>{night.name}</p>
+            <p>{recipe.name}</p>
             <h1>INGREDIENTS</h1>
             <p>(need means of providing key for indexes of ingredients array)</p>
             <h1>IMAGE</h1>
             <p>(currently does not work because "src=" is duplicated in props and listed in image's property value string)</p>
-            <RecipeImg src={night.image}></RecipeImg>
+            <RecipeImg src={recipe.image}></RecipeImg>
             <h1>INSTRUCTIONS</h1>
             <p>(need means of providing key for indexes of instructions array)</p>
             <h1>MAIN TYPE</h1>
-            <p>{night.type}</p>
+            <p>{recipe.type}</p>
             <h1>SUGGESTED WINE PAIRING</h1>
-            <p>{night.wine} - {night.subwine}</p>
+            <p>{recipe.wine} - {recipe.subwine}</p>
 
             
             
@@ -74,7 +74,7 @@ function RecipeDetail(props) {
       </Row>
       <Row>
         <Col size="md-2">
-          <Link to="/nightin">← Back to Recipe List</Link>
+          <Link to="/recipe">← Back to Recipe List</Link>
         </Col>
       </Row>
     </Container>

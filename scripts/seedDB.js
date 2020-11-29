@@ -6,7 +6,7 @@ const db = require("../models");
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nightindb");
 
 // "Food" Collection Seed Data
-const nightSeed = [
+const recipeSeed = [
   // Beef
   {
     name: "New York Strip Steak with Wild Rice and Broccoli",
@@ -975,8 +975,8 @@ const userSeed = [
   },
 ];
 
-db.Night.remove({})
-  .then(() => db.Night.collection.insertMany(nightSeed))
+db.Recipe.remove({})
+  .then(() => db.Recipe.collection.insertMany(recipeSeed))
   .then((data) => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

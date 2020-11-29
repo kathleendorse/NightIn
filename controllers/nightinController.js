@@ -7,36 +7,36 @@ const db = require("../models");
 //which will assign these queries to different routes 
 
 module.exports = {
-  findAll: function (req, res) {
-    db.Night.find(req.query)
+  recipeFindAll: function (req, res) {
+    db.Recipe.find(req.query)
       .sort({ date: -1 })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   //returns results based on search term 
-  find: function(req, res){
-    db.Night.find({ name: { $regex: new RegExp(req.query.q, 'i')} })
+  recipeFind: function(req, res){
+    db.Recipe.find({ name: { $regex: new RegExp(req.query.q, 'i')} })
     .then((dbModel)=>{res.json(dbModel)})
     .catch(err => res.status(422).json(err));
 
   },
-  findById: function (req, res) {
-    db.Night.findById(req.params.id)
+  recipeFindById: function (req, res) {
+    db.Recipe.findById(req.params.id)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  create: function (req, res) {
-    db.Night.create(req.body)
+  recipeCreate: function (req, res) {
+    db.Recipe.create(req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  update: function (req, res) {
-    db.Night.findOneAndUpdate({ _id: req.params.id }, req.body)
+  recipeUpdate: function (req, res) {
+    db.Recipe.findOneAndUpdate({ _id: req.params.id }, req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  remove: function (req, res) {
-    db.Night.findById({ _id: req.params.id })
+  recipeRemove: function (req, res) {
+    db.Recipe.findById({ _id: req.params.id })
       .then((dbModel) => dbModel.remove())
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));

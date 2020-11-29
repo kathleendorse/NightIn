@@ -8,17 +8,17 @@ const nightinController = require("../../controllers/nightinController");
   //POST, run the create query method 
 router.route("/")
 //  .get(nightinController.findAll) //commented out for testing
-  .post(nightinController.create)
-  .get(nightinController.find); //added
+  .post(nightinController.recipeCreate)
+  .get(nightinController.recipeFind); //added
 
 //if a route matching "/api/nightin/:id" is hit with a
   //GET, run the findById query method
   //PUT, run the update query method
   //DELETE, run the remove query method
 router.route("/:id")
-  .get(nightinController.findById)
-  .put(nightinController.update)
-  .delete(nightinController.remove);
+  .get(nightinController.recipeFindById)
+  .put(nightinController.recipeUpdate)
+  .delete(nightinController.recipeRemove);
 
 module.exports = router;
 
