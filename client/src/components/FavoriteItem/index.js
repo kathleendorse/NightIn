@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Col, Row, Container } from "./../Grid";
-import RecipeImg from "./../RecipeImg";
+import Photo from "./../Photo";
 import { Button, Card } from "react-bootstrap";
 
 // The ...props means, spread all of the passed props onto this element

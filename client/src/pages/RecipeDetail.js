@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import Butt from "../components/Butt";
-import RecipeImg from "../components/RecipeImg";
+import Photo from "../components/Photo";
 import API from "../utils/API";
 
 
@@ -66,8 +66,7 @@ function RecipeDetail(props) {
             <h1>INGREDIENTS</h1>
             <p>(need means of providing key for indexes of ingredients array)</p>
             <h1>IMAGE</h1>
-            <p>(currently does not work because "src=" is duplicated in props and listed in image's property value string)</p>
-            <RecipeImg src={recipe.image}></RecipeImg>
+            <Photo src={recipe.image} alt={recipe.name}></Photo>
             <h1>INSTRUCTIONS</h1>
             <p>(need means of providing key for indexes of instructions array)</p>
             <h1>MAIN TYPE</h1>
