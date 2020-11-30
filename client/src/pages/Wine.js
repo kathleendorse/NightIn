@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 //importing multiple components from the same file
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-
+import { Card } from "react-bootstrap";
 
 function Wine(){
 
@@ -40,9 +40,16 @@ function Wine(){
                         <List>
                             {wines.map((wine) => (
                                 <ListItem key={wine._id}>
-                                    {/* <Link to={"/nightin/" + wine._id}> */}
-                                    <Link to={"/wine/" + wine._id}>    
-                                        <strong>{wine.name}</strong>
+                                    <Link to={"/wine/" + wine._id}> 
+                                        <Card style={{width: "10rem"}} className="text-center">
+                                            <Card.Img
+                                                className="rounded-circle"
+                                                variant="top"
+                                                src={wine.image}
+                                                alt={`photo of ${wine.title}`}
+                                            />
+                                            <Card.Title>{wine.name}</Card.Title>
+                                        </Card>
                                     </Link>
                                 </ListItem>
                             ))}

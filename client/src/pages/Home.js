@@ -14,7 +14,7 @@ function Home(){
                         <h1>Start Planning Your Night In</h1>
                         <br></br>
                         <button>
-                            <Link to={"/nightin"}>Start Planning Your Night In</Link>
+                            <Link to={"/recipe"}>Start Planning Your Night In</Link>
                         </button>
                     </Jumbotron>
                 </Col>

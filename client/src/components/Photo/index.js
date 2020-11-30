@@ -1,10 +1,10 @@
 import React from "react";
 
-function RecipeImg (props){
+function Photo (props){
     return(
         <img {...props} /> 
     );
 
 }
 
-export default RecipeImg;
+export default Photo;

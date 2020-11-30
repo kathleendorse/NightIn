@@ -16,16 +16,16 @@ export default {
   },
 
   //Finds recipes with the provided query term
-  getNightin: function (query){
-    return axios.get("/api/nightin", { params: { q: query } }) 
+  getRecipes: function (query){
+    return axios.get("/api/recipe", { params: { q: query } }) 
   },  
   //Finds a recipe with the provided id 
-  getNight: function (id) {
-    return axios.get("/api/nightin/" + id);
+  getRecipe: function (id) {
+    return axios.get("/api/recipe/" + id);
   },
   // Deletes a recipe with the provided id
-  deleteNight: function (id) {
-    return axios.delete("/api/nightin/" + id);
+  deleteRecipe: function (id) {
+    return axios.delete("/api/recipe/" + id);
   },
 
   //TESTING

@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Nightin from "./pages/Nightin";
+import Recipe from "./pages/Recipe";
 import RecipeDetail from "./pages/RecipeDetail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
@@ -53,10 +53,10 @@ function App() {
           <Route exact path="/favorites">
             <Favorites />
           </Route>
-          <Route exact path="/nightin">
-            <Nightin />
+          <Route exact path="/recipe">
+            <Recipe />
           </Route>
-          <Route exact path="/nightin/:id">
+          <Route exact path="/recipe/:id">
             <RecipeDetail />
           </Route>
           <Route exact path="/wine">
