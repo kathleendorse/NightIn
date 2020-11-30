@@ -1,37 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
+import { List, ListItem } from "../components/List";
 import Butt from "../components/Butt";
-//import RecipeImg from "../components/RecipeImg";
+import Photo from "../components/Photo";
 import API from "../utils/API";
 
 function WineDetail(props){
     const [wine, setWine] = useState({});
+    const [vintages, setVintages] = useState([]);
 
     const { id } = useParams();
     useEffect(() => {
-        API.getWine(id)
-            .then((res) => setWine(res.data))
-            .catch((err) => console.log(err));
+        handleWine(id);
+        handleVintages(id);
     }, [id]);
+
+    function handleWine(id){
+        API.getWine(id)
+        .then((res) => setWine(res.data))
+        .catch((err) => console.log(err));
+    }
+
+    function handleVintages(id){
+        API.getWine(id)
+        .then((res) => setVintages(res.data.vintages))
+        .catch((err) => console.log(err));
+    }
 
     return(
         <Container fluid>
             <Row>
-                <Col size="md-12">
-                    <Jumbotron>
-                        <h1>
-                            DETAIL OF A SPECIFIC WINE RECORD IN COLLECTION
-                        </h1>
-                    </Jumbotron>
-                </Col>
-            </Row>
-            <Row>
                 <Col size="md-10 md-offset-1">
-                    <article>
-                        <p>
-                            <Link to="/wine">
+
+                    <Row>
+                        <Link to="/wine">
                             <Butt 
                                 onClick={()=>{}}
                                 type="success"
@@ -39,23 +42,42 @@ function WineDetail(props){
                                 >
                                 ← Back
                             </Butt>
-                            </Link>
-                            <Link to="/favorites">
-                                <Butt 
+                        </Link>
+                        <Link to="/favorites">
+                            <Butt 
+                                onClick={()=>{}}
                                 type="success"
                                 className="input-lg btn-lg"
                                 >
                                 + Select Wine
-                                </Butt>
-                            </Link>    
-                        </p>
-                        <h1>ID</h1>
-                        <p>{wine._id}</p>
-                        <h1>NAME</h1>
-                        <p>{wine.name}</p>
-                        <h1>TYPE</h1>
-                        <p>{wine.type}</p>
-                    </article>
+                            </Butt>
+                        </Link>    
+                    </Row>
+                    <Row>
+                        <Col size="md-10">
+                            <Photo src={wine.image} alt={wine.name}></Photo>
+                            <br></br>
+                            <h1>{wine.name}</h1>
+                        </Col>
+                    </Row>    
+                    <Row>
+                        <Col size="md-10">
+                            <h2>VINTAGES</h2>
+                            {vintages.length ? (
+                                <List>
+                                    {vintages.map((vintage) => (
+                                    <ListItem key={vintage.id}>
+                                        {vintage.vin}
+                                    </ListItem>
+                                    ))}
+                                </List>
+                            ) : (
+                                <h3>No Results to Display</h3>
+                            )}
+                        </Col>
+                    </Row>
+ 
+
                 </Col>
             </Row>
         </Container>
