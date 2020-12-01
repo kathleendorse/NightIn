@@ -2,10 +2,8 @@
 import axios from "axios";
 
 export default {
-  // user login
-  userLogin: function (userObj) {
-    return axios.post("/api/user/login", userObj);
-  },
+  
+  //user signup
   userRegister: function (userObj) {
     return axios({
       method: "POST",
@@ -14,6 +12,15 @@ export default {
       url: "http://localhost:3001/api/user/register",
     });
   },
+
+
+  // user login
+  userLogin: function (userObj) {
+    return axios.post("/api/user/login", userObj);
+  },
+
+
+
 
   //Finds recipes with the provided query term
   getRecipes: function (query){

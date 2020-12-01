@@ -14,6 +14,8 @@ passport.deserializeUser((id, cb) => {
       email: user.email,
       isAdmin: user.isAdmin,
       id: user._id,
+      //added
+      favs: user.favs
     };
     cb(err, userInformation);
   });
