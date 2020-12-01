@@ -24,7 +24,8 @@ export default function Login() {
       (res) => {
         console.log(res);
         if (res.data.email === email) {
-          window.location.href = "/";
+          const use = (res.data.id);
+          (window.location.href = `${use}/home`)
         }
       },
       () => {

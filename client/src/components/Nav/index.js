@@ -28,6 +28,11 @@ function Nav() {
         <strong>Favorites</strong>
       </Link>
       </span>
+      <span className="nav-item nav-link">
+      <Link to={"/register"}>
+        <strong>Log Out</strong>
+      </Link>
+      </span>
     </nav>
   );
 }

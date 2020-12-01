@@ -10,7 +10,7 @@ import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Wine from "./pages/Wine";
 import WineDetail from "./pages/WineDetail";
-
+import { UserProvider } from "./utils/UserContext"; 
 // inside the router we render a nav component
 //for each route path we render a different component
 //the component will only be visible when that route is hit by some means
@@ -19,56 +19,42 @@ import WineDetail from "./pages/WineDetail";
 
 function App() {
 
-  //test
-  // const [selectionState, setSelectionState] = useState({
-  //   recipeSelection: {},
-  //   mealSelection: {}
-  // });
-
-  // function changeRecipe(recipeSelection){
-  //   setSelectionState({
-  //     ...selectionState, 
-  //     recipeSelection
-  //   });
-  // }
-
-
-
-  //--------------------------------
 
   return (
     <Router>
       <div>
-        <Nav />
-        <Switch>
-          <Route exact path={["/", "/home"]}> 
-            <Home />
-          </Route>
-          <Route exact path="/register">
-            <Signup />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/favorites">
-            <Favorites />
-          </Route>
-          <Route exact path="/recipe">
-            <Recipe />
-          </Route>
-          <Route exact path="/recipe/:id">
-            <RecipeDetail />
-          </Route>
-          <Route exact path="/wine">
-            <Wine />
-          </Route>
-          <Route exact path="/wine/:id">
-            <WineDetail />
-          </Route>
-          <Route>
-            <NoMatch />
-          </Route>
-        </Switch>
+        <UserProvider>
+          <Nav />
+          <Switch>
+            <Route exact path="/:id/home"> 
+              <Home />
+            </Route>
+            <Route exact path={["/", "/register"]}>
+              <Signup />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/favorites">
+              <Favorites />
+            </Route>
+            <Route exact path="/recipe">
+              <Recipe />
+            </Route>
+            <Route exact path="/recipe/:id">
+              <RecipeDetail />
+            </Route>
+            <Route exact path="/wine">
+              <Wine />
+            </Route>
+            <Route exact path="/wine/:id">
+              <WineDetail />
+            </Route>
+            <Route>
+              <NoMatch />
+            </Route>
+          </Switch>
+        </UserProvider>
       </div>
     </Router>
   );

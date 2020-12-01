@@ -3,10 +3,16 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Login.css";
 import API from "../utils/API";
+import { Link } from "react-router-dom";
+import { useUserContext } from "../utils/UserContext";
 
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  //test
+  const [state, dispatch] = useUserContext();
+  //----
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -15,12 +21,35 @@ export default function Register() {
   function handleSubmit(event) {
     event.preventDefault();
   }
+
   const register = () => {
     API.userRegister({
       email: email,
       password: password,
-    }).then((res) => (window.location.href = "/"));
+    })
+  //     .then((res) => {
+  //       console.log(res);
+  //       const use = (res.data._id);
+  // //      (window.location.href = `/${use}/home`)
+  //     });
+
+      .then((res) => 
+        {
+          dispatch({
+          type: "setCurrentUser",
+          user: res.data });
+          
+        }
+      )
+      .catch(err => console.log(err));
   };
+
+
+
+
+
+
+  //--------
 
   return (
     <div className="Login">
@@ -42,6 +71,7 @@ export default function Register() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
+        <Link to={`/${state.user.id}/home`}>
         <Button
           block
           size="lg"
@@ -51,7 +81,12 @@ export default function Register() {
         >
           Sign Up
         </Button>
+        </Link>
+        <Link to="/login">
+          <strong>Or Click here to Login</strong>
+        </Link>
       </Form>
+
     </div>
   );
 }
