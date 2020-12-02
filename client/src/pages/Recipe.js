@@ -6,27 +6,28 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Input from "../components/Input";
-import SearchBtn from "../components/SearchBtn";
+import Butt from"../components/Butt";
+import { Card } from "react-bootstrap";
 
-function Nightin() {
+function Recipe() {
 
   // Using the useState hook [nameOfState, methodForUpdatingState] = useState( setInitalValueofState )
   //recipe results
-  const [nightin, setNightin] = useState([]);
+  const [recipes, setRecipes] = useState([]);
   //search term
-  const [nightinSearch, setNightinSearch] = useState(""); //ADDED
+  const [recipesSearch, setRecipesSearch] = useState(""); //ADDED
 
     //when the input value changes we update the nightinSearch value
   const handleInputChange = event => {
     const { value } = event.target;
-    setNightinSearch(value);
+    setRecipesSearch(value);
   }
 
   //when the form is submitted we use the getNightin method from the API to find recipes and update the nightinState
   const handleFormSubmit = event => {
     event.preventDefault();
-    API.getNightin(nightinSearch)
-      .then(res => setNightin(res.data)) 
+    API.getRecipes(recipesSearch)
+      .then(res => setRecipes(res.data)) 
       .catch(err => console.log(err));
   }
   return (
@@ -38,7 +39,7 @@ function Nightin() {
           <Jumbotron>
             <h5>
               The name of our mongo database is nightindb. In this version the
-              data we are using is coming from a collection called nightin. 
+              data we are using is coming from a collection called recipes. 
               When the user enters a term and clicks the search button, recipes containing that term appear below.
             </h5>
           </Jumbotron>
@@ -54,23 +55,23 @@ function Nightin() {
                 <Col size="md-6 sm-12">
                   <Input
     
-                    name="NightinSearch"
+                    name="RecipesSearch"
                     //assigning the search term to the input value
-                    value={nightinSearch}
+                    value={recipesSearch}
                     //update the search term when the input changes
                     onChange={handleInputChange}
                     placeholder="Search For a Recipe"
                   />
                 </Col>
                 <Col size="xs-3 sm-2">
-                  <SearchBtn
+                  <Butt
                     //make the API call when the button is clicked
                     onClick={handleFormSubmit}
                     type="success"
-                    className="input-lg"
+                    className="input-lg btn-lg"
                   >
                     Search
-                  </SearchBtn>
+                  </Butt>
                 </Col>
               </Row>
             </Container>
@@ -81,16 +82,26 @@ function Nightin() {
       <Row>
         <Col size="md-6 sm-12">    
           {/* ternary operator - show no results if the nightin state is empty*/}
-          {nightin.length ? (
+          {recipes.length ? (
             <List>
               {/* maping over the array in nightin state. for each index we do the following*/}
-              {nightin.map((night) => (
+              {recipes.map((recipe) => (
                 // create a list item with a key equal to the index's id **react requires a unique KEY to use for arrays indexes. here we assign it the id of the recipe object
-                <ListItem key={night._id}>
-                  {/* link to a detailed view of that recipe */}
-                  <Link to={"/nightin/" + night._id}>
-                    <strong>{night.name}</strong>
+                <ListItem key={recipe._id}>
+
+                  <Link to={"/recipe/" + recipe._id}>
+                    <Card style={{width: "10rem"}} className="text-center">
+                      <Card.Img
+                        className="rounded-circle"
+                        variant="top"
+                        src={recipe.image}
+                        alt={`photo of ${recipe.title}`}
+                      />
+                      <Card.Title>{recipe.name}</Card.Title>
+                    </Card>
                   </Link>
+
+
                 </ListItem>
               ))}
             </List>
@@ -103,4 +114,4 @@ function Nightin() {
   );
 }
 
-export default Nightin;
+export default Recipe;

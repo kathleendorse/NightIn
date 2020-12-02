@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 //creating the structure of the schema  
-const nightSchema = new Schema({
+const recipeSchema = new Schema({
   name: { type: String, required: true },
   type: { type: String, required: true },
   wine: { type: String, required: true },
@@ -13,7 +13,7 @@ const nightSchema = new Schema({
 });
 
 //creating a collection called Night that uses the nightSchema
-const Night = mongoose.model("Night", nightSchema);
+const Recipe = mongoose.model("Recipe", recipeSchema);
 
-module.exports = Night;
+module.exports = Recipe;
 

@@ -7,7 +7,7 @@
 
 
 module.exports = {
-  Night: require("./night"),
+  Recipe: require("./recipe"),
   User: require("./user"),
   Wine: require("./wine")
 };

@@ -44,7 +44,7 @@ router.route("/user").get((req, res) => {
   res.send(req.user);
 });
 
-router.route("/logout").post((req, res) => {
+router.route("/logout").get((req, res) => {
   req.logout();
   res.send("success");
 });

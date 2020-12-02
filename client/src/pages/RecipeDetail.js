@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
-import AddRecipeBtn from "../components/AddRecipeBtn";
-import RecipeImg from "../components/RecipeImg";
+import Butt from "../components/Butt";
+import Photo from "../components/Photo";
 import API from "../utils/API";
+import { List, ListItem } from "../components/List";
+
 
 //when this component is instantiated it will be passed a "prop" 
 function RecipeDetail(props) {
@@ -12,69 +13,101 @@ function RecipeDetail(props) {
   //we use the useState hook to create: 
   //a state object for this component called "night" that is an empty object by default
   //a method for managing/updating this state called "setNight"
-  const [night, setNight] = useState({});
+  const [recipe, setRecipe] = useState({});
+  const [ingredients, setIngredients] = useState([]);
+  const [directions, setDirections] = useState([]);
 
   // When this component mounts, it invoke API's getNight method that takes in an id and returns its details
   // if the id changes, run this function again
   const { id } = useParams();
   useEffect(() => {
-    API.getNight(id)
-      .then((res) => setNight(res.data))
-      .catch((err) => console.log(err));
+    handleRecipe(id);
+    handleIngredients(id)
+    handleDirections(id)
   }, [id]);
+
+  function handleRecipe(id){
+    API.getRecipe(id)
+    .then((res) => setRecipe(res.data))
+    .catch((err) => console.log(err));
+  }
+
+ function handleIngredients (id){
+   API.getRecipe(id)
+   .then((res) => setIngredients(res.data.ingredients))
+   .catch((err) => console.log(err));
+ } 
+
+ function handleDirections (id){
+   API.getRecipe(id)
+   .then((res) => setDirections(res.data.directions))
+   .catch((err) => console.log(err));
+ }
 
 
   return (
     <Container fluid>
-      <Row>
-        <Col size="md-12">
-          {/* Jumbotron accepts props.children thats why we can include an <h1> */}
-          <Jumbotron>
-            <h1>DETAIL OF SPECIFIC RECIPE RECORD IN COLLECTION</h1>
-          </Jumbotron>
-        </Col>
-      </Row>
+
       <Row>
         {/* Col accepts props for it's attributes that's how we set the size */}
         <Col size="md-10 md-offset-1">
-
-          {/* All of this is just a placeholder for now until we: 
-            1. decide how the page should be styled 
-            2. create and bring in components to replace the html elements */}
-
           <article>
 
-            <p>
-              {/* Link belongs to react-router dom. We want this to go to the suggested wine pairings page*/}
-              <Link to="/wine">
-                {/* AddRecipeBtn accepts props. We want the onClick callback tosave the users recipe selection*/}
-                <AddRecipeBtn onClick={()=>{}}></AddRecipeBtn>
+            <Row>
+              <Link to="/recipe">
+                <Butt 
+                  onClick={()=>{}}
+                  type="success"
+                  className="input-lg btn-lg"
+                >
+                  ← Back
+                </Butt>
               </Link>
-            </p>
-            <h1>ID</h1>
-            <p>{night._id}</p>
-            <h1>NAME</h1>
-            <p>{night.name}</p>
-            <h1>INGREDIENTS</h1>
-            <p>(need means of providing key for indexes of ingredients array)</p>
-            <h1>IMAGE</h1>
-            <p>(currently does not work because "src=" is duplicated in props and listed in image's property value string)</p>
-            <RecipeImg src={night.image}></RecipeImg>
-            <h1>INSTRUCTIONS</h1>
-            <p>(need means of providing key for indexes of instructions array)</p>
-            <h1>MAIN TYPE</h1>
-            <p>{night.type}</p>
-            <h1>SUGGESTED WINE PAIRING</h1>
-            <p>{night.wine} - {night.subwine}</p>
-
-            
-            
+              <Link to="/wine">
+                <Butt 
+                  type="success"
+                  className="input-lg btn-lg"
+                >
+                  + Select Recipe
+                </Butt>
+              </Link>
+            </Row>
+            <Row>
+              <Col size="md-10">
+                <Photo src={recipe.image} alt={recipe.name}></Photo>
+                <br></br>
+                <h1>{recipe.name}</h1>
+              </Col>
+              <Col size="md-5">
+                <h2>INGREDIENTS</h2>
+                {ingredients.length ? (
+                  <List>
+                    {ingredients.map((ingredient) => (
+                      <ListItem key={ingredient.id}>
+                        {ingredient.ing}
+                      </ListItem>
+                    ))}
+                  </List>
+                ) : (
+                  <h3>No Results to Display</h3>
+                )}
+              </Col>
+              <Col size="md-5">
+                <h2>INSTRUCTIONS</h2>
+                {directions.length ? (
+                  <List>
+                    {directions.map((direction) => (
+                      <ListItem key={direction.id}>
+                        {direction.dir}
+                      </ListItem>
+                    ))}
+                  </List>
+                ) : (
+                  <h3>No Results to Display</h3>
+                )}
+              </Col>  
+            </Row>
           </article>
-        </Col>
-      </Row>
-      <Row>
-        <Col size="md-2">
-          <Link to="/nightin">← Back to Recipe List</Link>
         </Col>
       </Row>
     </Container>

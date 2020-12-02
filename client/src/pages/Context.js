@@ -11,7 +11,7 @@ export const myContext = createContext({});
 export default function Context(props) {
   const [user, setUser] = useState();
   useEffect(() => {
-    Axios.get("http://localhost:3001/api/user/login", {
+    Axios.get("http://localhost:3001/api/user/user", {
       withCredentials: true,
     }).then((res) => {
       setUser(res.data);
