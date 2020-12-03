@@ -5,11 +5,12 @@ import Butt from "../components/Butt";
 import Photo from "../components/Photo";
 import API from "../utils/API";
 import { List, ListItem } from "../components/List";
-
+import { useUserContext } from "../utils/UserContext";
 
 //when this component is instantiated it will be passed a "prop" 
 function RecipeDetail(props) {
 
+  const [state, dispatch] = useUserContext();
   //we use the useState hook to create: 
   //a state object for this component called "night" that is an empty object by default
   //a method for managing/updating this state called "setNight"

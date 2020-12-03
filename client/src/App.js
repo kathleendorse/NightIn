@@ -26,7 +26,7 @@ function App() {
         <UserProvider>
           <Nav />
           <Switch>
-            <Route exact path="/:id/home"> 
+            <Route exact path="/:userId/home"> 
               <Home />
             </Route>
             <Route exact path={["/", "/register"]}>
