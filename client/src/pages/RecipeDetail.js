@@ -6,17 +6,15 @@ import Photo from "../components/Photo";
 import API from "../utils/API";
 import { List, ListItem } from "../components/List";
 import { useUserContext } from "../utils/UserContext";
-import Nav from "../components/Nav";
-
 //when this component is instantiated it will be passed a "prop"
 function RecipeDetail(props) {
+  const [state, dispatch] = useUserContext();
   //we use the useState hook to create:
   //a state object for this component called "night" that is an empty object by default
   //a method for managing/updating this state called "setNight"
   const [recipe, setRecipe] = useState({});
   const [ingredients, setIngredients] = useState([]);
   const [directions, setDirections] = useState([]);
-
   // When this component mounts, it invoke API's getNight method that takes in an id and returns its details
   // if the id changes, run this function again
   const { id } = useParams();
@@ -25,51 +23,48 @@ function RecipeDetail(props) {
     handleIngredients(id);
     handleDirections(id);
   }, [id]);
-
   function handleRecipe(id) {
     API.getRecipe(id)
-      .then((res) => setRecipe(res.data))
+      .then((res) => {
+        setRecipe(res.data);
+      })
       .catch((err) => console.log(err));
   }
-
   function handleIngredients(id) {
     API.getRecipe(id)
       .then((res) => setIngredients(res.data.ingredients))
       .catch((err) => console.log(err));
   }
-
-  
-    function handleDirections(id) {
+  function handleDirections(id) {
     API.getRecipe(id)
       .then((res) => setDirections(res.data.directions))
       .catch((err) => console.log(err));
   }
-  
-    function addRecipe() {
-  API.addRecipe({
+  //added
+  function addRecipe() {
+    API.addRecipe({
       userId: state.user.id,
-      favorite: recipe._id
-  })
-   .then((res)=> {
-     dispatch({
-       type: "setCurrentUser",
-       user: res.data
-     });
-   })
-   .catch((err)=>console.log(err));
-}
-  
+      favorite: recipe._id,
+    })
+      .then((res) => {
+        dispatch({
+          type: "setCurrentUser",
+          user: res.data,
+        });
+      })
+      .catch((err) => console.log(err));
+  }
+  //-------------
   return (
     <Container fluid>
       <Row>
         {/* Col accepts props for it's attributes that's how we set the size */}
         <Col size="md-10 md-offset-1">
           <article>
-
             <Row>
               <Link to="/recipe">
-                <Butt 
-                  onClick={()=>{}}
+                <Butt
+                  onClick={() => {}}
                   type="success"
                   className="input-lg btn-lg"
                 >
@@ -77,7 +72,7 @@ function RecipeDetail(props) {
                 </Butt>
               </Link>
               <Link to="/wine">
-                <Butt 
+                <Butt
                   type="success"
                   className="input-lg btn-lg"
                   // added
@@ -99,9 +94,7 @@ function RecipeDetail(props) {
                 {ingredients.length ? (
                   <List>
                     {ingredients.map((ingredient) => (
-                      <ListItem key={ingredient.id}>
-                        {ingredient.ing}
-                      </ListItem>
+                      <ListItem key={ingredient.id}>{ingredient.ing}</ListItem>
                     ))}
                   </List>
                 ) : (
@@ -113,15 +106,13 @@ function RecipeDetail(props) {
                 {directions.length ? (
                   <List>
                     {directions.map((direction) => (
-                      <ListItem key={direction.id}>
-                        {direction.dir}
-                      </ListItem>
+                      <ListItem key={direction.id}>{direction.dir}</ListItem>
                     ))}
                   </List>
                 ) : (
                   <h3>No Results to Display</h3>
                 )}
-              </Col>  
+              </Col>
             </Row>
           </article>
         </Col>
@@ -129,5 +120,4 @@ function RecipeDetail(props) {
     </Container>
   );
 }
-
 export default RecipeDetail;

@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useUserContext } from "../../utils/UserContext";
 import API from "../../utils/API";
 
 function Nav() {
   const [state, dispatch] = useUserContext();
+
+  // useEffect(() => {
+  //   console.log("hi");
+  // }, [state]);
 
   const logout = () => {
     API.userLogout(state)
@@ -30,7 +34,7 @@ function Nav() {
           Night In
         </span>
         <span className="nav-item nav-link">
-          <Link to={"/:userId/home"}>
+          <Link to={`/${state.user.id}/home`}>
             <strong>Home</strong>
           </Link>
         </span>
