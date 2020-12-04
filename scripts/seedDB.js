@@ -992,7 +992,7 @@ const userSeed = [
 ];
 
 db.Recipe.remove({})
-  .then(() => db.Recipe.collection.insertMany(recipeSeed))
+  .then(() => db.Recipe.insertMany(recipeSeed))
   .then((data) => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
@@ -1003,7 +1003,7 @@ db.Recipe.remove({})
   });
 
 db.Wine.remove({})
-  .then(() => db.Wine.collection.insertMany(wineSeed))
+  .then(() => db.WineinsertMany(wineSeed))
   .then((data) => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
@@ -1014,7 +1014,7 @@ db.Wine.remove({})
   });
 
 db.User.remove({})
-  .then(() => db.User.collection.insertMany(userSeed))
+  .then(() => db.User.insertMany(userSeed))
   .then((data) => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
