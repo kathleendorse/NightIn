@@ -27,11 +27,10 @@ export default function Login() {
   const login = () => {
     API.userLogin({
       email: email,
-      password: password,
-    }).then(
-      (res) => {
-        console.log(res);
-        if (res.data.email === email) {
+      password: password})
+    .then((res) => {
+      console.log(res);
+      if (res.data.email === email) {
 
           dispatch({
           type: "setCurrentUser",

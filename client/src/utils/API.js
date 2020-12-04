@@ -19,8 +19,11 @@ export default {
     return axios.post("/api/user/login", userObj);
   },
 
-
-
+  //added
+  addRecipe: function(userObj){
+    return axios.put("/api/user/addRecipe", userObj);
+  },
+  //------------------
 
   //Finds recipes with the provided query term
   getRecipes: function (query){
@@ -34,8 +37,6 @@ export default {
   deleteRecipe: function (id) {
     return axios.delete("/api/recipe/" + id);
   },
-
-  //TESTING
   getWines: function (){
     return axios.get("/api/wine")
   },
