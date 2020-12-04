@@ -28,7 +28,7 @@ export default function Login() {
   const login = () => {
     API.userLogin({
       email: email,
-      password: password,
+            password: password,
     }).then(
       (res) => {
         console.log(res);

@@ -16,6 +16,10 @@ router.route("/login").post(passport.authenticate("local"), (req, res) => {
   });
 });
 
+router.route("/addRecipe").put(
+  userController.addRecipe
+);
+
 router.route("/user").get((req, res) => {
   res.send(req.user);
 });

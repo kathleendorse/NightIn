@@ -38,73 +38,95 @@ function RecipeDetail(props) {
       .catch((err) => console.log(err));
   }
 
-  function handleDirections(id) {
+  
+    function handleDirections(id) {
     API.getRecipe(id)
       .then((res) => setDirections(res.data.directions))
       .catch((err) => console.log(err));
   }
-
+  
+    function addRecipe() {
+  API.addRecipe({
+      userId: state.user.id,
+      favorite: recipe._id
+  })
+   .then((res)=> {
+     dispatch({
+       type: "setCurrentUser",
+       user: res.data
+     });
+   })
+   .catch((err)=>console.log(err));
+}
+  
   return (
-    <div>
-      <Container fluid>
-        <Row>
-          {/* Col accepts props for it's attributes that's how we set the size */}
-          <Col size="md-10 md-offset-1">
-            <article>
-              <Row>
-                <Link to="/recipe">
-                  <Butt
-                    onClick={() => {}}
-                    type="success"
-                    className="input-lg btn-lg"
-                  >
-                    ← Back
-                  </Butt>
-                </Link>
-                <Link to="/wine">
-                  <Butt type="success" className="input-lg btn-lg">
-                    + Select Recipe
-                  </Butt>
-                </Link>
-              </Row>
-              <Row>
-                <Col size="md-10">
-                  <Photo src={recipe.image} alt={recipe.name}></Photo>
-                  <br></br>
-                  <h1>{recipe.name}</h1>
-                </Col>
-                <Col size="md-5">
-                  <h2>INGREDIENTS</h2>
-                  {ingredients.length ? (
-                    <List>
-                      {ingredients.map((ingredient) => (
-                        <ListItem key={ingredient.id}>
-                          {ingredient.ing}
-                        </ListItem>
-                      ))}
-                    </List>
-                  ) : (
-                    <h3>No Results to Display</h3>
-                  )}
-                </Col>
-                <Col size="md-5">
-                  <h2>INSTRUCTIONS</h2>
-                  {directions.length ? (
-                    <List>
-                      {directions.map((direction) => (
-                        <ListItem key={direction.id}>{direction.dir}</ListItem>
-                      ))}
-                    </List>
-                  ) : (
-                    <h3>No Results to Display</h3>
-                  )}
-                </Col>
-              </Row>
-            </article>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+    <Container fluid>
+      <Row>
+        {/* Col accepts props for it's attributes that's how we set the size */}
+        <Col size="md-10 md-offset-1">
+          <article>
+
+            <Row>
+              <Link to="/recipe">
+                <Butt 
+                  onClick={()=>{}}
+                  type="success"
+                  className="input-lg btn-lg"
+                >
+                  ← Back
+                </Butt>
+              </Link>
+              <Link to="/wine">
+                <Butt 
+                  type="success"
+                  className="input-lg btn-lg"
+                  // added
+                  onClick={addRecipe}
+                  // ----
+                >
+                  + Select Recipe
+                </Butt>
+              </Link>
+            </Row>
+            <Row>
+              <Col size="md-10">
+                <Photo src={recipe.image} alt={recipe.name}></Photo>
+                <br></br>
+                <h1>{recipe.name}</h1>
+              </Col>
+              <Col size="md-5">
+                <h2>INGREDIENTS</h2>
+                {ingredients.length ? (
+                  <List>
+                    {ingredients.map((ingredient) => (
+                      <ListItem key={ingredient.id}>
+                        {ingredient.ing}
+                      </ListItem>
+                    ))}
+                  </List>
+                ) : (
+                  <h3>No Results to Display</h3>
+                )}
+              </Col>
+              <Col size="md-5">
+                <h2>INSTRUCTIONS</h2>
+                {directions.length ? (
+                  <List>
+                    {directions.map((direction) => (
+                      <ListItem key={direction.id}>
+                        {direction.dir}
+                      </ListItem>
+                    ))}
+                  </List>
+                ) : (
+                  <h3>No Results to Display</h3>
+                )}
+              </Col>  
+            </Row>
+          </article>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
