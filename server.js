@@ -34,13 +34,15 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nightindb", {
 });
 
 // app.use(cors({ origin: "https://localhost:3000", credentials: true }));
+// Sessions
 app.use(
   session({
-    secret: "secretcode",
-    resave: true,
-    saveUninitialized: true,
+    secret: "facebook-special",
+    resave: false,
+    saveUninitialized: false,
   })
 );
+
 app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
