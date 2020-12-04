@@ -29,12 +29,13 @@ export default function Register() {
       password: password
     })
     
-        .then((res) => {
-        dispatch({
-          type: "setCurrentUser",
-          user: res.data,
-        });
-      })
+    
+          .then((res) => {
+            if (res.data.email === email){
+              dispatch({
+                type: "setCurrentUser",
+                user: res.data });
+            })
       .catch((err) => console.log(err));
   };
 
