@@ -25,22 +25,16 @@ export default function Register() {
   const register = () => {
     API.userRegister({
       email: email,
-      password: password,
+      password: password
     })
-  //     .then((res) => {
-  //       console.log(res);
-  //       const use = (res.data._id);
-  // //      (window.location.href = `/${use}/home`)
-  //     });
-
-      .then((res) => 
-        {
-          dispatch({
-          type: "setCurrentUser",
-          user: res.data });
-          
-        }
-      )
+      .then((res) => {
+            if (res.data.email === email){
+              dispatch({
+                type: "setCurrentUser",
+                user: res.data });
+            }
+            
+      })
       .catch(err => console.log(err));
   };
 

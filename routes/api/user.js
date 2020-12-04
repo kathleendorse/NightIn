@@ -7,13 +7,6 @@ const userController = require("../../controllers/userController");
 router.route("/register")
   .post(userController.userCreate);
 
-
-
-
-
-
-
-
 //user login  
 router.route("/login").post(passport.authenticate("local"), (req, res) => {
   res.json({
@@ -24,7 +17,9 @@ router.route("/login").post(passport.authenticate("local"), (req, res) => {
   });
 });
 
-
+router.route("/addRecipe").put(
+  userController.addRecipe
+);
 
 router.route("/user").get((req, res) => {
   res.send(req.user);

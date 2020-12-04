@@ -1,6 +1,7 @@
 //bringing in our Collection from the model directory
 const db = require("../models");
 const bcrypt = require("bcryptjs");
+const mongojs = require("mongojs");
 //const User = require("../models/user");
 //const passport = require("../../passport");
 
@@ -44,7 +45,28 @@ module.exports = {
 
 
     },
+//added
+    addRecipe: function (req, res) {
+      const {userId, favorite} = req.body;
+       db.User.updateOne(
+        { _id: mongojs.ObjectId(userId) },
+        {$push: {"favs": { mealId: favorite }} },
+        {new: true}
+      )
+      .then(
+        db.User.findOne({ _id: mongojs.ObjectId(userId) })
+        .then(function(dbModel){
+           const userObj = {
+             _id: dbModel._id,
+             email: dbModel.email,
+             favs: dbModel.favs,
+           }
+           res.json(userObj)
+        })        
+      )
+     .catch((err)=> res.status(422).json(err));
 
+    },
     //------------------------
     // userCreate: function (req, res) {
     //   db.Wine.create(req.body)

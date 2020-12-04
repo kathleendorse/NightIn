@@ -23,13 +23,14 @@ function RecipeDetail(props) {
   const { id } = useParams();
   useEffect(() => {
     handleRecipe(id);
-    handleIngredients(id)
-    handleDirections(id)
+    handleIngredients(id);
+    handleDirections(id);
   }, [id]);
 
   function handleRecipe(id){
     API.getRecipe(id)
-    .then((res) => setRecipe(res.data))
+    .then((res) => {setRecipe(res.data)
+    })
     .catch((err) => console.log(err));
   }
 
@@ -45,6 +46,21 @@ function RecipeDetail(props) {
    .catch((err) => console.log(err));
  }
 
+ //added
+  function addRecipe() {
+  API.addRecipe({
+      userId: state.user.id,
+      favorite: recipe._id
+  })
+   .then((res)=> {
+     dispatch({
+       type: "setCurrentUser",
+       user: res.data
+     });
+   })
+   .catch((err)=>console.log(err));
+}
+//-------------
 
   return (
     <Container fluid>
@@ -68,6 +84,9 @@ function RecipeDetail(props) {
                 <Butt 
                   type="success"
                   className="input-lg btn-lg"
+                  // added
+                  onClick={addRecipe}
+                  // ----
                 >
                   + Select Recipe
                 </Butt>
