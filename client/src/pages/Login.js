@@ -3,10 +3,18 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Login.css";
 import API from "../utils/API";
+//added
+import { Link } from "react-router-dom";
+import { useUserContext } from "../utils/UserContext";
+//----
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  //test
+  const [state, dispatch] = useUserContext();
+  //----
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -24,8 +32,13 @@ export default function Login() {
       (res) => {
         console.log(res);
         if (res.data.email === email) {
-          const use = (res.data.id);
-          (window.location.href = `${use}/home`)
+
+          dispatch({
+          type: "setCurrentUser",
+          user: res.data });
+
+          // const use = (res.data.id);
+          // (window.location.href = `${use}/home`)
         }
       },
       () => {
@@ -54,6 +67,7 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
+        <Link to={`/${state.user.id}/home`}>
         <Button
           block
           size="lg"
@@ -63,6 +77,7 @@ export default function Login() {
         >
           Login
         </Button>
+        </Link>
       </Form>
     </div>
   );

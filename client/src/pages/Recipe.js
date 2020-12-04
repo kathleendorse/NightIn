@@ -8,8 +8,11 @@ import { List, ListItem } from "../components/List";
 import Input from "../components/Input";
 import Butt from"../components/Butt";
 import { Card } from "react-bootstrap";
+import { useUserContext } from "../utils/UserContext";
 
 function Recipe() {
+  
+  const [state, dispatch] = useUserContext();
 
   // Using the useState hook [nameOfState, methodForUpdatingState] = useState( setInitalValueofState )
   //recipe results

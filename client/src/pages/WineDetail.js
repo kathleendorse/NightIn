@@ -5,8 +5,11 @@ import { List, ListItem } from "../components/List";
 import Butt from "../components/Butt";
 import Photo from "../components/Photo";
 import API from "../utils/API";
+import { useUserContext } from "../utils/UserContext";
 
 function WineDetail(props){
+
+    const [state, dispatch] = useUserContext();
     const [wine, setWine] = useState({});
     const [vintages, setVintages] = useState([]);
 

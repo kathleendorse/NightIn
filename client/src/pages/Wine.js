@@ -6,9 +6,11 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Card } from "react-bootstrap";
+import { useUserContext } from "../utils/UserContext";
 
 function Wine(){
 
+    const [state, dispatch] = useUserContext();
     const [wines, setWines] = useState([]);
 
     useEffect(() => {
