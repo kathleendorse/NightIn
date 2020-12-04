@@ -51,7 +51,7 @@ const recipeSeed = [
       {id: 9, ing: "oregeno, to taste"},
       {id: 10, ing: "2 bays leaves"},
       {id: 11, ing: "2 cups chicken stock"},
-      {id: 12, ing: "15 ounce can of black beans, drained"},
+      {id: 12, ing: "15-ounce can of black beans, drained"},
       {id: 13, ing: "salt and pepper, to taste"}
     ],
     image:
@@ -78,8 +78,8 @@ const recipeSeed = [
       {id: 7, ing: "3 ½ cups beef broth, homemade or low-sodium canned"},
       {id: 8, ing: "2 bay leaves"},
       {id: 9, ing: "1 medium onion, peeled and chopped"},
-      {id: 10, ing: "5 medium carrots, peeled and cut into 1/4-inch rounds"},
-      {id: 11, ing: "2 large baking potatoes, peeled and cut into 3/4-inch cubes"},
+      {id: 10, ing: "5 medium carrots, peeled and cut into ¼-inch rounds"},
+      {id: 11, ing: "2 large baking potatoes, peeled and cut into ¾-inch cubes"},
       {id: 12, ing: "12 teaspoons salt"}
     ],
     image:
@@ -87,7 +87,7 @@ const recipeSeed = [
     directions: [
       {id: 1, dir: "Combine the flour and pepper in a bowl, add the beef and toss to coat well. Heat 3 teaspoons of the oil in a large pot. Add the beef a few pieces at a time; do not overcrowd. Cook, turning the pieces until beef is browned on all sides, about 5 minutes per batch; add more oil as needed between batches."},
       {id: 2, dir: "Remove the beef from the pot and add the vinegar and wine. Cook over medium-high heat, scraping the pan with a wooden spoon to loosen any browned bits. Add the beef, beef broth and bay leaves. Bring to a boil, then reduce to a slow simmer."},
-      {id: 3, dir: "Cover and cook, skimming broth from time to time, until the beef is tender, about 1 1/2 hours. Add the onions and carrots and simmer, covered, for 10 minutes. Add the potatoes and simmer until vegetables are tender, about 30 minutes more. Add broth or water if the stew is dry. Season with salt and pepper to taste. Ladle among 4 bowls and serve."}
+      {id: 3, dir: "Cover and cook, skimming broth from time to time, until the beef is tender, about 1 ½ hours. Add the onions and carrots and simmer, covered, for 10 minutes. Add the potatoes and simmer until vegetables are tender, about 30 minutes more. Add broth or water if the stew is dry. Season with salt and pepper to taste. Ladle among 4 bowls and serve."}
      ],
   },
   {
@@ -99,11 +99,11 @@ const recipeSeed = [
       {id: 1, ing: "1 pound Certified Angus Beef ® sirloin filets (2-3 ounces each)  "},
       {id: 2, ing: "2 tablespoons vegetable or canola oil"},
       {id: 3, ing: "1 cup frozen petite pearl onions"},
-      {id: 4, ing: "1/2 cup red wine blend"},
-      {id: 5, ing: "1/2 cup beef stock"},
+      {id: 4, ing: "½ cup red wine blend"},
+      {id: 5, ing: "½ cup beef stock"},
       {id: 6, ing: "1 tablespoon tomato paste"},
-      {id: 7, ing: "1/2 teaspoon coarse kosher salt"},
-      {id: 8, ing: "1/2 teaspoon cracked black pepper"},
+      {id: 7, ing: "½ teaspoon coarse kosher salt"},
+      {id: 8, ing: "½ teaspoon cracked black pepper"},
       {id: 9, ing: "2 sprigs fresh thyme"}
     ],
     image:
@@ -120,7 +120,7 @@ const recipeSeed = [
     wine: "red",
     subwine: "Merlot",
     ingredients: [
-      {id: 1, ing: "One 2- to 2 1/2-inch-thick porterhouse steak"},
+      {id: 1, ing: "One 2- to 2 ½-inch-thick porterhouse steak"},
       {id: 2, ing: "Kosher salt and freshly ground black pepper"},
       {id: 3, ing: "1 tablespoon canola oil"},
       {id: 4, ing: "2 tablespoons butter, cubed"},
@@ -146,7 +146,7 @@ const recipeSeed = [
     subwine: "Zinfandel",
     ingredients: [
       {id: 1, ing: "1 lb pork tenderloin"},
-      {id: 2, ing: "1/2 yukon gold potatoes"},
+      {id: 2, ing: "½ yukon gold potatoes"},
       {id: 3, ing: "2 tablespoons pork rub"},
       {id: 4, ing: "2 tablespoons of Olive Oil"},
       {id: 5, ing: "cooking twine"},
@@ -174,8 +174,8 @@ const recipeSeed = [
       {id: 4, ing: "2 tablespoons olive oil"},
       {id: 5, ing: "6 cloves garlic, minced"},
       {id: 6, ing: "1 tablespoon unsalted butter"},
-      {id: 7, ing: "1/4 cup honey"},
-      {id: 8, ing: "1/4 cup water (or chicken broth)"},
+      {id: 7, ing: "¼ cup honey"},
+      {id: 8, ing: "¼ cup water (or chicken broth)"},
       {id: 9, ing: "2 tablespoons rice wine vinegar (or apple cider vinegar, or any white vinegar)"}
     ],
     image:
@@ -194,7 +194,7 @@ const recipeSeed = [
     wine: "red",
     subwine: "Resiling",
     ingredients: [
-      {id: 1, ing: "3 1-inch-thick boneless pork loin chops (1 pound total), trimmed and sliced into 1/4-inch-wide strips"},
+      {id: 1, ing: "3 1-inch-thick boneless pork loin chops (1 pound total), trimmed and sliced into ¼-inch-wide strips"},
       {id: 2, ing: "1 teaspoon fennel seeds"},
       {id: 3, ing: "Kosher salt and freshly ground pepper"},
       {id: 4, ing: "Zest and juice of 1 lemon"},
@@ -205,14 +205,14 @@ const recipeSeed = [
       {id: 9, ing: "1 small fennel bulb, trimmed and chopped"},
       {id: 10, ing: "2 tablespoons tomato paste"},
       {id: 11, ing: "10 ounces cremini mushrooms, sliced"},
-      {id: 12, ing: "1 1/2 cups red or white wine"}
+      {id: 12, ing: "1 ½ cups red or white wine"}
     ],
     image:
       "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2009/8/13/0/FNM100109WeekNight017_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371589485637.jpeg",
     directions: [
-      {id: 1, dir: "1. Grind the fennel seeds with 1 teaspoon salt and 1/2 teaspoon pepper in a spice grinder or chop with a knife. Transfer to a medium bowl; mix with the lemon juice and pork. Add the flour and toss to coat. In another bowl, mix the lemon zest with 2 tablespoons parsley."},
+      {id: 1, dir: "1. Grind the fennel seeds with 1 teaspoon salt and ½ teaspoon pepper in a spice grinder or chop with a knife. Transfer to a medium bowl; mix with the lemon juice and pork. Add the flour and toss to coat. In another bowl, mix the lemon zest with 2 tablespoons parsley."},
       {id: 2, dir: "2. Heat a deep skillet or pot over high heat and add the olive oil. Brown the pork in batches, 1 minute per side; transfer to a plate. Add the shallots, fennel bulb, the remaining 3 tablespoons parsley, and salt to taste to the skillet. Reduce the heat and cook until the vegetables are wilted, 2 minutes. Add the tomato paste and cook, stirring, 3 minutes."},
-      {id: 3, dir: "3. Add the mushrooms, wine and 1/2 cup water; scrape up any browned bits. Cover and simmer over low heat until the fennel is tender, 12 minutes. Add the pork and heat through, 2 to 3 minutes. Season with salt and pepper and top with the lemon zest-parsley mixture."}
+      {id: 3, dir: "3. Add the mushrooms, wine and ½ cup water; scrape up any browned bits. Cover and simmer over low heat until the fennel is tender, 12 minutes. Add the pork and heat through, 2 to 3 minutes. Season with salt and pepper and top with the lemon zest-parsley mixture."}
     ],
   },
   {
@@ -222,7 +222,7 @@ const recipeSeed = [
     subwine: "Merlot",
     ingredients: [
       {id: 1, ing: " 4 - 5lb pork ribs (2 racks)"},
-      {id: 2, ing: "3/4 cup sweet alcoholic apple cider (hard cider) , "},
+      {id: 2, ing: "¾ cup sweet alcoholic apple cider (hard cider) , "},
       {id: 3, ing: "1 tbsp olive oil"},
       {id: 4, ing: "choice of pork rub"},
       {id: 5, ing: "choice of barbeque sauce"}
@@ -243,14 +243,14 @@ const recipeSeed = [
     subwine: "Zinfandel",
     ingredients: [
       {id: 1, ing: "1 tablespoon olive oil"},
-      {id: 2, ing: "1/2 cup diced white onion"},
+      {id: 2, ing: "½ cup diced white onion"},
       {id: 3, ing: "1 pound ground pork"},
       {id: 4, ing: "3 cloves garlic, minced"},
       {id: 5, ing: "1 tablespoon grated fresh ginger (about 1 inch, peeled)"},
       {id: 6, ing: "1 tablespoon soy sauce"},
       {id: 7, ing: "1 large carrot, shredded"},
       {id: 8, ing: "1 medium cucumber, sliced"},
-      {id: 9, ing: "1/3 cup each fresh basil, parsely and mint"},
+      {id: 9, ing: "⅓ cup each fresh basil, parsely and mint"},
       {id: 10, ing: "1 cup dried jasmine rice, to serve"},
       {id: 11, ing: "1 lime, sliced, to serve"},
       {id: 12, ing: "Sesame seeds, garnish"}
@@ -258,11 +258,11 @@ const recipeSeed = [
     image:
       "https://www.simplyrecipes.com/wp-content/uploads/2019/07/pork-rice-bowls-Lead-00004.jpg ",
     directions: [
-      {id: 1, dir: "1. Add dried rice to a medium pot and rinse with cold water until the water runs clear. Fill the pot until water covers the rice by about 1/4 inch. Place over high heat and bring to a simmer."},
+      {id: 1, dir: "1. Add dried rice to a medium pot and rinse with cold water until the water runs clear. Fill the pot until water covers the rice by about ¼ inch. Place over high heat and bring to a simmer."},
       {id: 2, dir: "2. Once simmering, stir the rice, cover it, and turn heat down to very low. Simmer rice slowly for 8 to 10 minutes, then test rice. If it’s cooked through (i.e. not crunchy), drain off any extra water, remove from heat, cover and steam for five minutes, then fluff with a fork."},
       {id: 3, dir: "3. In a large skillet over medium-high heat, add the olive oil and diced onions. Cook until the onions turn translucent, 3 to 4 minutes. Add ground pork and break up with a spatula continuously while cooking until the pork is crumbly, browned, and cooked through, 7 to 8 minutes."},
       {id: 4, dir: "4. When the pork is almost done cooking, add garlic, ginger, and soy sauce. Stir, and cook for another minute or two to combine flavors."},
-      {id: 5, dir: "5. Add 1/2 to 3/4 cup of cooked jasmine rice to a wide bowl. Top with 1/2 cup of the pork mixture, sliced cucumbers, shredded carrots, and the herb mix. Sprinkle the bowl with sweet soy sauce and sesame seeds."}
+      {id: 5, dir: "5. Add ½ to ¾ cup of cooked jasmine rice to a wide bowl. Top with ½ cup of the pork mixture, sliced cucumbers, shredded carrots, and the herb mix. Sprinkle the bowl with sweet soy sauce and sesame seeds."}
     ],
   },
   // Salad
@@ -276,9 +276,9 @@ const recipeSeed = [
       {id: 2, ing: "1 small garlic clove"},
       {id: 3, ing: "2 large egg yolks"},
       {id: 4, ing: "2 tablespoons fresh lemon juice, plus more"},
-      {id: 5, ing: "1/2 teaspoon Dijon mustard"},
+      {id: 5, ing: "½ teaspoon Dijon mustard"},
       {id: 6, ing: "2 tablespoons olive oil"},
-      {id: 7, ing: "1/2 cup olive oil"},
+      {id: 7, ing: "½ cup olive oil"},
       {id: 8, ing: "3 tablespoons finely grated Parmesan"},
       {id: 9, ing: "ground black pepper"},
       {id: 10, ing: "croutons"},
@@ -300,21 +300,21 @@ const recipeSeed = [
     wine: "white",
     subwine: "Sauvignon Blanc",
     ingredients: [
-      {id: 1, ing: "1/2 head of each romaine, Boston lettuce"},
+      {id: 1, ing: "½ head of each romaine, Boston lettuce"},
       {id: 2, ing: "1 small bunch of frisée (curly endive)"},
-      {id: 3, ing: "1/2 bunch of watercress, coarse stems discarded"},
+      {id: 3, ing: "½ bunch of watercress, coarse stems discarded"},
       {id: 4, ing: "6 slices of bacon"},
-      {id: 5, ing: "2 ripe avocados, seed removed, peeled, and cut into 1/2-inch pieces"},
-      {id: 6, ing: "1 whole skinless boneless chicken breast (about 3/4 pound total), halved, cooked, and diced "},
+      {id: 5, ing: "2 ripe avocados, seed removed, peeled, and cut into ½-inch pieces"},
+      {id: 6, ing: "1 whole skinless boneless chicken breast (about ¾ pound total), halved, cooked, and diced "},
       {id: 7, ing: "1 tomato, seeded and chopped fine"},
       {id: 8, ing: "2 hard-boiled large eggs, separated, the yolk finely chopped and the white finely chopped"},
       {id: 9, ing: "2 tablespoons chopped fresh chives"},
-      {id: 10, ing: "1/3 cup red-wine vinegar"},
+      {id: 10, ing: "⅓ cup red-wine vinegar"},
       {id: 11, ing: "1 tablespoon Dijon-style mustard"},
       {id: 12, ing: "1-2 teaspoons sugar"},
       {id: 13, ing: "Salt and pepper, to taste"},
-      {id: 14, ing: "2/3 cup extra virgin olive oil"},
-      {id: 15, ing: "1/2 cup finely grated Roquefort"}
+      {id: 14, ing: "⅔ cup extra virgin olive oil"},
+      {id: 15, ing: "½ cup finely grated Roquefort"}
     ],
     image:
       "https://www.simplyrecipes.com/wp-content/uploads/2006/06/cobb-salad-sally-horiz-b-1800.jpg",
@@ -323,7 +323,7 @@ const recipeSeed = [
       {id: 2, dir: "2. Toss the various lettuces: In a large salad bowl, toss together well the various lettuces and watercress."},
       {id: 3, dir: "3. Compose the salad: Arrange the chicken, the bacon, the tomato, and the avocado decoratively over the greens and garnish the salad with the chopped egg and the chives."},
       {id: 4, dir: "4. Make the vinaigrette: In a small bowl whisk together the vinegar, the mustard, and salt and pepper to taste, add the oil in a slow stream, whisking, and whisk the dressing until it is emulsified."},
-      {id: 5, dir: "5. Stir in the Roquefort. Add sugar to taste, 1/2 teaspoon at a time. Whisk the dressing. Serve separately or toss in with the salad."}
+      {id: 5, dir: "5. Stir in the Roquefort. Add sugar to taste, ½ teaspoon at a time. Whisk the dressing. Serve separately or toss in with the salad."}
     ],
   },
   {
@@ -332,17 +332,17 @@ const recipeSeed = [
     wine: "white",
     subwine: "Pinot Gris",
     ingredients: [
-      {id: 1, ing: "1/4 cup reduced-fat mayonnaise"},
-      {id: 2, ing: "1/4 cup maple syrup"},
+      {id: 1, ing: "¼ cup reduced-fat mayonnaise"},
+      {id: 2, ing: "¼ cup maple syrup"},
       {id: 3, ing: "3 tablespoons white wine vinegar"},
       {id: 4, ing: "2 tablespoons minced shallot"},
       {id: 5, ing: "2 teaspoons sugar"},
-      {id: 6, ing: "1/2 cup canola oil"},
+      {id: 6, ing: "½ cup canola oil"},
       {id: 7, ing: "2 packages (5 ounces each) spring mix salad greens"},
       {id: 8, ing: "2 medium tart apples, thinly sliced"},
       {id: 9, ing: "1 cup dried cherries"},
       {id: 10, ing: "1 cup pecan halves"},
-      {id: 11, ing: "1/4 cup thinly sliced red onion"}
+      {id: 11, ing: "¼ cup thinly sliced red onion"}
     ],
     image:
       "https://www.tasteofhome.com/wp-content/uploads/2018/01/Perfect-Winter-Salad_EXPS_HC17_42750_D01_20_7b-696x696.jpg",
@@ -355,9 +355,9 @@ const recipeSeed = [
     name: "Spinach Apple Salad",
     type: "salad",
     wine: "white",
-    subwine: "rose",
+    subwine: "Rosé",
     ingredients: [
-      {id: 1, ing: "1/2 cup Glazed Walnuts or Glazed Pecans (or toasted walnuts or toasted pecans)"},
+      {id: 1, ing: "½ cup Glazed Walnuts or Glazed Pecans (or toasted walnuts or toasted pecans)"},
       {id: 2, ing: "1 recipe Best Balsamic Dressing"},
       {id: 3, ing: "1 apple"},
       {id: 4, ing: "1 ripe pear"},
@@ -407,11 +407,11 @@ const recipeSeed = [
     ingredients: [
       {id: 1, ing: "8 fresh-caught Walleye fillets"},
       {id: 2, ing: "2 eggs"},
-      {id: 3, ing: "3/4 cups flour"},
+      {id: 3, ing: "¾ cups flour"},
       {id: 4, ing: "1 cup Italian style bread crumbs"},
-      {id: 5, ing: "1/2 teaspoon salt"},
-      {id: 6, ing: "1/4 teaspoon onion powder"},
-      {id: 7, ing: "1/2 teaspoon paprika"},
+      {id: 5, ing: "½ teaspoon salt"},
+      {id: 6, ing: "¼ teaspoon onion powder"},
+      {id: 7, ing: "½ teaspoon paprika"},
       {id: 8, ing: "4 Tablespoons oil"}
     ],
     image:
@@ -434,23 +434,23 @@ const recipeSeed = [
     ingredients: [
       {id: 1, ing: "1 pound (500 g) fingerling potatoes, halved (or Yukon golds or halved white/red baby potatoes)"},
       {id: 2, ing: "2 tablespoons olive oil"},
-      {id: 3, ing: "1 1/2 teaspoons salt, divided"},
-      {id: 4, ing: "1/2 teaspoon cracked black pepper, divided"},
+      {id: 3, ing: "1 ½ teaspoons salt, divided"},
+      {id: 4, ing: "½ teaspoon cracked black pepper, divided"},
       {id: 5, ing: "4 (6 oz | 170 g) skinless salmon fillets"},
-      {id: 6, ing: "2 1/2 tablespoons minced garlic, divided"},
+      {id: 6, ing: "2 ½ tablespoons minced garlic, divided"},
       {id: 7, ing: "2 tablespoons fresh chopped parsley"},
-      {id: 8, ing: "1/3 cup freshly squeezed lemon juice"},
-      {id: 9, ing: "1/2 cup melted unsalted butter"},
+      {id: 8, ing: "⅓ cup freshly squeezed lemon juice"},
+      {id: 9, ing: "½ cup melted unsalted butter"},
       {id: 10, ing: "3 bunches asparagus, (18 spears, woody ends removed)"},
-      {id: 11, ing: "2 tablespoons dry white wine (substitute with 1/4 cup low-sodium chicken broth)"},
+      {id: 11, ing: "2 tablespoons dry white wine (substitute with ¼ cup low-sodium chicken broth)"},
       {id: 12, ing: "1 lemon sliced to garnish "}
     ],
     image:
       "https://cafedelites.com/wp-content/uploads/2018/03/Sheet-Pan-Baked-Salmon-Potatoes-Asparagus-4.jpg",
     directions: [
-      {id: 1, dir: "1. Heat oven to 400°F | 200°C. On a large rimmed baking sheet, toss together potatoes with the oil, 1/2 tablespoon of garlic, 1/2 teaspoon salt, and 1/4 teaspoon pepper. Spread out in an even layer and roast for 15 minutes until they're just starting to soften and brown."},
-      {id: 2, dir: "2. Push potatoes to one side of the sheet pan and arrange salmon down the centre. Rub salmon evenly with 1 1/2 tablespoons of the minced garlic and 2 tablespoons of parsley. Add the asparagus to the other side of the pan. "},
-      {id: 3, dir: "3. Combine 1/4 cup of lemon juice and 1/4 cup of the melted butter together and pour the mixture over the salmon and asparagus. Season everything with the remaining salt and pepper."},
+      {id: 1, dir: "1. Heat oven to 400°F | 200°C. On a large rimmed baking sheet, toss together potatoes with the oil, ½ tablespoon of garlic, ½ teaspoon salt, and ¼ teaspoon pepper. Spread out in an even layer and roast for 15 minutes until they're just starting to soften and brown."},
+      {id: 2, dir: "2. Push potatoes to one side of the sheet pan and arrange salmon down the centre. Rub salmon evenly with 1 ½ tablespoons of the minced garlic and 2 tablespoons of parsley. Add the asparagus to the other side of the pan. "},
+      {id: 3, dir: "3. Combine ¼ cup of lemon juice and ¼ cup of the melted butter together and pour the mixture over the salmon and asparagus. Season everything with the remaining salt and pepper."},
       {id: 4, dir: "4. Return to oven and continue baking until the potatoes are golden and fork-tender and the salmon is opaque throughout, (about 10 minutes). Optional: broil in the last 2 minutes for charred edges.   "},
       {id: 5, dir: "5. Meanwhile, in a small bowl, combine the remaining butter, garlic and lemon juice with the wine (or chicken stock). Serve with the salmon, veggies and lemon slices!"}
     ],
@@ -484,11 +484,11 @@ const recipeSeed = [
     wine: "white",
     subwine: "Sauvignon Blanc",
     ingredients: [
-      {id: 1, ing: "1/2 cup (8 Tbsp) unsalted butter"},
+      {id: 1, ing: "½ cup (8 Tbsp) unsalted butter"},
       {id: 2, ing: "4 cloves of garlic, pressed or minced"},
       {id: 3, ing: "1 Tbsp cajun spice (provides light heat; it’s not too spicy)"},
-      {id: 4, ing: "1/2 tsp salt (omit if using salted butter)"},
-      {id: 5, ing: "1 Tbsp lemon juice (from 1/2 medium lemon)"},
+      {id: 4, ing: "½ tsp salt (omit if using salted butter)"},
+      {id: 5, ing: "1 Tbsp lemon juice (from ½ medium lemon)"},
       {id: 6, ing: "2 lbs uncooked large shrimp (21-25 count), peeled and deveined"},
       {id: 7, ing: "12 medium wooden skewers"}
     ],
@@ -535,8 +535,8 @@ const recipeSeed = [
       {id: 6, ing: "1 small onion, minced"},
       {id: 7, ing: "1 can low-sodium crushed tomatoes"},
       {id: 8, ing: "1 tablespoon sugar"},
-      {id: 9, ing: "1/2 teaspoon balsamic vinegar"},
-      {id: 10, ing: "1/2 cup (125ml) chicken stock"},
+      {id: 9, ing: "½ teaspoon balsamic vinegar"},
+      {id: 10, ing: "½ cup (125ml) chicken stock"},
       {id: 11, ing: "Crushed red pepper flakes, to taste (optional)"},
       {id: 12, ing: "Salt and fresh cracked pepper"}
     ],
@@ -609,15 +609,15 @@ const recipeSeed = [
     name: "Crispy Cilantro Lime Chicken",
     type: "white meat (chicken)",
     wine: "white",
-    subwine: "Rose",
+    subwine: "Rosé",
     ingredients: [
       {id: 1, ing: "3 tablespoons olive oil divided"},
-      {id: 2, ing: "1/4 cup fresh squeezed lime juice (Juice of 2 limes)"},
-      {id: 3, ing: "1/4 cup fresh chopped cilantro"},
+      {id: 2, ing: "¼ cup fresh squeezed lime juice (Juice of 2 limes)"},
+      {id: 3, ing: "¼ cup fresh chopped cilantro"},
       {id: 4, ing: "1 teaspoon red chili (or pepper) flakes"},
       {id: 5, ing: "4 cloves garlic minced"},
       {id: 6, ing: "2 teaspoons brown sugar"},
-      {id: 7, ing: "3/4 teaspoon ground cumin"},
+      {id: 7, ing: "¾ teaspoon ground cumin"},
       {id: 8, ing: "6 bone-in skin-on (or off) chicken thighs"},
       {id: 9, ing: "Salt and pepper to taste"},
       {id: 10, ing: "1 cup mozzarella cheese shredded"},
@@ -641,8 +641,8 @@ const recipeSeed = [
     subwine: "Malbec",
     ingredients: [
       {id: 1, ing: "3 lbs chicken breasts (boneless, skinless), about 5-6 count"},
-      {id: 2, ing: "1 1/2 cups BBQ Sauce, your choice"},
-      {id: 3, ing: "1/2 medium onion grated (with juice)"},
+      {id: 2, ing: "1 ½ cups BBQ Sauce, your choice"},
+      {id: 3, ing: "½ medium onion grated (with juice)"},
       {id: 4, ing: "1 Tbsp olive oil"},
       {id: 5, ing: "1 Tbsp Worcestershire sauce"},
       {id: 6, ing: "2 Tbsp brown sugar"}
@@ -665,10 +665,10 @@ const recipeSeed = [
       {id: 1, ing: "1 lb Fettuccine Pasta"},
       {id: 2, ing: "6 Tablespoons Butter"},
       {id: 3, ing: "1 Garlic Clove (minced)"},
-      {id: 4, ing: "1 1/2 cups Heavy Cream"},
-      {id: 5, ing: "1/4 teaspoon Salt"},
-      {id: 6, ing: "1 1/4 cup Shredded Parmesan Cheese"},
-      {id: 7, ing: "1/4 teaspoon Pepper"},
+      {id: 4, ing: "1 ½ cups Heavy Cream"},
+      {id: 5, ing: "¼ teaspoon Salt"},
+      {id: 6, ing: "1 ¼ cup Shredded Parmesan Cheese"},
+      {id: 7, ing: "¼ teaspoon Pepper"},
       {id: 8, ing: "2 Tablespoons Italian Parsley (optional)"}
     ],
     image:
@@ -693,9 +693,9 @@ const recipeSeed = [
       {id: 3, ing: "1 red bell pepper diced"},
       {id: 4, ing: "1 6.5 ounce can sliced olives"},
       {id: 5, ing: "1 cup spinach"},
-      {id: 6, ing: "1/4 cup basil chopped"},
-      {id: 7, ing: "1/2 cup grated parmesan cheese"},
-      {id: 8, ing: "3/4 cup olive oil"},
+      {id: 6, ing: "¼ cup basil chopped"},
+      {id: 7, ing: "½ cup grated parmesan cheese"},
+      {id: 8, ing: "¾ cup olive oil"},
       {id: 9, ing: "2 tablespoons white vinegar"},
       {id: 10, ing: "2 tablespoons water"},
       {id: 11, ing: "1 teaspoon salt"},
@@ -721,11 +721,11 @@ const recipeSeed = [
     ingredients: [
       {id: 1, ing: "kosher salt"},
       {id: 2, ing: "1 28-ounce can whole peeled San Marzano tomatoes , with purée"},
-      {id: 3, ing: "1/4 cup extra-virgin olive oil"},
+      {id: 3, ing: "¼ cup extra-virgin olive oil"},
       {id: 4, ing: "4 garlic cloves, peeled and smashed"},
       {id: 5, ing: "1 tablespoon tomato paste"},
       {id: 6, ing: "1 teaspoon kosher salt"},
-      {id: 7, ing: "1/2 teaspoon freshly ground black pepper"},
+      {id: 7, ing: "½ teaspoon freshly ground black pepper"},
       {id: 8, ing: "2 sprigs fresh basil or oregano , plus more basil for garnish"},
       {id: 9, ing: "1 pound dried penne pasta , or other favorite pasta of your choice"}
     ],
@@ -752,7 +752,7 @@ const recipeSeed = [
       {id: 6, ing: "2 tsp. garlic powder"},
       {id: 7, ing: "Kosher salt, to taste"},
       {id: 8, ing: "Freshly ground black pepper"},
-      {id: 9, ing: "3/4 c. grated Parmesan, plus more for garnish"},
+      {id: 9, ing: "¾ c. grated Parmesan, plus more for garnish"},
       {id: 10, ing: "Sliced fresh basil, for serving"}
     ],
     image:
@@ -760,7 +760,7 @@ const recipeSeed = [
     directions: [
       {id: 1, dir: "1. Preheat oven to 400°. In a large pot of salted boiling water, cook pasta until al dente. Drain, reserving 1 cup pasta water, and return to pot."},
       {id: 2, dir: "2. On a large baking sheet, toss broccoli, tomatoes, mushrooms, and artichoke hearts with oil and season with garlic powder, salt, and pepper. Roast until tender and caramelized, stirring once, 15 to 20 minutes."},
-      {id: 3, dir: "3. Add vegetables to pot along with Parmesan and 1/2 pasta water and, over low heat, stir vigorously to create a sauce. (Add more pasta water until you reach your desired consistency.)"},
+      {id: 3, dir: "3. Add vegetables to pot along with Parmesan and ½ pasta water and, over low heat, stir vigorously to create a sauce. (Add more pasta water until you reach your desired consistency.)"},
       {id: 4, dir: "4. Garnish with Parmesan and basil before serving."}
     ],
   },
@@ -770,17 +770,17 @@ const recipeSeed = [
     wine: "red",
     subwine: "Malbec",
     ingredients: [
-      {id: 1, ing: "2 large eggplants sliced lengthwise 3/4-inch thick (about 8 slices)"},
-      {id: 2, ing: "3 1/2 tablespoons extra virgin olive oil divided"},
+      {id: 1, ing: "2 large eggplants sliced lengthwise ¾-inch thick (about 8 slices)"},
+      {id: 2, ing: "3 ½ tablespoons extra virgin olive oil divided"},
       {id: 3, ing: "1 ½ teaspoons kosher salt divided"},
       {id: 4, ing: "½ teaspoon black pepper divided"},
       {id: 5, ing: "16 ounces sliced cremini (baby bella) mushrooms"},
       {id: 6, ing: "3 cloves garlic minced"},
-      {id: 7, ing: "1/2 teaspoon dried oregano"},
+      {id: 7, ing: "½ teaspoon dried oregano"},
       {id: 8, ing: "1 (24-ounce) can prepared marinara-style pasta sauce of choice I used a roasted garlic flavor"},
       {id: 9, ing: "1 (15-ounce) container part-skim ricotta cheese"},
       {id: 10, ing: "1 (10 ounce) package frozen chopped spinach thawed with excess water squeezed out"},
-      {id: 11, ing: "1/2 cup grated Parmesan divided"},
+      {id: 11, ing: "½ cup grated Parmesan divided"},
       {id: 12, ing: "1 large egg"},
       {id: 13, ing: "1 cup shredded part-skim mozzarella cheese or a blend of mozzarella and provolone"},
       {id: 14, ing: "2 tablespoons chopped fresh basil thyme, or parsley"}
@@ -789,10 +789,10 @@ const recipeSeed = [
       "https://www.wellplated.com/wp-content/uploads/2019/08/Classic-Eggplant-Lasagna-Recipe-600x718.jpg",
     directions: [
       {id: 1, dir: "1. Position racks in the upper and lower thirds of your oven. Preheat the oven to 400 degrees F. Lightly coat 2 rimmed baking sheets with nonstick spray. Coat a 9x13-inch baking dish with nonstick spray and set aside."},
-      {id: 2, dir: "2. Arrange sliced eggplant in a single layer on the 2 sheet pans—if some of your end-most eggplant slices are very curved, trim off the eggplant outermost curvy portion so that the slices lay mostly flat. Brush 2 1/2 tablespoons of the oil over both sides of all of the slices. Sprinkle 1/2 teaspoon kosher salt and ¼ teaspoon pepper over the top."},
+      {id: 2, dir: "2. Arrange sliced eggplant in a single layer on the 2 sheet pans—if some of your end-most eggplant slices are very curved, trim off the eggplant outermost curvy portion so that the slices lay mostly flat. Brush 2 ½ tablespoons of the oil over both sides of all of the slices. Sprinkle ½ teaspoon kosher salt and ¼ teaspoon pepper over the top."},
       {id: 3, dir: "3. Roast the eggplant until it is soft and golden, about 25 minutes, flipping the slices over and swapping the pans’ positions once halfway through. Remove the slices from the oven and reduce the oven temperature to 350 degrees F."},
-      {id: 4, dir: "4. Meanwhile, in a large skillet heat the remaining 1/2 tablespoon oil over medium heat. Add the sliced mushrooms. Saute until the mushrooms are soft, about 7 minutes. Add the minced garlic, next ½ teaspoon kosher salt, and oregano. Cook for another 2 minutes. Remove the pan from the heat. Add the marinara pasta sauce and stir to combine."},
-      {id: 5, dir: "5. In a large bowl add the ricotta, 1/4 cup Parmesan, egg, and remaining 1/2 teaspoon salt and remaining 1/4 teaspoon pepper. Mix well, until the mixture is evenly combined. Stir in the spinach, using a fork to break it up and distribute it as evenly with the ricotta mixture as possible."},
+      {id: 4, dir: "4. Meanwhile, in a large skillet heat the remaining ½ tablespoon oil over medium heat. Add the sliced mushrooms. Saute until the mushrooms are soft, about 7 minutes. Add the minced garlic, next ½ teaspoon kosher salt, and oregano. Cook for another 2 minutes. Remove the pan from the heat. Add the marinara pasta sauce and stir to combine."},
+      {id: 5, dir: "5. In a large bowl add the ricotta, ¼ cup Parmesan, egg, and remaining ½ teaspoon salt and remaining ¼ teaspoon pepper. Mix well, until the mixture is evenly combined. Stir in the spinach, using a fork to break it up and distribute it as evenly with the ricotta mixture as possible."},
       {id: 6, dir: "6. Spoon half of the mushroom marinara sauce on the bottom of the prepared baking dish and spread it into an even layer. Lay 4 eggplant slices on top followed by all of the ricotta mixture. Layer on another 4 slices of eggplant and finish with the remaining mushroom marinara sauce. Top with the mozzarella and remaining ¼ cup Parmesan. Bake for 25 to 30 minutes, until the cheese is melted and the lasagna is hot and bubbly. Remove from the oven and sprinkle with fresh herbs. Let rest 5 to 10 minutes, then serve."}
     ],
   },
@@ -804,6 +804,7 @@ const wineSeed = [
   {
     name: "Pinot Noir",
     type: "red",
+    blurb: "Pinot Noir is the most romanticized red wine in the world. No other grape inspires such emotion and worship among wine enthusiasts. Festivals are thrown every year in the grape’s honor and an entire movie, Sideways, highlighted the fervor of its fans and helped boost the variety’s popularity.",
     image:
       "https://wineenthusiast.scene7.com/is/image/WineEnthusiast/f/590/33206_3.jpg",
     vintages:  [
@@ -817,6 +818,7 @@ const wineSeed = [
   {
     name: "Merlot",
     type: "red",
+    blurb: "Merlot is one of the world’s most popular red wines, and America’s second favorite after Cabernet Sauvignon. Known for its soft, sensual texture and approachable style, it’s made from red-skinned grapes that can adapt to a variety of climates to produce food-friendly wines in many price points. Merlot can be velvety and plummy, or rich and oaky. There’s something for everyone, which is why Merlot is adored.",
     image:
     "https://images.crateandbarrel.com/is/image/Crate/HipRedWine31ozSHF15/$web_plp_card_mobile$/190411135118/hip-red-wine-glass.jpg",
     vintages: [
@@ -830,6 +832,7 @@ const wineSeed = [
   {
     name: "Cabernet Sauvignon",
     type: "red",
+    blurb: "Cabernet Sauvignon is known for its dark color, full body and an alcohol content that is over 13.5%, with most Cabernet Sauvignons, especially those from places such as California, Australia and Chile, being more like 14.5% and sometimes even going over 15%. The wine is dry (not sweet) and has a healthy level of tannin, which is why your mouth dries out when you sip it. Many people who drink Cabernet Sauvignon say they always pick up a taste of green pepper in the wine, along with tobacco, cassis, and dark fruits such as cherries, along with a hint of vanilla that comes from the wine aging in the oak",
     image:
     "https://b3h2.scene7.com/is/image/BedBathandBeyond/172001116045659p?$690$&wid=690&hei=690",
     vintages: [
@@ -843,6 +846,7 @@ const wineSeed = [
   {
     name: "Syrah",
     type: "red",
+    blurb: "Malbec is a dry red wine that appeals to the masses due to its affordability and approachable, juicy fruit flavors. While its popularity has surged over the past two decades, in reality, Malbec has been used as a blending grape in France for over a century. But it’s the Argentine expression (which people are most familiar with) that enjoys worldwide popularity.",
     image:
     "https://images-na.ssl-images-amazon.com/images/I/31ArGEj53KL._AC_.jpg",
     vintages: [
@@ -869,6 +873,7 @@ const wineSeed = [
   {
     name: "Sauvignon Blanc",
     type: "white",
+    blurb: "Sauvignon Blanc is one of the most popular white wines in the U.S. Often referred to as “grassy,” it is known for its refreshing crispness, which is due to its high levels of acidity and low amounts of sugar. It is known as a refreshing dry wine that has a great minerality, aromas and tastes of herbs and grasses and a nice crisp pucker. Across the world, including in France, the wine is hardly ever aged in oak, with the winemakers preferring to exhibit the bright and fruity characteristics of the grape.",
     image:
     "https://www.beveragefactory.com/images/6416-33092815151006.jpg",
     vintages: [
@@ -882,6 +887,7 @@ const wineSeed = [
   {
     name: "Pinot Gris",
     type: "white",
+    blurb: "While most believe Pinot Grigio originated in Italy, it was actually born, like many of the most popular grapes of the world, in France, where it is known as Pinot Gris. Thought to be a mutation of the red grape Pinot Noir, Pinot Gris’ skins are not green like other white grapes, but instead have a greyish blue hue, which is what gives them their name.",
     image:
     "https://images-na.ssl-images-amazon.com/images/I/61-1ko8h4VL._AC_SX522_.jpg",
     vintages: [
@@ -895,6 +901,7 @@ const wineSeed = [
   {
     name: "Chardonnay",
     type: "white",
+    blurb: "Chardonnay is the most popular white wine on earth. The grape is a near-blank canvas, capable of being produced in a gamut of different styles. Chardonnay grapes are somewhat resilient, low-maintenance in the vineyard and easy to grow in almost any climate. Travel to any wine region in the world, you will find at least one vineyard growing Chardonnay. ",
     image:
     "https://celebrityvineyards.com/wp-content/uploads/2019/10/riedel-chardonnay.jpg",
     vintages: [
@@ -908,6 +915,7 @@ const wineSeed = [
   {
     name: "Zinfandel",
     type: "white",
+    blurb: "Zinfandel is a wine truly made famous by California. Planted in over 10 percent of all Californian vineyards, the Zinfandel grape is an important player in the California red wine industry, creating a big, ripe red wine that comes with some of the highest alcohol content of any red wine on the market (between 14 and 17 percent). Due to the hot sun of California, Zinfandels have come to be known for their jammy, fruity characteristics.",
     image:
     "https://i.pinimg.com/originals/58/e3/87/58e387f5e68890f8446860adefa6d33d.jpg",
     vintages: [
@@ -919,8 +927,9 @@ const wineSeed = [
     ],
   },
   {
-    name: "Rose",
+    name: "Rosé",
     type: "white",
+    blurb: "Rosé has exploded on the US market over the past few years, especially during the warm months of the year. In France, it now eclipses the sale of white wine and, rumor has it, Sting slugs bottles of the stuff during his live performances. It also happens to be the perfect wine for sipping in the park or at a backyard barbecue. Suffice it to say, rosé has become incredibly popular, but most of us don’t know how rosé is made or where some of the most consistent rosés comes from.",
     image:
     "https://www.amara.com/static/uploads/images-2/products/huge/174155/la-rose-chianti-red-wine-glass-269149.jpg",
     vintages: [
@@ -934,6 +943,7 @@ const wineSeed = [
   {
     name: "Reisling",
     type: "white",
+    blurb: "Tasting Riesling starts with intense aromas that rise from the glass (even when the wine is ice cold). This aromatic wine offers primary fruit aromas of orchard fruits like nectarine, apricot, honey-crisp apple, and pear. Besides fruit, you’ll often smell things like honeycomb, jasmine, or lime peel, along with a striking aroma that smells similar to petrol or petroleum wax (a natural compound called TDN). On the palate, Riesling has high acidity, similar to the levels in lemonade.",
     image:
     "https://www.plumstreetpottery.com/wp-content/uploads/2019/08/Veritas-644900015-600.jpg",
     vintages: [
