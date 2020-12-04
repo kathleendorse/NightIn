@@ -5,6 +5,7 @@ import "./Login.css";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { useUserContext } from "../utils/UserContext";
+import Nav from "../components/Nav";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -27,21 +28,16 @@ export default function Register() {
       email: email,
       password: password
     })
-      .then((res) => {
+    
+    
+          .then((res) => {
             if (res.data.email === email){
               dispatch({
                 type: "setCurrentUser",
                 user: res.data });
-            }
-            
-      })
-      .catch(err => console.log(err));
+            })
+      .catch((err) => console.log(err));
   };
-
-
-
-
-
 
   //--------
 
@@ -66,21 +62,20 @@ export default function Register() {
           />
         </Form.Group>
         <Link to={`/${state.user.id}/home`}>
-        <Button
-          block
-          size="lg"
-          type="submit"
-          onClick={register}
-          disabled={!validateForm()}
-        >
-          Sign Up
-        </Button>
+          <Button
+            block
+            size="lg"
+            type="submit"
+            onClick={register}
+            disabled={!validateForm()}
+          >
+            Sign Up
+          </Button>
         </Link>
         <Link to="/login">
           <strong>Or Click here to Login</strong>
         </Link>
       </Form>
-
     </div>
   );
 }

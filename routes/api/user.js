@@ -4,16 +4,15 @@ const passport = require("../../passport");
 const userController = require("../../controllers/userController");
 
 //user sign up
-router.route("/register")
-  .post(userController.userCreate);
+router.route("/register").post(userController.userCreate);
 
-//user login  
+//user login
 router.route("/login").post(passport.authenticate("local"), (req, res) => {
   res.json({
     email: req.user.email,
     id: req.user.id,
     //added
-    favs: req.user.favs
+    favs: req.user.favs,
   });
 });
 
@@ -26,6 +25,7 @@ router.route("/user").get((req, res) => {
 });
 
 router.route("/logout").post((req, res) => {
+  console.log("success logout");
   req.logout();
   res.send("success");
 });

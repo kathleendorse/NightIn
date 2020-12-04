@@ -6,12 +6,11 @@ import Photo from "../components/Photo";
 import API from "../utils/API";
 import { List, ListItem } from "../components/List";
 import { useUserContext } from "../utils/UserContext";
+import Nav from "../components/Nav";
 
-//when this component is instantiated it will be passed a "prop" 
+//when this component is instantiated it will be passed a "prop"
 function RecipeDetail(props) {
-
-  const [state, dispatch] = useUserContext();
-  //we use the useState hook to create: 
+  //we use the useState hook to create:
   //a state object for this component called "night" that is an empty object by default
   //a method for managing/updating this state called "setNight"
   const [recipe, setRecipe] = useState({});
@@ -27,27 +26,26 @@ function RecipeDetail(props) {
     handleDirections(id);
   }, [id]);
 
-  function handleRecipe(id){
+  function handleRecipe(id) {
     API.getRecipe(id)
-    .then((res) => {setRecipe(res.data)
-    })
-    .catch((err) => console.log(err));
+      .then((res) => setRecipe(res.data))
+      .catch((err) => console.log(err));
   }
 
- function handleIngredients (id){
-   API.getRecipe(id)
-   .then((res) => setIngredients(res.data.ingredients))
-   .catch((err) => console.log(err));
- } 
+  function handleIngredients(id) {
+    API.getRecipe(id)
+      .then((res) => setIngredients(res.data.ingredients))
+      .catch((err) => console.log(err));
+  }
 
- function handleDirections (id){
-   API.getRecipe(id)
-   .then((res) => setDirections(res.data.directions))
-   .catch((err) => console.log(err));
- }
-
- //added
-  function addRecipe() {
+  
+    function handleDirections(id) {
+    API.getRecipe(id)
+      .then((res) => setDirections(res.data.directions))
+      .catch((err) => console.log(err));
+  }
+  
+    function addRecipe() {
   API.addRecipe({
       userId: state.user.id,
       favorite: recipe._id
@@ -60,11 +58,9 @@ function RecipeDetail(props) {
    })
    .catch((err)=>console.log(err));
 }
-//-------------
-
+  
   return (
     <Container fluid>
-
       <Row>
         {/* Col accepts props for it's attributes that's how we set the size */}
         <Col size="md-10 md-offset-1">

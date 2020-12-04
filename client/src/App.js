@@ -10,7 +10,8 @@ import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Wine from "./pages/Wine";
 import WineDetail from "./pages/WineDetail";
-import { UserProvider } from "./utils/UserContext"; 
+import { UserProvider } from "./utils/UserContext";
+
 // inside the router we render a nav component
 //for each route path we render a different component
 //the component will only be visible when that route is hit by some means
@@ -18,15 +19,13 @@ import { UserProvider } from "./utils/UserContext";
 //the NoMatch component will render if a route other than the ones listed is hit by some means
 
 function App() {
-
-
   return (
     <Router>
       <div>
         <UserProvider>
           <Nav />
           <Switch>
-            <Route exact path="/:userId/home"> 
+            <Route exact path="/:userId/home">
               <Home />
             </Route>
             <Route exact path={["/", "/register"]}>
