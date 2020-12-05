@@ -24,7 +24,7 @@ function Home() {
             </Jumbotron>
           ) : (
             <Link to="/login">
-              <strong>Or Click here to Login</strong>
+              <strong>Click here to Login</strong>
             </Link>
           )}
         </Col>
