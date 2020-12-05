@@ -12,10 +12,9 @@ passport.deserializeUser((id, cb) => {
   User.findOne({ _id: id }, (err, user) => {
     const userInformation = {
       email: user.email,
-      isAdmin: user.isAdmin,
       id: user._id,
       //added
-      favs: user.favs
+      favs: user.favs,
     };
     cb(err, userInformation);
   });

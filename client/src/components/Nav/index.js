@@ -14,12 +14,10 @@ function Nav() {
     API.userLogout(state)
       .then((e) => {
         dispatch({
-          username: "",
           email: "",
           faves: [],
           _id: "",
         });
-        // localStorage.removeItem("currentUser");
       })
       .then(() => {
         window.location.reload();
@@ -44,8 +42,8 @@ function Nav() {
           </Link>
         </span>
         <span className="nav-item nav-link">
-          <Link to={"/register"} onClick={logout}>
-            <strong>Log Out</strong>
+          <Link to={"/register"}>
+            <strong onClick={logout}>Log Out</strong>
           </Link>
         </span>
       </nav>

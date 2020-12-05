@@ -6,7 +6,7 @@ import API from "../utils/API";
 //added
 import { Link } from "react-router-dom";
 import { useUserContext } from "../utils/UserContext";
-import Nav from "../components/Nav";
+
 //----
 
 export default function Login() {
@@ -28,7 +28,7 @@ export default function Login() {
   const login = () => {
     API.userLogin({
       email: email,
-            password: password,
+      password: password,
     }).then(
       (res) => {
         console.log(res);
