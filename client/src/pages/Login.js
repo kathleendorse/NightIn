@@ -6,7 +6,7 @@ import API from "../utils/API";
 //added
 import { Link } from "react-router-dom";
 import { useUserContext } from "../utils/UserContext";
-import Nav from "../components/Nav";
+
 //----
 
 export default function Login() {
@@ -28,18 +28,20 @@ export default function Login() {
   const login = () => {
     API.userLogin({
       email: email,
-            password: password,
+      password: password,
     }).then(
       (res) => {
-        console.log(res);
-        if (res.data.email === email) {
-          dispatch({
-            type: "setCurrentUser",
-            user: res.data,
-          });
-
-          // const use = (res.data.id);
-          // (window.location.href = `${use}/home`)
+        if (res.status === 200) {
+          console.log(res);
+          if (res.data.email === email) {
+            dispatch({
+              type: "setCurrentUser",
+              user: res.data,
+            });
+            console.log(state);
+            // const use = (res.data.id);
+            // (window.location.href = `${use}/home`)
+          }
         }
       },
       () => {

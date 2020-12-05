@@ -18,16 +18,27 @@ export default {
   },
 
   userLogout: function (userObj) {
-    return axios({
-      method: "Get",
-      withCredentials: true,
-      url: "http://localhost:3001/api/user/logout",
-    });
-  },
-    addRecipe: function(userObj){
-    return axios.put("/api/user/addRecipe", userObj);
+    console.log(userObj);
+    return axios.post("/api/user/logout", userObj);
   },
 
+  // userLogout: function (userObj) {
+  //   console.log(userObj);
+  //   return axios({
+  //     method: "POST",
+  //     withCredentials: true,
+  //     url: "http://localhost:3001/api/user/logout",
+  //   });
+  // },
+
+  // userLogout: function (id) {
+  //   console.log(id);
+  //   return axios.post("/api/user/something", id);
+  // },
+
+  addRecipe: function (userObj) {
+    return axios.put("/api/user/addRecipe", userObj);
+  },
 
   //Finds recipes with the provided query term
   getRecipes: function (query) {
@@ -41,8 +52,8 @@ export default {
   deleteRecipe: function (id) {
     return axios.delete("/api/recipe/" + id);
   },
-  getWines: function (){
-    return axios.get("/api/wine")
+  getWines: function () {
+    return axios.get("/api/wine");
   },
   getWine: function (id) {
     return axios.get("/api/wine/" + id);

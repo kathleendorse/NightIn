@@ -16,18 +16,29 @@ router.route("/login").post(passport.authenticate("local"), (req, res) => {
   });
 });
 
-router.route("/addRecipe").put(
-  userController.addRecipe
-);
+router.route("/addRecipe").put(userController.addRecipe);
 
 router.route("/user").get((req, res) => {
   res.send(req.user);
 });
 
-router.route("/logout").post((req, res) => {
-  console.log("success logout");
-  req.logout();
-  res.send("success");
+// router.route("/logout").post((req, res) => {
+//   console.log("success logout");
+
+//   req.logout();
+//   res.send("logout success");
+//   console.log(res);
+// });
+
+router.post("/logout", (req, res) => {
+  //   console.log(req.user);
+  if (req.user) {
+    req.logout();
+    res.send({ msg: "logging out" });
+    // console.log("user logged out" + req.user);
+  } else {
+    res.send({ msg: "no user to log out" });
+  }
 });
 
 module.exports = router;

@@ -14,6 +14,7 @@ export default function Register() {
   function validateForm() {
     return email.length > 0 && password.length > 0;
   }
+
   function handleSubmit(event) {
     event.preventDefault();
   }
@@ -23,15 +24,23 @@ export default function Register() {
       password: password,
     })
       .then((res) => {
-        if (res.data.email === email) {
-          dispatch({
-            type: "setCurrentUser",
-            user: res.data,
-          });
+        if (res.data === "User Already Exists") {
+          alert("This email is already in use");
+        } else {
+          window.location = "/login";
         }
       })
+      // .then((res) => {
+      //   if (res.data.email === email) {
+      //     dispatch({
+      //       type: "setCurrentUser",
+      //       user: res.data,
+      //     });
+      //   }
+      // })
       .catch((err) => console.log(err));
   };
+
   //--------
   return (
     <div className="Login">
@@ -53,17 +62,17 @@ export default function Register() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Link to={`/${state.user.id}/home`}>
-          <Button
-            block
-            size="lg"
-            type="submit"
-            onClick={register}
-            disabled={!validateForm()}
-          >
-            Sign Up
-          </Button>
-        </Link>
+
+        <Button
+          block
+          size="lg"
+          type="submit"
+          onClick={register}
+          disabled={!validateForm()}
+        >
+          Sign Up
+        </Button>
+
         <Link to="/login">
           <strong>Or Click here to Login</strong>
         </Link>

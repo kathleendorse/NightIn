@@ -7,7 +7,6 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Card } from "react-bootstrap";
 import { useUserContext } from "../utils/UserContext";
-import Nav from "../components/Nav";
 
 function Wine() {
   const [state, dispatch] = useUserContext();
