@@ -23,9 +23,10 @@ function Home() {
               </button>
             </Jumbotron>
           ) : (
-            <Link to="/login">
-              <strong>Click here to Login</strong>
-            </Link>
+            // <Link to="/login">
+            //   <strong>Click here to Login</strong>
+            // </Link>
+            <div></div>
           )}
         </Col>
       </Row>
