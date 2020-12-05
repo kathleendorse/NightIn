@@ -3,13 +3,7 @@ const db = require("../models");
 
 // This file empties the Nightin collection and inserts the nightin below
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nightindb", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-});
-
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nightindb");
 
 // "Food" Collection Seed Data
 const recipeSeed = [
@@ -863,11 +857,12 @@ const wineSeed = [
       {id: 5, vin: "Coppola Diamond"}
     ],
   },
+
   {
     name: "Malbec",
     type: "red",
     image:
-    "https://lh3.googleusercontent.com/proxy/d1x1y3OkI1h41wgjpsDKtf_CRAYFzXJItM8ROGy0cmj1c-HTZOJgitJ1vFP9T9lh-hZyyNdcjiqicP1nqK7LJTTMqwOUKyLJrbkWCPaHo-BiMXOO-bo",
+    "https://www.athome.com/dw/image/v2/AAYZ_PRD/on/demandware.static/-/Sites-AtHome/default/dw2a864e0c/images/124249393.jpg?sw=740&sh=740&sm=fit",
     vintages: [
       {id: 1, vin: "Pascual Toso Mendoza"},
       {id: 2, vin: "Kaiken Ultra"},
@@ -991,10 +986,10 @@ const userSeed = [
   },
 ];
 
-db.Recipe.remove({})
+db.Recipe.deleteMany({})
   .then(() => db.Recipe.insertMany(recipeSeed))
   .then((data) => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data.result + " records inserted!");
     process.exit(0);
   })
   .catch((err) => {
@@ -1002,10 +997,10 @@ db.Recipe.remove({})
     process.exit(1);
   });
 
-db.Wine.remove({})
+db.Wine.deleteMany({})
   .then(() => db.Wine.insertMany(wineSeed))
   .then((data) => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data.result + " records inserted!");
     process.exit(0);
   })
   .catch((err) => {
@@ -1013,10 +1008,10 @@ db.Wine.remove({})
     process.exit(1);
   });
 
-db.User.remove({})
+db.User.deleteMany({})
   .then(() => db.User.insertMany(userSeed))
   .then((data) => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data.result + " records inserted!");
     process.exit(0);
   })
   .catch((err) => {
