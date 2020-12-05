@@ -8,7 +8,7 @@ export default {
       method: "POST",
       data: userObj,
       withCredentials: true,
-      url: "http://localhost:3001/api/user/register",
+      url: "/api/user/register",
     });
   },
 
