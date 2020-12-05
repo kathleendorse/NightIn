@@ -857,11 +857,12 @@ const wineSeed = [
       {id: 5, vin: "Coppola Diamond"}
     ],
   },
+
   {
     name: "Malbec",
     type: "red",
     image:
-    "https://lh3.googleusercontent.com/proxy/d1x1y3OkI1h41wgjpsDKtf_CRAYFzXJItM8ROGy0cmj1c-HTZOJgitJ1vFP9T9lh-hZyyNdcjiqicP1nqK7LJTTMqwOUKyLJrbkWCPaHo-BiMXOO-bo",
+    "https://www.athome.com/dw/image/v2/AAYZ_PRD/on/demandware.static/-/Sites-AtHome/default/dw2a864e0c/images/124249393.jpg?sw=740&sh=740&sm=fit",
     vintages: [
       {id: 1, vin: "Pascual Toso Mendoza"},
       {id: 2, vin: "Kaiken Ultra"},
@@ -984,7 +985,6 @@ const userSeed = [
     ],
   },
 ];
-
 
 db.Recipe.deleteMany({})
   .then(() => db.Recipe.insertMany(recipeSeed))
