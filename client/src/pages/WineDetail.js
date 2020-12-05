@@ -60,6 +60,7 @@ function WineDetail(props) {
                 <Photo src={wine.image} alt={wine.name}></Photo>
                 <br></br>
                 <h1>{wine.name}</h1>
+                <h4>{wine.blurb}</h4>
               </Col>
             </Row>
             <Row>
@@ -72,7 +73,7 @@ function WineDetail(props) {
                     ))}
                   </List>
                 ) : (
-                  <h3>No Results to Display</h3>
+                  <p>No Results to Display</p>
                 )}
               </Col>
             </Row>
