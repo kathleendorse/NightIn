@@ -3,13 +3,7 @@ const db = require("../models");
 
 // This file empties the Nightin collection and inserts the nightin below
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nightindb", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-});
-
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nightindb");
 
 // "Food" Collection Seed Data
 const recipeSeed = [
@@ -990,6 +984,7 @@ const userSeed = [
     ],
   },
 ];
+
 
 db.Recipe.deleteMany({})
   .then(() => db.Recipe.insertMany(recipeSeed))
