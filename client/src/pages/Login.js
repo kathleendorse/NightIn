@@ -31,15 +31,17 @@ export default function Login() {
       password: password,
     }).then(
       (res) => {
-        console.log(res);
-        if (res.data.email === email) {
-          dispatch({
-            type: "setCurrentUser",
-            user: res.data,
-          });
-
-          // const use = (res.data.id);
-          // (window.location.href = `${use}/home`)
+        if (res.status === 200) {
+          console.log(res);
+          if (res.data.email === email) {
+            dispatch({
+              type: "setCurrentUser",
+              user: res.data,
+            });
+            console.log(state);
+            // const use = (res.data.id);
+            // (window.location.href = `${use}/home`)
+          }
         }
       },
       () => {
