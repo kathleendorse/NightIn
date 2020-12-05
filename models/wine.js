@@ -5,6 +5,8 @@ const Schema = mongoose.Schema;
 const wineSchema = new Schema({
   name: { type: String, required: true },
   type: { type: String, required: true },
+  blurb: { type: String },
+  image: { type: String},
   vintages: { type: Array, required: true }
 });
 

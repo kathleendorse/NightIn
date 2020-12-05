@@ -991,10 +991,10 @@ const userSeed = [
   },
 ];
 
-db.Recipe.remove({})
+db.Recipe.deleteMany({})
   .then(() => db.Recipe.insertMany(recipeSeed))
   .then((data) => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data.result + " records inserted!");
     process.exit(0);
   })
   .catch((err) => {
@@ -1002,10 +1002,10 @@ db.Recipe.remove({})
     process.exit(1);
   });
 
-db.Wine.remove({})
+db.Wine.deleteMany({})
   .then(() => db.Wine.insertMany(wineSeed))
   .then((data) => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data.result + " records inserted!");
     process.exit(0);
   })
   .catch((err) => {
@@ -1013,10 +1013,10 @@ db.Wine.remove({})
     process.exit(1);
   });
 
-db.User.remove({})
+db.User.deleteMany({})
   .then(() => db.User.insertMany(userSeed))
   .then((data) => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data.result + " records inserted!");
     process.exit(0);
   })
   .catch((err) => {
