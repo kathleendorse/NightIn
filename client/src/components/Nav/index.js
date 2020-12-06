@@ -90,11 +90,6 @@ function Nav() {
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav mr-auto">
             <li className="nav-item">
-              <a class="nav-link" href={`/${state.user.id}/home`}>
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
               <a class="nav-link" href={"/register"}>
                 Sign Up
               </a>
