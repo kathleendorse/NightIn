@@ -10,22 +10,20 @@ function Home() {
   const [state, dispatch] = useUserContext();
 
   return (
-    <Container fluid>
-      <Row>
-        <Col size="md-10 sm-12">
+    <Container fluid className="justify-content-center">
+      <Row className="justify-content-center">
+        <Col size="md-12 sm-12">
           {state.user.email ? (
             <Jumbotron>
-              <h1>{state.user.email}</h1>
-              <h1>Start Planning Your Night In</h1>
+              <p class="lead">
+                Welcome <span class="text-muted">{state.user.email}</span>!
+              </p>
               <br></br>
-              <button>
+              <button type="button" class="btn btn-secondary btn-lg">
                 <Link to={"/recipe"}>Start Planning Your Night In</Link>
               </button>
             </Jumbotron>
           ) : (
-            // <Link to="/login">
-            //   <strong>Click here to Login</strong>
-            // </Link>
             <div></div>
           )}
         </Col>

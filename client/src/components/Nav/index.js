@@ -34,7 +34,7 @@ function Nav() {
 
       <nav className="navbar navbar-expand-md navbar-light bg-light">
         <a className="navbar-brand" href="#">
-          Navbar
+          Night In
         </a>
         <button
           className="navbar-toggler"

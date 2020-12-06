@@ -39,49 +39,55 @@ function Recipe() {
 
     <div>
       <Container fluid>
-        <Row>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h5>
-                The name of our mongo database is nightindb. In this version the
-                data we are using is coming from a collection called recipes.
-                When the user enters a term and clicks the search button,
-                recipes containing that term appear below.
-              </h5>
-            </Jumbotron>
-          </Col>
-        </Row>
+        <Jumbotron>
+          <Row className="justify-content-center">
+            {" "}
+            <Col size="md-12 sm-12">
+              <p className="lead">
+                TEMP TEXT: The name of our mongo database is nightindb. In this
+                version the data we are using is coming from a collection called
+                recipes.
+              </p>
+              When the user enters a term and clicks the search button, recipes
+              containing that term appear below.
+              <p></p>
+            </Col>{" "}
+          </Row>
+          <br></br>
 
-        <Row>
-          <Col size="md-6 sm-12">
-            <form>
-              <Container fluid>
-                <Row>
-                  <Col size="md-6 sm-12">
-                    <Input
-                      name="RecipesSearch"
-                      //assigning the search term to the input value
-                      value={recipesSearch}
-                      //update the search term when the input changes
-                      onChange={handleInputChange}
-                      placeholder="Search For a Recipe"
-                    />
-                  </Col>
-                  <Col size="xs-3 sm-2">
-                    <Butt
-                      //make the API call when the button is clicked
-                      onClick={handleFormSubmit}
-                      type="success"
-                      className="input-lg btn-lg"
-                    >
-                      Search
-                    </Butt>
-                  </Col>
-                </Row>
-              </Container>
-            </form>
-          </Col>
-        </Row>
+          <Row>
+            <Col size="md-12 sm-12">
+              <form>
+                <Container fluid>
+                  <Row>
+                    <Col size="md-6 sm-12">
+                      <Input
+                        style={{ backgroundColor: "#DCDCDC" }}
+                        name="RecipesSearch"
+                        //assigning the search term to the input value
+                        value={recipesSearch}
+                        //update the search term when the input changes
+                        onChange={handleInputChange}
+                        placeholder="Search For a Recipe"
+                        id="defaultInput"
+                      />
+                    </Col>
+                    <Col size="xs-3 sm-2">
+                      <Butt
+                        //make the API call when the button is clicked
+                        onClick={handleFormSubmit}
+                        type="secondary"
+                        className="input-md btn-md btn-outline-secondary"
+                      >
+                        Search
+                      </Butt>
+                    </Col>
+                  </Row>
+                </Container>
+              </form>
+            </Col>
+          </Row>
+        </Jumbotron>
 
         <Row>
           <Col size="md-6 sm-12">
