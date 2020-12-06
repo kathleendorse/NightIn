@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 // This component lets us use a bootstrap input element without worrying about class names
 // or manually wrapping the input with a form-group div
@@ -6,7 +7,7 @@ import React from "react";
 function Input(props) {
   return (
     <div className="input-group">
-      <input className="form-control" type="text" {...props} />
+      <input className="form-control " type="text" {...props} />
     </div>
   );
 }

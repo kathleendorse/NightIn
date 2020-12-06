@@ -59,30 +59,26 @@ function Recipe() {
             <Col size="md-12 sm-12">
               <form>
                 <Container fluid>
-                  <Row>
-                    <Col size="md-6 sm-12">
-                      <Input
-                        style={{ backgroundColor: "#DCDCDC" }}
-                        name="RecipesSearch"
-                        //assigning the search term to the input value
-                        value={recipesSearch}
-                        //update the search term when the input changes
-                        onChange={handleInputChange}
-                        placeholder="Search For a Recipe"
-                        id="defaultInput"
-                      />
-                    </Col>
-                    <Col size="xs-3 sm-2">
-                      <Butt
-                        //make the API call when the button is clicked
-                        onClick={handleFormSubmit}
-                        type="secondary"
-                        className="input-md btn-md btn-outline-secondary"
-                      >
-                        Search
-                      </Butt>
-                    </Col>
-                  </Row>
+                  <Input
+                    style={{
+                      backgroundColor: "#DCDCDC",
+                    }}
+                    name="RecipesSearch"
+                    //assigning the search term to the input value
+                    value={recipesSearch}
+                    //update the search term when the input changes
+                    onChange={handleInputChange}
+                    placeholder="Search For a Recipe"
+                  />
+                  <br></br>
+                  <Butt
+                    //make the API call when the button is clicked
+                    onClick={handleFormSubmit}
+                    type="secondary"
+                    className="input-md btn-md btn-outline-secondary"
+                  >
+                    Search
+                  </Butt>
                 </Container>
               </form>
             </Col>
