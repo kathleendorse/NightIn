@@ -34,10 +34,10 @@ function Nav() {
 
       <nav className="navbar navbar-expand-md navbar-light bg-light">
         <a className="navbar-brand" href="#">
-          Night In
+          Navbar
         </a>
         <button
-          className="navbar-toggler collapsed"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarColor03"
@@ -48,20 +48,20 @@ function Nav() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav mr-auto">
+        <div className="collapse navbar-collapse" id="navbarColor03">
+          <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <a class="nav-link" href={`/${state.user.id}/home`}>
+              <a className="nav-link" href={`/${state.user.id}/home`}>
                 <strong>Home</strong>
               </a>
             </li>
             <li className="nav-item">
-              <a class="nav-link" href={"/favorites"}>
+              <a className="nav-link" href={"/favorites"}>
                 Favorites
               </a>
             </li>
             <li className="nav-item">
-              <a class="nav-link" href={"/register"} onClick={logout}>
+              <a className="nav-link" href={"/register"} onClick={logout}>
                 Log Out
               </a>
             </li>
@@ -76,7 +76,7 @@ function Nav() {
           Night In
         </a>
         <button
-          className="navbar-toggler collapsed"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarColor03"
@@ -87,15 +87,15 @@ function Nav() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav mr-auto">
+        <div className="collapse navbar-collapse" id="navbarColor03">
+          <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <a class="nav-link" href={"/register"}>
+              <a className="nav-link" href={"/register"}>
                 Sign Up
               </a>
             </li>
             <li className="nav-item">
-              <a class="nav-link" href={"/login"}>
+              <a className="nav-link" href={"/login"}>
                 Log In
               </a>
             </li>
