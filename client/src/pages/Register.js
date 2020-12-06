@@ -45,7 +45,7 @@ export default function Register() {
   return (
     <div className="Login">
       <Form onSubmit={handleSubmit}>
-        <Form.Group size="lg" controlId="email">
+        <Form.Group size="md" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
             autoFocus
@@ -54,7 +54,7 @@ export default function Register() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
-        <Form.Group size="lg" controlId="password">
+        <Form.Group size="md" controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
@@ -65,7 +65,7 @@ export default function Register() {
 
         <Button
           block
-          size="lg"
+          size="md"
           type="submit"
           onClick={register}
           disabled={!validateForm()}
