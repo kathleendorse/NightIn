@@ -6,16 +6,19 @@ import Butt from "../components/Butt";
 import Photo from "../components/Photo";
 import API from "../utils/API";
 import { useUserContext } from "../utils/UserContext";
-import Nav from "../components/Nav";
+// import Nav from "../components/Nav";
 
 function WineDetail(props) {
+
   const [wine, setWine] = useState({});
   const [vintages, setVintages] = useState([]);
-
   const { id } = useParams();
   useEffect(() => {
     handleWine(id);
     handleVintages(id);
+//---------------------------------------------------
+    //currentWine();
+//---------------------------------------------------
   }, [id]);
 
   function handleWine(id) {
@@ -30,6 +33,42 @@ function WineDetail(props) {
       .catch((err) => console.log(err));
   }
 
+//---------------------------------------------------
+const [state, dispatch] = useUserContext();
+
+function addWine(){
+  API.addWine({
+    userId: state._id,
+    favId: state.favs.pop()._id,
+    wineId: wine._id,
+ })
+ .then((res)=> {
+   console.log("Updated User Favorites: ",res.data);
+ })
+ .catch((err)=> console.log(err));
+}
+
+  //this function updates state.favs 
+  function updatedUser() {
+    API.findUser(state._id)
+    .then((res)=>{
+      dispatch({
+        type: "updateFavs",
+        favs: res.data,
+      });
+    })
+    .catch((err) => console.log(err));
+  }
+
+  //this function calls multiple functions to get the updated user and state
+  function handleSubmit (){
+    addWine();
+    updatedUser();
+  }
+
+
+//---------------------------------------------------
+
   return (
     <div>
       <Container fluid>
@@ -38,6 +77,7 @@ function WineDetail(props) {
             <Row>
               <Link to="/wine">
                 <Butt
+
                   onClick={() => {}}
                   type="success"
                   className="input-lg btn-lg"
@@ -47,7 +87,7 @@ function WineDetail(props) {
               </Link>
               <Link to="/favorites">
                 <Butt
-                  onClick={() => {}}
+                  onClick={handleSubmit}
                   type="success"
                   className="input-lg btn-lg"
                 >

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Jumbotron from "../components/Jumbotron";
 //import API from "../utils/API";
 import { Link } from "react-router-dom";
@@ -13,10 +13,10 @@ function Home() {
     <Container fluid className="justify-content-center">
       <Row className="justify-content-center">
         <Col size="md-12 sm-12">
-          {state.user.email ? (
+          {state.email ? (
             <Jumbotron>
               <p class="lead">
-                Welcome <span class="text-muted">{state.user.email}</span>!
+                Welcome <span class="text-muted">{state.email}</span>!
               </p>
               <br></br>
               <button type="button" class="btn btn-secondary btn-lg">

@@ -9,18 +9,24 @@ router.route("/register").post(userController.userCreate);
 //user login
 router.route("/login").post(passport.authenticate("local"), (req, res) => {
   res.json({
+    _id: req.user.id,
     email: req.user.email,
-    id: req.user.id,
-    //added
     favs: req.user.favs,
   });
 });
 
+router.route("/:userId")
+.get(userController.userFindById);
+
 router.route("/addRecipe").put(userController.addRecipe);
 
-router.route("/user").get((req, res) => {
-  res.send(req.user);
-});
+
+router.route("/addWine").put(userController.addWine);
+// router.route("/user").get((req, res) => {
+//   res.send(req.user);
+// });
+
+ 
 
 // router.route("/logout").post((req, res) => {
 //   console.log("success logout");

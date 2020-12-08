@@ -40,20 +40,54 @@ function RecipeDetail(props) {
       .then((res) => setDirections(res.data.directions))
       .catch((err) => console.log(err));
   }
-  //added
+  //COMMENTED OUT FOR TESTING- DO NOT REMOVE UNLESS NEW METHOD WORKS
+  // function addRecipe() {
+  //   API.addRecipe({
+  //     userId: state._id,
+  //     favorite: recipe._id,
+  //   })
+  //     .then((res) => {
+  //       dispatch({
+  //         type: "setCurrentUser",
+  //         user: res.data,
+  //       });
+  //     })
+  //     .catch((err) => console.log(err));
+  // }
+
+  //adds an object to the user's favs array and returns a confirmation
   function addRecipe() {
     API.addRecipe({
-      userId: state.user.id,
+      userId: state._id,
       favorite: recipe._id,
     })
       .then((res) => {
-        dispatch({
-          type: "setCurrentUser",
-          user: res.data,
-        });
+        // console.log("last index of favs array", res.data);
+        console.log("Updated User Favorites: ", res.data);
       })
       .catch((err) => console.log(err));
   }
+
+  //this function updates state.favs 
+  function updatedUser() {
+    API.findUser(state._id)
+    .then((res)=>{
+      dispatch({
+        type: "updateFavs",
+        favs: res.data,
+      });
+    })
+    .catch((err) => console.log(err));
+  }
+
+
+  //this function calls multiple functions to get the updated user and state
+  function handleSubmit (){
+    addRecipe();
+    updatedUser();
+  }
+
+
   //-------------
   return (
     <Container fluid>
@@ -76,7 +110,7 @@ function RecipeDetail(props) {
                   type="success"
                   className="input-lg btn-lg"
                   // added
-                  onClick={addRecipe}
+                  onClick={handleSubmit}
                   // ----
                 >
                   + Select Recipe

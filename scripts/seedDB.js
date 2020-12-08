@@ -965,22 +965,14 @@ const userSeed = [
       {
         mealId: "5fbef776c25152658e9133be",
         wineId: "5fbef776c25152658e9133bd",
-        note: "Perfect combination!",
       },
       {
         mealId: "5fbef776c25152658e9133be",
         wineId: "5fbef776c25152658e9133bd",
-        note: "Great Suggestion!",
       },
       {
         mealId: "5fbef776c25152658e9133be",
         wineId: "5fbef776c25152658e9133bd",
-        note: "Great night!",
-      },
-      {
-        mealId: "5fbef776c25152658e9133be",
-        wineId: "5fbef776c25152658e9133bd",
-        note: "Awesome!",
       },
     ],
   },

@@ -58,6 +58,17 @@ export default {
   getWine: function (id) {
     return axios.get("/api/wine/" + id);
   },
+
+  //test-----------------------------------
+  addWine: function (userObj) {
+    return axios.put("/api/user/addWine", userObj);
+  },
+
+  //works do not touch!------------------------
+  findUser: function (userId) {
+    return axios.get("/api/user/"+ userId);
+  }
+  //--------------------------------------
 };
 
 //these methods return the results of making an ajax call

@@ -1,8 +1,8 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-import Nav from "../components/Nav";
-import { useUserContext } from "../utils/UserContext";
+// import Nav from "../components/Nav";
+// import { useUserContext } from "../utils/UserContext";
 
 function NoMatch() {
   return (

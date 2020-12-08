@@ -2,7 +2,7 @@ import React from "react";
 
 function Photo (props){
     return(
-        <img {...props} /> 
+        <img src={props.src} alt={props.alt}{...props} /> 
     );
 
 }

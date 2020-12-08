@@ -34,11 +34,20 @@ export default function Login() {
         if (res.status === 200) {
           console.log(res);
           if (res.data.email === email) {
+            // dispatch({
+            //   type: "setCurrentUser",
+            //   user: res.data,
+            // });
             dispatch({
               type: "setCurrentUser",
-              user: res.data,
+              _id: res.data._id,
+              email: res.data.email,
+              favs: res.data.favs
             });
-            console.log(state);
+
+
+
+            console.log(state._id);
             // const use = (res.data.id);
             // (window.location.href = `${use}/home`)
           }
@@ -70,7 +79,7 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Link to={`/${state.user.id}/home`}>
+        <Link to="/home">
           <Button
             block
             size="md"
