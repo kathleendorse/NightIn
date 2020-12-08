@@ -19,22 +19,36 @@ const user = new Schema({
     required: true,
     default: Date.now,
   },
+
   favs: [
     {
-      mealId: {
-        type: Schema.Types.ObjectId,
-        ref: "night",
-      },
-      wineId: {
-        type: Schema.Types.ObjectId,
-        ref: "night",
-      },
-      note: {
-        type: String,
-        trim: true,
-      },
+      mealId: "",
+      wineId: "",
     },
-  ],
+  ]
 });
 
 module.exports = mongoose.model("User", user);
+
+
+  // favs: [
+  //   // {
+  //   //   mealId: {
+  //   //     type: Schema.Types.ObjectId,
+  //   //     ref: "night",
+  //   //   },
+  //   //   wineId: {
+  //   //     type: Schema.Types.ObjectId,
+  //   //     ref: "night",
+  //   //   },
+  //   //   note: {
+  //   //     type: String,
+  //   //     trim: true,
+  //   //   },
+  //   // },
+  //   // {
+  //   //   id: "",
+  //   //   mealId: "",
+  //   //   wineId: ""
+  //   // },
+  // ],

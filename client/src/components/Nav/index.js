@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useUserContext } from "../../utils/UserContext";
 import API from "../../utils/API";
@@ -24,7 +24,7 @@ function Nav() {
       });
   };
 
-  if (state.user.email) {
+  if (state.email) {
     return (
       // <nav className="navbar navbar-expand-lg navbar-dark">
       //   <span className="nav-brand">
@@ -33,9 +33,9 @@ function Nav() {
       //   </span>
 
       <nav className="navbar navbar-expand-md navbar-light bg-light">
-        <a className="navbar-brand" href="#">
+        <Link to="#" className="navbar-brand">
           Night In
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -51,19 +51,19 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarColor03">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <a className="nav-link" href={`/${state.user.id}/home`}>
+              <Link to="/home"  className="navbar-brand">
                 <strong>Home</strong>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href={"/favorites"}>
+              <Link to={"/favorites"} className="navbar-brand">
                 Favorites
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href={"/register"} onClick={logout}>
+              <Link to={"/register"} onClick={logout} className="navbar-brand">
                 Log Out
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -72,9 +72,9 @@ function Nav() {
   } else {
     return (
       <nav className="navbar navbar-expand-md navbar-light bg-light">
-        <a className="navbar-brand" href="#">
+        <Link to="#" className="navbar-brand">
           Night In
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -90,14 +90,14 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarColor03">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <a className="nav-link" href={"/register"}>
+              <Link to={"/register"} className="nav-link">
                 Sign Up
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href={"/login"}>
+              <Link to={"/login"} className="nav-link">
                 Log In
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

@@ -1,8 +1,10 @@
 import React from "react";
 
-import { Col, Row, Container } from "./../Grid";
-import Photo from "./../Photo";
-import { Button, Card } from "react-bootstrap";
+//import { Col, Row, Container } from "./../Grid";
+import { Row } from "./../Grid";
+//import Photo from "./../Photo";
+// import { Button, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually

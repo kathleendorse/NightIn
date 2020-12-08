@@ -8,7 +8,16 @@ const reducer = (state, action) => {
     case "setCurrentUser":
       return {
         ...state,
-        user: action.user,
+        _id: action._id,
+        email: action.email,
+        favs: action.favs,
+        loading: false,
+      };
+    
+    case "updateFavs":
+      return {
+        ...state,
+        favs: [...state.favs, action.favs],
         loading: false,
       };
 
@@ -25,7 +34,9 @@ const reducer = (state, action) => {
 
 const UserProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useReducer(reducer, {
-    user: {},
+    _id: "",
+    email: "",
+    favs: [],
     loading: false,
   });
 
