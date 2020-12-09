@@ -24,7 +24,10 @@ import { useUserContext } from "./utils/UserContext";
 //{["/", "/nightin"]} this is an either or for if the root route OR /nightin is hit
 //the NoMatch component will render if a route other than the ones listed is hit by some means
 
+
+
 function App() {
+  
   const [state, dispatch] = useUserContext();
 
   return (

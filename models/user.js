@@ -20,13 +20,67 @@ const user = new Schema({
     default: Date.now,
   },
 
-  favs: [
-    {
-      mealId: "",
-      wineId: "",
-    },
-  ]
+  //***WORKS COMMENTED OUT FOR TESTING */
+  // favs: [
+  //   {
+  //     mealId: "",
+  //     wineId: "",
+  //   },
+  // ],
+
+  //----------------TESTING
+    favs: [
+      {
+        favRecipe: {},
+        favWine: {}
+      },
+    ],
+  // favs: [
+  //   {
+  //     favRecipe: {
+  //       _id: Schema.Types.ObjectId,
+  //       name: "",
+  //       type: "",
+  //       wine: "",
+  //       subwine: "",
+  //       subwine: "",
+  //       ingredients: [],
+  //       image: "",
+  //       directions: []
+  //       },
+  //     favWine: {
+  //       _id: Schema.Types.ObjectId,
+  //       name: "",
+  //       type: "",
+  //       blurb: "",
+  //       image: "",
+  //       vintages: []
+  //     },
+
+  //   }
+  // ]
+
+  // favs: [
+  //   {
+  //       recipeName: "",
+  //       recipeType: "",
+  //       recipeWine: "",
+  //       recipeSubwine: "",
+  //       recipeIngredients: [],
+  //       recipeImage: "",
+  //       recipeDirections: [],
+  //       wineName: "",
+  //       wineType: "",
+  //       wineBlurb: "",
+  //       wineImage: "",
+  //       wineVintages: []
+  //   },
+  // ]
+//------------------------------
 });
+
+
+
 
 module.exports = mongoose.model("User", user);
 

@@ -11,18 +11,51 @@ export default {
       url: "/api/user/register",
     });
   },
-
   // user login
   userLogin: function (userObj) {
     return axios.post("/api/user/login", userObj);
   },
-
   userLogout: function (userObj) {
     console.log(userObj);
     return axios.post("/api/user/logout", userObj);
   },
+  findUser: function (userId) {
+    return axios.get("/api/user/"+ userId);
+  },
+  addRecipe: function (userObj) {
+    return axios.put("/api/user/addRecipe", userObj);
+  },
+  //Finds recipes with the provided query term
+  getRecipes: function (query) {
+    return axios.get("/api/recipe", { params: { q: query } });
+  },
+  //Finds a recipe with the provided id
+  getRecipe: function (id) {
+    return axios.get("/api/recipe/" + id);
+  },
+  getWines: function () {
+    return axios.get("/api/wine");
+  },
+  getWine: function (id) {
+    return axios.get("/api/wine/" + id);
+  },
+  addWine: function (userObj) {
+    return axios.put("/api/user/addWine", userObj);
+  },
+};
 
-  // userLogout: function (userObj) {
+//these methods return the results of making an ajax call
+//back to wherever they are called from in the front end
+
+
+
+
+  // Deletes a recipe with the provided id
+  // deleteRecipe: function (id) {
+  //   return axios.delete("/api/recipe/" + id);
+  // },
+
+    // userLogout: function (userObj) {
   //   console.log(userObj);
   //   return axios({
   //     method: "POST",
@@ -35,41 +68,3 @@ export default {
   //   console.log(id);
   //   return axios.post("/api/user/something", id);
   // },
-
-  addRecipe: function (userObj) {
-    return axios.put("/api/user/addRecipe", userObj);
-  },
-
-  //Finds recipes with the provided query term
-  getRecipes: function (query) {
-    return axios.get("/api/recipe", { params: { q: query } });
-  },
-  //Finds a recipe with the provided id
-  getRecipe: function (id) {
-    return axios.get("/api/recipe/" + id);
-  },
-  // Deletes a recipe with the provided id
-  deleteRecipe: function (id) {
-    return axios.delete("/api/recipe/" + id);
-  },
-  getWines: function () {
-    return axios.get("/api/wine");
-  },
-  getWine: function (id) {
-    return axios.get("/api/wine/" + id);
-  },
-
-  //test-----------------------------------
-  addWine: function (userObj) {
-    return axios.put("/api/user/addWine", userObj);
-  },
-
-  //works do not touch!------------------------
-  findUser: function (userId) {
-    return axios.get("/api/user/"+ userId);
-  }
-  //--------------------------------------
-};
-
-//these methods return the results of making an ajax call
-//back to wherever they are called from in the front end

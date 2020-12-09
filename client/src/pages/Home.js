@@ -15,6 +15,7 @@ function Home({ email }) {
       {!email && <Redirect to="/login" />}
       <Row className="justify-content-center">
         <Col size="md-12 sm-12">
+    
           <Jumbotron>
             <p className="lead">
               Welcome <span className="text-muted">{state.email}</span>!
@@ -24,6 +25,7 @@ function Home({ email }) {
               <Link to={"/recipe"}>Start Planning Your Night In</Link>
             </button>
           </Jumbotron>
+
         </Col>
       </Row>
     </Container>
