@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -15,7 +15,7 @@ import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Wine from "./pages/Wine";
 import WineDetail from "./pages/WineDetail";
-import { UserProvider } from "./utils/UserContext";
+
 import { useUserContext } from "./utils/UserContext";
 
 // inside the router we render a nav component
@@ -32,14 +32,18 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route exact path="/home">
-            {!state.email ? <Redirect to="/login" /> : <Home />}
+          <Route exact path="/home" render={() => <Home email={state.email} />}>
+            {/* {!state.email ? <Redirect to="/login" /> : <Home />} */}
           </Route>
           <Route exact path={["/", "/register"]}>
             {state.email ? <Redirect to="/recipe" /> : <Signup />}
           </Route>
-          <Route exact path="/login">
-            {state.email ? <Redirect to="/recipe" /> : <Login />}
+          <Route
+            exact
+            path="/login"
+            render={() => <Login useremail={state.email} />}
+          >
+            {/* {state.email ? <Redirect to="/recipe" /> : <Login />} */}
           </Route>
           <Route exact path="/favorites">
             {!state.email ? <Redirect to="/login" /> : <Favorites />}
