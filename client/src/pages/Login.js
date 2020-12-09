@@ -6,12 +6,14 @@ import API from "../utils/API";
 //added
 import { Link } from "react-router-dom";
 import { useUserContext } from "../utils/UserContext";
+import { Redirect } from "react-router-dom";
 
 //----
 
-export default function Login() {
+export default function Login({ useremail }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  console.log("useremail: ", useremail);
 
   //test
   const [state, dispatch] = useUserContext();
@@ -42,10 +44,8 @@ export default function Login() {
               type: "setCurrentUser",
               _id: res.data._id,
               email: res.data.email,
-              favs: res.data.favs
+              favs: res.data.favs,
             });
-
-
 
             console.log(state._id);
             // const use = (res.data.id);
@@ -61,6 +61,7 @@ export default function Login() {
 
   return (
     <div className="Login">
+      {useremail && <Redirect to="/recipe" />}
       <Form onSubmit={handleSubmit}>
         <Form.Group size="md" controlId="email">
           <Form.Label>Email</Form.Label>

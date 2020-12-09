@@ -1,5 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import Recipe from "./pages/Recipe";
 import RecipeDetail from "./pages/RecipeDetail";
 import NoMatch from "./pages/NoMatch";
@@ -10,7 +15,8 @@ import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import Wine from "./pages/Wine";
 import WineDetail from "./pages/WineDetail";
-import { UserProvider } from "./utils/UserContext";
+
+import { useUserContext } from "./utils/UserContext";
 
 // inside the router we render a nav component
 //for each route path we render a different component
@@ -21,44 +27,46 @@ import { UserProvider } from "./utils/UserContext";
 
 
 function App() {
-
   
+  const [state, dispatch] = useUserContext();
 
   return (
     <Router>
       <div>
-        <UserProvider>
-          <Nav />
-          <Switch>
-            <Route exact path="/home">
-              <Home />
-            </Route>
-            <Route exact path={["/", "/register"]}>
-              <Signup />
-            </Route>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/favorites">
-              <Favorites />
-            </Route>
-            <Route exact path="/recipe">
-              <Recipe />
-            </Route>
-            <Route exact path="/recipe/:id">
-              <RecipeDetail />
-            </Route>
-            <Route exact path="/wine">
-              <Wine />
-            </Route>
-            <Route exact path="/wine/:id">
-              <WineDetail />
-            </Route>
-            <Route>
-              <NoMatch />
-            </Route>
-          </Switch>
-        </UserProvider>
+        <Nav />
+        <Switch>
+          <Route exact path="/home" render={() => <Home email={state.email} />}>
+            {/* {!state.email ? <Redirect to="/login" /> : <Home />} */}
+          </Route>
+          <Route exact path={["/", "/register"]}>
+            {state.email ? <Redirect to="/recipe" /> : <Signup />}
+          </Route>
+          <Route
+            exact
+            path="/login"
+            render={() => <Login useremail={state.email} />}
+          >
+            {/* {state.email ? <Redirect to="/recipe" /> : <Login />} */}
+          </Route>
+          <Route exact path="/favorites">
+            {!state.email ? <Redirect to="/login" /> : <Favorites />}
+          </Route>
+          <Route exact path="/recipe">
+            {!state.email ? <Redirect to="/login" /> : <Recipe />}
+          </Route>
+          <Route exact path="/recipe/:id">
+            {!state.email ? <Redirect to="/login" /> : <RecipeDetail />}
+          </Route>
+          <Route exact path="/wine">
+            {!state.email ? <Redirect to="/login" /> : <Wine />}
+          </Route>
+          <Route exact path="/wine/:id">
+            {!state.email ? <Redirect to="/login" /> : <WineDetail />}
+          </Route>
+          <Route>
+            <NoMatch />
+          </Route>
+        </Switch>
       </div>
     </Router>
   );
