@@ -6,11 +6,12 @@ import FavoriteItem from "../components/FavoriteItem";
 import { useUserContext } from "../utils/UserContext";
 
 export default function Favorites() {
-   const [state, dispatch] = useUserContext();
+  const [state, dispatch] = useUserContext();
 
   return (
     <Container fluid>
-      {state.email ? <FavoriteItem /> : <div></div>}
+      {/* {state.email ? <FavoriteItem /> : <div></div>} */}
+      <FavoriteItem />
     </Container>
   );
 }
