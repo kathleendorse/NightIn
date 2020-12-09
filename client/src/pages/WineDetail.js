@@ -6,19 +6,18 @@ import Butt from "../components/Butt";
 import Photo from "../components/Photo";
 import API from "../utils/API";
 import { useUserContext } from "../utils/UserContext";
-// import Nav from "../components/Nav";
 
 function WineDetail(props) {
 
+  const [state, dispatch] = useUserContext();
   const [wine, setWine] = useState({});
   const [vintages, setVintages] = useState([]);
+
   const { id } = useParams();
+
   useEffect(() => {
     handleWine(id);
     handleVintages(id);
-//---------------------------------------------------
-    //currentWine();
-//---------------------------------------------------
   }, [id]);
 
   function handleWine(id) {
@@ -33,22 +32,20 @@ function WineDetail(props) {
       .catch((err) => console.log(err));
   }
 
-//---------------------------------------------------
-const [state, dispatch] = useUserContext();
+  //adds wine to object in favs array
+  function addWine(){
+    API.addWine({
+      userId: state._id,
+      favId: state.favs.pop()._id,
+      favorite: wine,
+  })
+  .then((res)=> {
+    console.log("Updated User Favorites: ",res.data);
+  })
+  .catch((err)=> console.log(err));
+  }
 
-function addWine(){
-  API.addWine({
-    userId: state._id,
-    favId: state.favs.pop()._id,
-    wineId: wine._id,
- })
- .then((res)=> {
-   console.log("Updated User Favorites: ",res.data);
- })
- .catch((err)=> console.log(err));
-}
-
-  //this function updates state.favs 
+  //updates state.favs 
   function updatedUser() {
     API.findUser(state._id)
     .then((res)=>{
@@ -66,8 +63,6 @@ function addWine(){
     updatedUser();
   }
 
-
-//---------------------------------------------------
 
   return (
     <div>

@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Nightin collection and inserts the nightin below
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nightindb");
 
@@ -799,7 +798,6 @@ const recipeSeed = [
 ];
 
 // "Wine" Collection Seed Data
-
 const wineSeed = [
   {
     name: "Pinot Noir",
@@ -957,27 +955,6 @@ const wineSeed = [
   },
 ];
 
-const userSeed = [
-  {
-    email: "negin@nightin.com",
-    password: "night",
-    favs: [
-      {
-        mealId: "5fbef776c25152658e9133be",
-        wineId: "5fbef776c25152658e9133bd",
-      },
-      {
-        mealId: "5fbef776c25152658e9133be",
-        wineId: "5fbef776c25152658e9133bd",
-      },
-      {
-        mealId: "5fbef776c25152658e9133be",
-        wineId: "5fbef776c25152658e9133bd",
-      },
-    ],
-  },
-];
-
 db.Recipe.deleteMany({})
   .then(() => db.Recipe.insertMany(recipeSeed))
   .then((data) => {
@@ -1000,13 +977,145 @@ db.Wine.deleteMany({})
     process.exit(1);
   });
 
-db.User.deleteMany({})
-  .then(() => db.User.insertMany(userSeed))
-  .then((data) => {
-    console.log(data.result + " records inserted!");
-    process.exit(0);
-  })
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
+
+
+
+
+
+//LEAVING THIS IN JUST IN CASE BUT DO NOT BELIEVE IT IS NEEDED-----------------------------------  
+
+// db.User.deleteMany({})
+//   .then(() => db.User.insertMany(userSeed))
+//   .then((data) => {
+//     console.log(data.result + " records inserted!");
+//     process.exit(0);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//     process.exit(1);
+//   });
+
+
+// ***WORKS COMMENTED OUT FOR TESTING */
+// const userSeed = [
+//   {
+//     email: "negin@nightin.com",
+//     password: "night",
+//     favs: [
+//       {
+//         mealId: "5fbef776c25152658e9133be",
+//         wineId: "5fbef776c25152658e9133bd",
+//       },
+//       {
+//         mealId: "5fbef776c25152658e9133be",
+//         wineId: "5fbef776c25152658e9133bd",
+//       },
+//       {
+//         mealId: "5fbef776c25152658e9133be",
+//         wineId: "5fbef776c25152658e9133bd",
+//       },
+//     ],
+//   },
+// ];
+
+//TESTING--------------------------------
+
+// const userSeed = [
+//   {
+//     email: "negin@nightin.com",
+//     password: "night",
+//     favs: [
+//       {
+//         favRecipe: {
+//           _id: "5fd0072624acff7a7c24bf4d",
+//           name: "New York Strip Steak with Wild Rice and Broccoli",
+//           type: "red meat",
+//           wine: "red",
+//           subwine: "Pinot Noir",
+//           ingredients: [
+//             {id: 1, ing: "1 one-and-a-half-inch-thick NY Strip Steak"},
+//             {id: 2, ing: "half cup wild rice"},
+//             {id: 3, ing: "1 brocoli crown, diced"},
+//             {id: 4, ing: "garlic salt, to taste"},
+//             {id: 5, ing: "pepper, to taste"},
+//             {id: 6, ing: "2 tablespoons of olive oil"}
+//           ],
+//           image:
+//             "https://www.dinneratthezoo.com/wp-content/uploads/2020/03/new-york-strip-steak-44.jpg",
+//           directions: [
+//             {id: 1, dir: "About 20 minutes before grilling, remove the steaks from the refrigerator and cover in olive oil and garlic salt and pepper. Let sit, covered, at room temperature."},
+//             {id: 2, dir: "Prepare rice using desired method and allow it to cook while you prepare steak and broccoli."},
+//             {id: 3, dir: "Heat your grill to high. Brush the steaks on both sides with oil and season liberally with salt and pepper. Place the steaks on the grill and cook until golden brown and slightly charred, 4 to 5 minutes. Turn the steaks over and continue to grill 3 to 5 minutes for medium-rare (an internal temperature of 135 degrees F), 5 to 7 minutes for medium (140 degrees F) or 8 to 10 minutes for medium-well (150 degrees F). Place Brocoli in pot of boiling water for 8 to 10 minutes."},
+//             {id: 4, dir: "Transfer the steaks to a cutting board or platter, tent loosely with foil and let rest 5 minutes before slicing. Add rice and broccoli."},
+//             {id: 5, dir: "Add the drained black beans and bring to a boil. Reduce heat, cover, and simmer for 30-50 minutes (depending on rice variety). Stir the mixture occasionally and add more liquid as needed to keep it from sticking to the bottom."},
+//             {id: 6, dir: "About 10 minutes before the rice is done, sear the skirt steak. Pat the steak dry and season all over with salt and pepper."},
+//             {id: 7, dir: "Heat the neutral cooking oil in a skillet over high heat. Once the oil is very, very hot add the steak and cook without moving for 3-5 minutes (depending on thickness). Flip and cook until desired internal temperature is reached, about 3-4 minutes more. Transfer to a plate and cover with foil."},
+//             {id: 8, dir: "Divide the spicy rice and beans between plates and arrange the steak on top. Pile each plate with the garnish and enjoy!"}
+//           ],
+//         },
+//         favWine: {
+//           _id: "5fd0072624acff7a7c24bf6f",
+//           name: "Pinot Noir",
+//           type: "red",
+//           blurb: "Pinot Noir is the most romanticized red wine in the world. No other grape inspires such emotion and worship among wine enthusiasts. Festivals are thrown every year in the grape’s honor and an entire movie, Sideways, highlighted the fervor of its fans and helped boost the variety’s popularity.",
+//           image:
+//             "https://wineenthusiast.scene7.com/is/image/WineEnthusiast/f/590/33206_3.jpg",
+//           vintages:  [
+//             {id: 1, vin: "Belle Glos Clark & Telephone Vineyard Pinot Noir"},
+//             {id: 2, vin: "La Crema Willamette Valley Pinot Noir 2018"},
+//             {id: 3, vin: "Kosta Browne Sta. Rita Hills Pinot Noir"},
+//             {id: 4, vin: "Samuel Robert Family Reserve"},
+//             {id: 5, vin: "Vennstone Tri Appellation"}
+//           ],
+//         }
+//       },
+//     ],
+//   },
+// ];
+
+// const userSeed = [
+//   {
+//     email: "negin@nightin.com",
+//     password: "night",
+//     favs: [
+//       {
+//         recipeName: "New York Strip Steak with Wild Rice and Broccoli",
+//         recipeType: "red meat",
+//         recipeWine: "red",
+//         recipeSubwine: "Pinot Noir",
+//         recipeIngredients: [
+//           {id: 1, ing: "1 one-and-a-half-inch-thick NY Strip Steak"},
+//           {id: 2, ing: "half cup wild rice"},
+//           {id: 3, ing: "1 brocoli crown, diced"},
+//           {id: 4, ing: "garlic salt, to taste"},
+//           {id: 5, ing: "pepper, to taste"},
+//           {id: 6, ing: "2 tablespoons of olive oil"}
+//         ],
+//         recipeImage:  "https://www.dinneratthezoo.com/wp-content/uploads/2020/03/new-york-strip-steak-44.jpg",
+//         recipeDirections: [
+//           {id: 1, dir: "About 20 minutes before grilling, remove the steaks from the refrigerator and cover in olive oil and garlic salt and pepper. Let sit, covered, at room temperature."},
+//           {id: 2, dir: "Prepare rice using desired method and allow it to cook while you prepare steak and broccoli."},
+//           {id: 3, dir: "Heat your grill to high. Brush the steaks on both sides with oil and season liberally with salt and pepper. Place the steaks on the grill and cook until golden brown and slightly charred, 4 to 5 minutes. Turn the steaks over and continue to grill 3 to 5 minutes for medium-rare (an internal temperature of 135 degrees F), 5 to 7 minutes for medium (140 degrees F) or 8 to 10 minutes for medium-well (150 degrees F). Place Brocoli in pot of boiling water for 8 to 10 minutes."},
+//           {id: 4, dir: "Transfer the steaks to a cutting board or platter, tent loosely with foil and let rest 5 minutes before slicing. Add rice and broccoli."},
+//           {id: 5, dir: "Add the drained black beans and bring to a boil. Reduce heat, cover, and simmer for 30-50 minutes (depending on rice variety). Stir the mixture occasionally and add more liquid as needed to keep it from sticking to the bottom."},
+//           {id: 6, dir: "About 10 minutes before the rice is done, sear the skirt steak. Pat the steak dry and season all over with salt and pepper."},
+//           {id: 7, dir: "Heat the neutral cooking oil in a skillet over high heat. Once the oil is very, very hot add the steak and cook without moving for 3-5 minutes (depending on thickness). Flip and cook until desired internal temperature is reached, about 3-4 minutes more. Transfer to a plate and cover with foil."},
+//           {id: 8, dir: "Divide the spicy rice and beans between plates and arrange the steak on top. Pile each plate with the garnish and enjoy!"}
+//         ],
+//         wineName: "Pinot Noir",
+//         wineType: "red",
+//         wineBlurb: "Pinot Noir is the most romanticized red wine in the world. No other grape inspires such emotion and worship among wine enthusiasts. Festivals are thrown every year in the grape’s honor and an entire movie, Sideways, highlighted the fervor of its fans and helped boost the variety’s popularity.",
+//         wineImage: "https://wineenthusiast.scene7.com/is/image/WineEnthusiast/f/590/33206_3.jpg",
+//         wineVintages:  [
+//           {id: 1, vin: "Belle Glos Clark & Telephone Vineyard Pinot Noir"},
+//           {id: 2, vin: "La Crema Willamette Valley Pinot Noir 2018"},
+//           {id: 3, vin: "Kosta Browne Sta. Rita Hills Pinot Noir"},
+//           {id: 4, vin: "Samuel Robert Family Reserve"},
+//           {id: 5, vin: "Vennstone Tri Appellation"}
+//         ]
+//       }
+//     ],
+//   },
+// ];
+
+//--------------------------------

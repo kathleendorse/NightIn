@@ -15,11 +15,11 @@ function Home() {
         <Col size="md-12 sm-12">
           {state.email ? (
             <Jumbotron>
-              <p class="lead">
-                Welcome <span class="text-muted">{state.email}</span>!
+              <p className="lead">
+                Welcome <span className="text-muted">{state.email}</span>!
               </p>
               <br></br>
-              <button type="button" class="btn btn-secondary btn-lg">
+              <button type="button" className="btn btn-secondary btn-lg">
                 <Link to={"/recipe"}>Start Planning Your Night In</Link>
               </button>
             </Jumbotron>
