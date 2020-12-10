@@ -63,11 +63,6 @@ function RecipeDetail(props) {
     updateUserRecipeSelection();
   }
 
-  //calls multiple functions to get the updated user and state
-  function handleSubmit (){
-    addRecipe();
-    updatedUser();
-  }
 
 
 
