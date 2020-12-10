@@ -19,64 +19,8 @@ const user = new Schema({
     required: true,
     default: Date.now,
   },
-
-  //***WORKS COMMENTED OUT FOR TESTING */
-  // favs: [
-  //   {
-  //     mealId: "",
-  //     wineId: "",
-  //   },
-  // ],
-
-  //----------------TESTING
-    favs: [
-      {
-        favRecipe: {},
-        favWine: {}
-      },
-    ],
-  // favs: [
-  //   {
-  //     favRecipe: {
-  //       _id: Schema.Types.ObjectId,
-  //       name: "",
-  //       type: "",
-  //       wine: "",
-  //       subwine: "",
-  //       subwine: "",
-  //       ingredients: [],
-  //       image: "",
-  //       directions: []
-  //       },
-  //     favWine: {
-  //       _id: Schema.Types.ObjectId,
-  //       name: "",
-  //       type: "",
-  //       blurb: "",
-  //       image: "",
-  //       vintages: []
-  //     },
-
-  //   }
-  // ]
-
-  // favs: [
-  //   {
-  //       recipeName: "",
-  //       recipeType: "",
-  //       recipeWine: "",
-  //       recipeSubwine: "",
-  //       recipeIngredients: [],
-  //       recipeImage: "",
-  //       recipeDirections: [],
-  //       wineName: "",
-  //       wineType: "",
-  //       wineBlurb: "",
-  //       wineImage: "",
-  //       wineVintages: []
-  //   },
-  // ]
-//------------------------------
+  favs: [],
+ 
 });
 
 
