@@ -8,7 +8,7 @@ import { Card } from "react-bootstrap";
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
-export function FavoriteItem() {
+export function FavoriteItem({recipeName, recipeImage, wineName, wineImage}) {
   return (
 
     <Row>
@@ -17,22 +17,21 @@ export function FavoriteItem() {
           <Card.Img
             className="rounded-circle"
             variant="top"
-            src="https://via.placeholder.com/150"
+            src={recipeImage}
+            alt={recipeName}
           />
-          <Card.Title>New York Strip Steak with Wild Rice and Broccoli</Card.Title>
+          <Card.Title>{recipeName}</Card.Title>
         </Card>
       {/* </Col> */}
-
-
-
       {/* <Col size="sm-4"> */}
         <Card style={{ width: "10rem" }}>
           <Card.Img
             className="rounded-circle"
             variant="top"
-            src="https://via.placeholder.com/150"
+            src={wineImage}
+            alt={wineName}
           />
-          <Card.Title>Wine Name</Card.Title>
+          <Card.Title>{wineName}</Card.Title>
         </Card>
       {/* </Col> */}
       {/* <Col size="sm-4">
@@ -46,6 +45,7 @@ export function FavoriteItem() {
         </p>
       </Col> */}
     </Row>
+    
   );
 }
 
