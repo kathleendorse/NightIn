@@ -19,9 +19,14 @@ export default {
     console.log(userObj);
     return axios.post("/api/user/logout", userObj);
   },
-  findUser: function (userId) {
+  //used to update state.favs
+  getLatestFav: function (userId) {
     return axios.get("/api/user/"+ userId);
   },
+  //add favorite to favs array 
+  addFav: function (userObj) {
+    return axios.put("/api/user/addFav", userObj);
+  },  
   addRecipe: function (userObj) {
     return axios.put("/api/user/addRecipe", userObj);
   },
@@ -39,13 +44,27 @@ export default {
   getWine: function (id) {
     return axios.get("/api/wine/" + id);
   },
-  addWine: function (userObj) {
-    return axios.put("/api/user/addWine", userObj);
-  },
 };
 
 //these methods return the results of making an ajax call
 //back to wherever they are called from in the front end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
