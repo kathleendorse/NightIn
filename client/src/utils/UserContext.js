@@ -14,12 +14,43 @@ const reducer = (state, action) => {
         loading: false,
       };
     
+    //adds object to the favs array once it's been added to the db       
     case "updateFavs":
       return {
         ...state,
         favs: [...state.favs, action.favs],
         loading: false,
       };
+
+
+    //updates values for the user's current recipe Selection  
+    case "updateRecipe":
+      return {
+        ...state,
+        selectionId: action.selectionId,
+        recipeId: action.recipeId,
+        recipeName: action.recipeName,
+        recipeType: action.recipeType,
+        recipeImage: action.recipeImage,
+        recipeWine: action.recipeWine,
+        recipeSubWine: action.recipeSubWine,
+        recipeIngredients: action.recipeIngredients,
+        recipeDirections: action.recipeDirections,
+        loading: false,
+      };  
+
+    //updates values for the user's current wine Selection  
+    case "updateWine":
+      return {
+        ...state,
+        wineId: action.wineId,
+        wineName: action.wineName,
+        wineType: action.wineType,
+        wineBlurb: action.wineBlurb,
+        wineImage: action.wineImage,
+        wineVintages: action.wineVintages,
+        loading: false,
+      };   
 
     case "loading":
       return {
@@ -32,13 +63,29 @@ const reducer = (state, action) => {
   }
 };
 
+//setting initial values for the UserState
 const UserProvider = ({ value = [], ...props }) => {
-  const [state, dispatch] = useReducer(reducer, {
-    _id: "",
-    email: "",
-    favs: [],
-    loading: false,
-  });
+ const [state, dispatch] = useReducer(reducer, {
+   _id: "",
+   email: "",
+   favs: [],
+   selectionId: "",
+   recipeId: "",
+   recipeName: "",
+   recipeType: "",
+   recipeImage: "",
+   recipeWine: "",
+   recipeSubWine: "",
+   recipeIngredients: [],
+   recipeDirections: [],
+   wineId: "",
+   wineName: "",
+   wineType: "",
+   wineBlurb: "",
+   wineImage: "",
+   wineVintages: [],
+   loading: false,
+ });
 
   return <Provider value={[state, dispatch]} {...props} />;
 };
