@@ -44,7 +44,7 @@ function Wine() {
                           className="rounded-circle"
                           variant="top"
                           src={wine.image}
-                          alt={`photo of ${wine.title}`}
+                          alt={`photo of ${wine.name}`}
                         />
                         <Card.Title>{wine.name}</Card.Title>
                       </Card>
