@@ -24,29 +24,5 @@ const user = new Schema({
 });
 
 
-
-
 module.exports = mongoose.model("User", user);
 
-
-  // favs: [
-  //   // {
-  //   //   mealId: {
-  //   //     type: Schema.Types.ObjectId,
-  //   //     ref: "night",
-  //   //   },
-  //   //   wineId: {
-  //   //     type: Schema.Types.ObjectId,
-  //   //     ref: "night",
-  //   //   },
-  //   //   note: {
-  //   //     type: String,
-  //   //     trim: true,
-  //   //   },
-  //   // },
-  //   // {
-  //   //   id: "",
-  //   //   mealId: "",
-  //   //   wineId: ""
-  //   // },
-  // ],
