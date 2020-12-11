@@ -10,13 +10,41 @@ export default function Favorites() {
   //runs when component loads
   useEffect(() => {
     clearSelection();
-  }, [state]);
+  });
 
   //clears out the users last selection from state (reset)
   //clears out the users current favorite selection
   function clearSelection (){
+    // dispatch({
+    //   type: "updateRecipe",
+    //   selectionId: "" ,  
+    //   recipeId: "",
+    //   recipeName: "",
+    //   recipeType: "",
+    //   recipeImage: "",
+    //   recipeWine: "",
+    //   recipeSubWine: "",
+    //   recipeIngredients: "",
+    //   recipeDirections: "",
+    //   wineId: "",
+    //   wineName: "",
+    //   wineType: "",
+    //   wineBlurb: "",
+    //   wineImage: "",
+    //   wineVintages: "",  
+    // });
+    // dispatch({
+    //   type: "updateWine",
+    //   wineId: "",
+    //   wineName: "",
+    //   wineType: "",
+    //   wineBlurb: "",
+    //   wineImage: "",
+    //   wineSubWine: "",
+    //   wineVintages: "",
+    // });
     dispatch({
-      type: "updateRecipe",
+      type: "clearSelections",
       selectionId: "" ,  
       recipeId: "",
       recipeName: "",
@@ -31,22 +59,10 @@ export default function Favorites() {
       wineType: "",
       wineBlurb: "",
       wineImage: "",
-      wineVintages: "",  
-    });
-    dispatch({
-      type: "updateWine",
-      wineId: "",
-      wineName: "",
-      wineType: "",
-      wineBlurb: "",
-      wineImage: "",
-      wineSubWine: "",
       wineVintages: "",
+      currentFav: "",  
     });
-    dispatch({
-      type: "setCurrentFav",
-      currentFav: ""
-    });
+
   }
 
 

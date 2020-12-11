@@ -1,3 +1,4 @@
+
 const express = require("express");
 const router = require("express").Router();
 const passport = require("../../passport");
@@ -21,6 +22,11 @@ router.route("/:userId")
 
 //add favorite to favs array
 router.route("/addFav").put(userController.addFavorite);
+
+
+router.route("/favorite")
+.get(userController.findFav);
+
 
 router.post("/logout", (req, res) => {
   //   console.log(req.user);

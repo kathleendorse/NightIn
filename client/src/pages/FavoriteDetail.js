@@ -11,7 +11,6 @@ import Photo from "../components/Photo";
 import { useUserContext } from "../utils/UserContext";
 
 
-
 function FavoriteDetail(){
 
     const [state, dispatch] = useUserContext();
@@ -23,13 +22,6 @@ function FavoriteDetail(){
 
     const { id } = useParams();
 
-    useEffect(() => {
-        setCurrentFav();
-        loadFav();
-        //setFav(currentFav); ///this works as is commenting out to test handleArrays
-        // console.log(state.currentFav);
-      }, [id]);
-    
 
     //find the current favorite in state.favs
     const currentFav = findFav(id, state.favs);
@@ -43,40 +35,17 @@ function FavoriteDetail(){
         }
     }
 
-    //(Global State) set the currentFav in state when this page loads
-    function setCurrentFav(){
+    useEffect(() => {
         dispatch({
             type: "setCurrentFav",
             currentFav: currentFav
         });
-    }
-
-    //(Component State)
-    function loadFav(){
         setFav(currentFav);
         setVintages(currentFav.wineVintages);
         setIngredients(currentFav.recipeIngredients);
         setDirections(currentFav.recipeDirections);
-    }
-
-
-
-
-
-
-
-
-
-
-    // function loadRecipe(id){
-
-    // }
-    // return (
-    //     <div>
-    //         hi
-    //     </div>
-    // );
-
+      }, [currentFav, dispatch]);
+    
     return (
         <Container fluid>
           <Row>
