@@ -84,7 +84,17 @@ function FavoriteDetail(){
                         {ingredients.length ? (
                         <List>
                             {ingredients.map((ingredient) => (
-                            <ListItem key={ingredient.id}>{ingredient.ing}</ListItem>
+                            <ListItem key={ingredient.id}>
+                              {ingredient.ing}
+                              <br></br>
+                              <Butt
+                                onClick={() => {}}
+                                type="secondary"
+                                className="input-md btn-md btn-outline-secondary"
+                              > 
+                                + Shopping List
+                              </Butt>
+                            </ListItem>
                             ))}
                         </List>
                         ) : (
