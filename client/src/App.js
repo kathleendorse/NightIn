@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -22,7 +22,7 @@ import { useUserContext } from "./utils/UserContext";
 
 function App() {
   
-  const [state, dispatch] = useUserContext();
+  const [state] = useUserContext();
 
   return (
     <Router>
