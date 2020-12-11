@@ -13,6 +13,7 @@ export default function Favorites() {
   }, []);
 
   //clears out the users last selection from state (reset)
+  //clears out the users current favorite selection
   function clearSelection (){
     dispatch({
       type: "updateRecipe",
@@ -42,13 +43,19 @@ export default function Favorites() {
       wineSubWine: "",
       wineVintages: "",
     });
+    dispatch({
+      type: "setCurrentFav",
+      currentFav: ""
+    });
   }
+
 
   //maps over state.favs and renders Favorite Item Component which uses these props.
   return (
     <Container fluid>
       {state.favs.map((fav) => (
         <FavoriteItem key={fav.id}
+        id={fav.id}
         recipeName={fav.recipeName}
         recipeImage={fav.recipeImage}
         wineName={fav.wineName}
