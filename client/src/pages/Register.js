@@ -4,12 +4,12 @@ import Button from "react-bootstrap/Button";
 import "./Login.css";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
-// import { useUserContext } from "../utils/UserContext";
+import { useUserContext } from "../utils/UserContext";
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   //test
-  // const [state, dispatch] = useUserContext();
+  const [state, dispatch] = useUserContext();
   //----
   function validateForm() {
     return email.length > 0 && password.length > 0;

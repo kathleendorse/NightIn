@@ -23,10 +23,8 @@ router.route("/:userId")
 //add favorite to favs array
 router.route("/addFav").put(userController.addFavorite);
 
-
 router.route("/favorite")
 .get(userController.findFav);
-
 
 router.post("/logout", (req, res) => {
   //   console.log(req.user);
@@ -38,5 +36,11 @@ router.post("/logout", (req, res) => {
     res.send({ msg: "no user to log out" });
   }
 });
+
+router.route("/addIngredient")
+.put(userController.addIngredient);
+
+router.route("/shop/:userId")
+.get(userController.findLatestIng);
 
 module.exports = router;

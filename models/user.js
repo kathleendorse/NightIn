@@ -20,6 +20,7 @@ const user = new Schema({
     default: Date.now,
   },
   favs: [],
+  shoppingList: []
  
 });
 
