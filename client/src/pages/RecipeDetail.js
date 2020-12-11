@@ -46,16 +46,16 @@ function RecipeDetail(props) {
   function updateUserRecipeSelection() {
     dispatch({
       type: "updateRecipe",
-      selectionId: Math.floor(Math.random() * 10000).toString() ,  
+      selectionId: Math.floor(Math.random() * 100000).toString() ,  
       recipeId: recipe._id,
       recipeName: recipe.name,
       recipeType: recipe.type,
       recipeImage: recipe.image,
-      recipeWine: recipe.image,
+      recipeWine: recipe.wine,
       recipeSubWine: recipe.subwine,
       recipeIngredients: recipe.ingredients,
       recipeDirections: recipe.directions,  
-    })
+    });
     console.log("Selected: ", state.recipeName);
   }
 
@@ -76,16 +76,16 @@ function RecipeDetail(props) {
               <Link to="/recipe">
                 <Butt
                   onClick={() => {}}
-                  type="success"
-                  className="input-lg btn-lg"
+                  type="secondary"
+                  className="input-md btn-md btn-outline-secondary"
                 >
                   ← Back
                 </Butt>
               </Link>
               <Link to="/wine">
                 <Butt
-                  type="success"
-                  className="input-lg btn-lg"
+                  type="secondary"
+                  className="input-md btn-md btn-outline-secondary"
                   onClick={handleSubmit}
                 >
                   + Select Recipe

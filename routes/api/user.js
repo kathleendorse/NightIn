@@ -22,7 +22,7 @@ router.route("/:userId")
 .get(userController.findLatestFav);
 
 //add favorite to favs array
-router.route("/addFav").put(userController.addFavorite);
+router.route("/addFav").put(userController.addFav);
 
 router.route("/favorite")
 .get(userController.findFav);
@@ -39,9 +39,15 @@ router.post("/logout", (req, res) => {
 });
 
 router.route("/addIngredient")
-.put(userController.addIngredient);
+.put(userController.addIng);
 
 router.route("/shop/:userId")
 .get(userController.findLatestIng);
+
+router.route("/removeIngredient")
+.put(userController.removeIng);
+
+router.route("/removeFav")
+.put(userController.removeFav);
 
 module.exports = router;

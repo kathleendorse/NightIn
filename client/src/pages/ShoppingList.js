@@ -9,6 +9,7 @@ import { List, ListItem } from "../components/List";
 //import Cord from "../components/Cord";
 import { useUserContext } from "../utils/UserContext";
 import Butt from "../components/Butt";
+import API from "../utils/API";
 
 export default function ShoppingList (){
 
@@ -16,9 +17,34 @@ export default function ShoppingList (){
     const [shoppingList, setShoppingList] = useState([]);
 
     useEffect(() => {
-        setShoppingList(state.shoppingList);
-    }, [state.shoppingList]);
+      dispatch({
+        type: "updateRecipe",
+        selectionId: "" ,  
+        recipeId: "",
+        recipeName: "",
+        recipeType: "",
+        recipeImage: "",
+        recipeWine: "",
+        recipeSubWine: "",
+        recipeIngredients: "",
+        recipeDirections: "",
+      });
+      setShoppingList(state.shoppingList);
+    }, [state.shoppingList, dispatch]);
 
+    function removeIng (ing){
+      const userObj = {
+        userId: state._id,
+        ing: ing
+      };
+      API.deleteIng(userObj)
+        .then((res)=>console.log(res))
+        .catch((err)=> console.log(err)); 
+      dispatch({
+        type: "removeFromShoppingList",
+        id: ing.id,
+      });     
+    }
 
 
     return (
@@ -38,12 +64,12 @@ export default function ShoppingList (){
                 {shoppingList.length ? (
                   <List>
                     {shoppingList.map((ingredient) => (
-                      <ListItem key={Math.floor(Math.random() * 10000).toString()}>
+                      <ListItem key={ingredient.id}>
                           {ingredient.ing}
                           <Butt
                                 type="secondary"
                                 className="input-md btn-md btn-outline-secondary"
-                                onClick={()=>{}}
+                                onClick={()=>removeIng(ingredient)}
                               > 
                                 - Shopping List
                               </Butt> 

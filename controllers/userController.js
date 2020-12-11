@@ -89,7 +89,7 @@ module.exports = {
   },
 
   //adds favorite object to favs array
-  addFavorite: function (req, res) {
+  addFav: function (req, res) {
     const {userId, favorite} = req.body;
     db.User.updateOne(
       { _id: mongojs.ObjectId(userId) },
@@ -119,7 +119,8 @@ module.exports = {
     .catch((err)=> res.status(422).json(err));
   },
 
-  addIngredient: function(req, res){
+  //adds ingredient to shopping list
+  addIng: function(req, res){
     const {userId, ing} = req.body;
     db.User.updateOne(
       { _id: mongojs.ObjectId(userId)},
@@ -146,6 +147,28 @@ module.exports = {
     })
     .catch((err)=> res.status(422).json(err));
   },
+
+  //removed ingredient from shopping list
+  removeIng: function(req, res){
+    const {userId, ing} = req.body;
+    db.User.updateOne(
+      { _id: mongojs.ObjectId(userId)},
+      { $pull: {"shoppingList" : {"id": ing.id}}}
+    )
+    .then((dbModel)=>res.json(dbModel))
+    .catch((err)=> res.status(422).json(err));
+  },
+
+    //removed ingredient from shopping list
+    removeFav: function(req, res){
+      const {userId, favId} = req.body;
+      db.User.updateOne(
+        { _id: mongojs.ObjectId(userId)},
+        { $pull: {"favs" : {"id": favId}}}
+      )
+      .then((dbModel)=>res.json(dbModel))
+      .catch((err)=> res.status(422).json(err));
+    },
 
 
   

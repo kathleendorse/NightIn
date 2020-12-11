@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Jumbotron from "../components/Jumbotron";
 //import API from "../utils/API";
 import { Link } from "react-router-dom";
@@ -8,7 +8,23 @@ import { useUserContext } from "../utils/UserContext";
 import { Redirect } from "react-router-dom";
 
 function Home({ email }) {
-  const [state] = useUserContext();
+  const [state, dispatch] = useUserContext();
+
+  useEffect(()=> {
+    dispatch({
+      type: "updateRecipe",
+      selectionId: "" ,  
+      recipeId: "",
+      recipeName: "",
+      recipeType: "",
+      recipeImage: "",
+      recipeWine: "",
+      recipeSubWine: "",
+      recipeIngredients: "",
+      recipeDirections: "",
+    });
+  }, [dispatch]);
+
 
   return (
     <Container fluid className="justify-content-center">
