@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
 import Butt from "../components/Butt";
 import Photo from "../components/Photo";
 import API from "../utils/API";
 import { useUserContext } from "../utils/UserContext";
+import Cord from "../components/Cord";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 function WineDetail(props) {
 
@@ -52,12 +54,31 @@ function WineDetail(props) {
       wineSubWine: wine.subwine,
       wineVintages: wine.vintages,
     };
+    
     API.addFav({
       userId: state._id,
       favorite: favObj,
       })
       .then((res) => {
         console.log("Updated User Favorites: ", res.data);
+        dispatch({
+          type: "clearSelections",
+          selectionId: "" ,  
+          recipeId: "",
+          recipeName: "",
+          recipeType: "",
+          recipeImage: "",
+          recipeWine: "",
+          recipeSubWine: "",
+          recipeIngredients: "",
+          recipeDirections: "",
+          wineId: "",
+          wineName: "",
+          wineType: "",
+          wineBlurb: "",
+          wineImage: "",
+          wineVintages: "",
+        });
       })
       .catch((err) => console.log(err));
   }
@@ -74,27 +95,30 @@ function WineDetail(props) {
     .catch((err) => console.log(err));
   }
 
-  //updates state selections with wine
-  function updatedSelection() {
-    dispatch({
-      type: "updateWine",
-      wineId: wine._id,
-      wineName: wine.name,
-      wineType: wine.type,
-      wineBlurb: wine.blurb,
-      wineImage: wine.image,
-      wineSubWine: wine.subwine,
-      wineVintages: wine.vintages,
-    })
-  }
-
-  //calls multiple functions to get the updated user and state
+  //calls multiple functions to add the favorite and get the updated user and state
   function handleSubmit (){
-    updatedSelection();
     addFavorite();
     updatedUser();
   }
 
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 2,
+    },
+  };
 
   return (
     <div>
@@ -106,8 +130,8 @@ function WineDetail(props) {
                 <Butt
 
                   onClick={() => {}}
-                  type="success"
-                  className="input-lg btn-lg"
+                  type="secondary"
+                  className="input-md btn-md btn-outline-secondary"
                 >
                   ← Back
                 </Butt>
@@ -115,8 +139,8 @@ function WineDetail(props) {
               <Link to="/favorites">
                 <Butt
                   onClick={handleSubmit}
-                  type="success"
-                  className="input-lg btn-lg"
+                  type="secondary"
+                  className="input-md btn-md btn-outline-secondary"
                 >
                   + Select Wine
                 </Butt>
@@ -130,18 +154,24 @@ function WineDetail(props) {
                 <h4>{wine.blurb}</h4>
               </Col>
             </Row>
+
+
             <Row>
-              <Col size="md-10">
-                <h2>VINTAGES</h2>
-                {vintages.length ? (
-                  <List>
-                    {vintages.map((vintage) => (
-                      <ListItem key={vintage.id}>{vintage.vin}</ListItem>
-                    ))}
-                  </List>
-                ) : (
-                  <p>No Results to Display</p>
-                )}
+              <Col size="md-12 sm-12">
+                <Container className="justify-content-center">
+                  <h2>VINTAGES</h2>
+                  {vintages.length ? (
+                    <Carousel responsive={responsive}>
+                      {vintages.map((vintage) => (
+                        <div key={vintage.id}>
+                          <Cord name={vintage.vin} image={wine.image} />
+                        </div>
+                      ))}
+                    </Carousel>
+                  ) : (
+                    <p>No Results to Display</p>
+                  )}
+                </Container>
               </Col>
             </Row>
           </Col>

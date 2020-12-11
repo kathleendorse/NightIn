@@ -45,6 +45,7 @@ export default function Login({ useremail }) {
               _id: res.data._id,
               email: res.data.email,
               favs: res.data.favs,
+              shoppingList: res.data.shoppingList
             });
 
             console.log(state._id);

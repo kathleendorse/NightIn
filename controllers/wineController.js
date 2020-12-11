@@ -36,4 +36,10 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
 
+  wineFind: function (req, res) {
+    db.Wine.find({ type: { $regex: new RegExp(req.query.q, 'i')} })
+    .then((dbModel)=>{res.json(dbModel)})
+    .catch(err => res.status(422).json(err));
+  },
+
 };

@@ -62,6 +62,11 @@ function Nav() {
               </Link>
             </li>
             <li className="nav-item">
+              <Link to={"/shoppinglist"} className="navbar-brand">
+                Shopping List
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link to={"/register"} onClick={logout} className="navbar-brand">
                 Log Out
               </Link>

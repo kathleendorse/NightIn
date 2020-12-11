@@ -16,6 +16,7 @@ import Favorites from "./pages/Favorites";
 import FavoriteDetail from "./pages/FavoriteDetail";
 import Wine from "./pages/Wine";
 import WineDetail from "./pages/WineDetail";
+import ShoppingList from "./pages/ShoppingList";
 
 import { useUserContext } from "./utils/UserContext";
 
@@ -26,25 +27,25 @@ function App() {
 
   return (
     <Router>
-      <div>
-        <Nav />
-        <Switch>
-          <Route exact path="/home" render={() => <Home email={state.email} />}>
-            {/* {!state.email ? <Redirect to="/login" /> : <Home />} */}
-          </Route>
-          <Route exact path={["/", "/register"]}>
-            {state.email ? <Redirect to="/recipe" /> : <Signup />}
-          </Route>
-          <Route
-            exact
-            path="/login"
-            render={() => <Login useremail={state.email} />}
-          >
-            {/* {!state.email ? <Redirect to="/recipe" /> : <Login />} */}
-          </Route>
-          <Route exact path="/favorites">
-            {!state.email ? <Redirect to="/login" /> : <Favorites />}
-          </Route>
+    <div>
+      <Nav />
+      <Switch>
+        <Route exact path="/home" render={() => <Home email={state.email} />}>
+          {/* {!state.email ? <Redirect to="/login" /> : <Home />} */}
+        </Route>
+        <Route exact path={["/", "/register"]}>
+          {state.email ? <Redirect to="/recipe" /> : <Signup />}
+        </Route>
+        <Route
+          exact
+          path="/login"
+          render={() => <Login useremail={state.email} />}
+        >
+          {/* {!state.email ? <Redirect to="/recipe" /> : <Login />} */}
+        </Route>
+        <Route exact path="/favorites">
+          {!state.email ? <Redirect to="/login" /> : <Favorites />}
+        </Route>
           <Route exact path="/favorites/:id">
             {!state.email ? <Redirect to="/login" /> : <FavoriteDetail />}
           </Route>
@@ -59,6 +60,9 @@ function App() {
           </Route>
           <Route exact path="/wine/:id">
             {!state.email ? <Redirect to="/login" /> : <WineDetail />}
+          </Route>
+          <Route exact path="/shoppinglist">
+            {!state.email ? <Redirect to="/login" /> : <ShoppingList />}
           </Route>
           <Route>
             <NoMatch />

@@ -7,7 +7,9 @@ import Butt from "../components/Butt";
 import Photo from "../components/Photo";
 import { useUserContext } from "../utils/UserContext";
 import API from "../utils/API";
-
+import Cord from "../components/Cord";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 function FavoriteDetail(){
 
@@ -46,9 +48,14 @@ function FavoriteDetail(){
 
 
     function addIngredient(ing){
+      const ingObj = {
+        id: `${currentFav.id}${Math.floor(Math.random() * 100000).toString()}`,
+        ing: ing.ing
+      };
+
       const userObj = {
         userId: state._id,
-        ing: ing
+        ing: ingObj
       };
       console.log(ing);
       API.addIngredient(userObj)
@@ -71,99 +78,113 @@ function FavoriteDetail(){
       updateUser();
     }
 
-    
+    const responsive = {
+      superLargeDesktop: {
+        breakpoint: { max: 4000, min: 3000 },
+        items: 5,
+      },
+      desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 4,
+      },
+      tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 3,
+      },
+      mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 2,
+      },
+    };
+
     return (
-        <Container fluid>
-          <Row>
-            <Col size="md-10 md-offset-1">
+      <Container fluid>
+        <Row>
+          <Col size="md-10 md-offset-1">
 
-                <Row>
-                  <Link to="/favorites">
-                    <Butt
-                      onClick={() => {}}
-                      type="success"
-                      className="input-lg btn-lg"
-                    >
-                      ← Back
-                    </Butt>
-                  </Link>
-                </Row>
+            <Row>
+              <Link to="/favorites">
+                <Butt
+                  onClick={() => {}}
+                  type="secondary"
+                  className="input-md btn-md btn-outline-secondary"
+                >
+                  ← Back
+                </Butt>
+              </Link>
+            </Row>
 
+            <Row>
+                <Col size="md-10">
+                    <Photo src={fav.recipeImage} alt={fav.recipeName}></Photo>
+                    <br></br>
+                    <h1>{fav.recipeName}</h1>
+                </Col>
+                <Col size="md-5">
+                    <h2>INGREDIENTS</h2>
+                    {ingredients.length ? (
+                    <List>
+                        {ingredients.map((ingredient) => (
+                        <ListItem key={ingredient.id}>
+                          {ingredient.ing}
+                          <Butt
+                            type="secondary"
+                            className="input-md btn-md btn-outline-secondary"
+                            onClick={()=>handleSubmit(ingredient)}
+                          > 
+                            + Shopping List
+                          </Butt>
+                        </ListItem>
+                        ))}
+                    </List>
+                    ) : (
+                    <h3>No Results to Display</h3>
+                    )}
+                </Col>
+                <Col size="md-5">
+                    <h2>INSTRUCTIONS</h2>
+                    {directions.length ? (
+                    <List>
+                        {directions.map((direction) => (
+                        <ListItem key={direction.id}>{direction.dir}</ListItem>
+                        ))}
+                    </List>
+                    ) : (
+                    <h3>No Results to Display</h3>
+                    )}
+                </Col>
+            </Row>
 
-                <Row>
-                    <Col size="md-10">
-                        <Photo src={fav.recipeImage} alt={fav.recipeName}></Photo>
-                        <br></br>
-                        <h1>{fav.recipeName}</h1>
-                    </Col>
-                    <Col size="md-5">
-                        <h2>INGREDIENTS</h2>
-                        {ingredients.length ? (
-                        <List>
-                            {ingredients.map((ingredient) => (
-                            <ListItem key={ingredient.id}>
-                              {ingredient.ing}
-                              <br></br>
-                              <Butt
-                                type="secondary"
-                                className="input-md btn-md btn-outline-secondary"
-                                onClick={()=>handleSubmit(ingredient)}
-                              > 
-                                + Shopping List
-                              </Butt>
-                            </ListItem>
-                            ))}
-                        </List>
-                        ) : (
-                        <h3>No Results to Display</h3>
-                        )}
-                    </Col>
-                    <Col size="md-5">
-                        <h2>INSTRUCTIONS</h2>
-                        {directions.length ? (
-                        <List>
-                            {directions.map((direction) => (
-                            <ListItem key={direction.id}>{direction.dir}</ListItem>
-                            ))}
-                        </List>
-                        ) : (
-                        <h3>No Results to Display</h3>
-                        )}
-                    </Col>
-                </Row>
-
-
-                <Row>
-                    <Col size="md-10">
-                        <Photo src={fav.wineImage} alt={fav.wineName}></Photo>
-                        <br></br>
-                        <h1>{fav.wineName}</h1>
-                        <h4>{fav.wineBlurb}</h4>
-                    </Col>
-                    </Row>
-                    <Row>
-                    <Col size="md-10">
-                        <h2>VINTAGES</h2>
-                        {vintages.length ? (
-                        <List>
-                            {vintages.map((vintage) => (
-                            <ListItem key={vintage.id}>{vintage.vin}</ListItem>
-                            ))}
-                        </List>
-                        ) : (
-                        <p>No Results to Display</p>
-                        )}
-                    </Col>
-                </Row>
-            </Col>
-          </Row>
-        </Container>
-      );
-
-
-
-
-
+            <Row>
+              <Col size="md-10">
+                <Photo src={fav.wineImage} alt={fav.wineName}></Photo>
+                <br></br>
+                <h1>{fav.wineName}</h1>
+                <h4>{fav.wineBlurb}</h4>
+              </Col>
+            </Row>
+            <Row>
+              <Col size="md-12 sm-12">
+                <Container className="justify-content-center">
+                  <h2>VINTAGES</h2>
+                  {vintages.length ? (
+                    <Carousel responsive={responsive}>
+                      {vintages.map((vintage) => (
+                        <div key={vintage.id}>
+                          <Cord name={vintage.vin} image={fav.wineImage} />
+                        </div>
+                      ))}
+                    </Carousel>
+                  ) : (
+                    <p>No Results to Display</p>
+                  )}
+                </Container>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Container>
+    );
 
 }
 

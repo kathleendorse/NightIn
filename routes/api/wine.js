@@ -6,9 +6,14 @@ const wineController = require("../../controllers/wineController");
 // if a route matching "/" i.e. "/api/wine" is hit with a
   //GET, run the findAll query method
   //POST, run the create query method 
+// router.route("/")
+//   .get(wineController.wineFindAll)
+//   .post(wineController.wineCreate);
+
+
 router.route("/")
-  .get(wineController.wineFindAll)
-  .post(wineController.wineCreate);
+  .get(wineController.wineFind);
+
 
 //if a route matching "/api/wine/:id" is hit with a
   //GET, run the findById query method

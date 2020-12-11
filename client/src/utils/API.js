@@ -34,13 +34,19 @@ export default {
   getRecipes: function (query) {
     return axios.get("/api/recipe", { params: { q: query } });
   },
+
+  getWines: function (query) {
+    return axios.get("/api/wine", { params: {q: query}});
+  },
+
+
   //Finds a recipe with the provided id
   getRecipe: function (id) {
     return axios.get("/api/recipe/" + id);
   },
-  getWines: function () {
-    return axios.get("/api/wine");
-  },
+  // getWines: function () {
+  //   return axios.get("/api/wine");
+  // },
   getWine: function (id) {
     return axios.get("/api/wine/" + id);
   },
@@ -49,7 +55,16 @@ export default {
   },
   getLatestIng: function (userId) {
     return axios.get("/api/user/shop/"+userId);
-  }
+  },
+
+
+  deleteIng: function (userObj) {
+    return axios.put("/api/user/removeIngredient", userObj);
+  },
+  deleteFav: function (userObj) {
+    return axios.put("/api/user/removeFav", userObj);
+  },
+  
 };
 
 //these methods return the results of making an ajax call

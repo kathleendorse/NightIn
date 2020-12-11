@@ -11,6 +11,7 @@ const reducer = (state, action) => {
         _id: action._id,
         email: action.email,
         favs: action.favs,
+        shoppingList: action.shoppingList,
         loading: false,
       };
     
@@ -29,6 +30,21 @@ const reducer = (state, action) => {
         loading: false,
       };
 
+    case "removeFromShoppingList":
+      return {
+        ...state,
+        shoppingList: state.shoppingList.filter((item) => {
+          return item.id !== action.id;
+        })
+      };
+    
+    case "removeFav":
+      return {
+        ...state,
+        favs: state.favs.filter((fav) => {
+          return fav.id !== action.id;
+        })
+      };  
 
     //updates values for the user's current recipe Selection  
     case "updateRecipe":
@@ -46,26 +62,15 @@ const reducer = (state, action) => {
         loading: false,
       };  
 
-    //updates values for the user's current wine Selection  
-    case "updateWine":
-      return {
-        ...state,
-        wineId: action.wineId,
-        wineName: action.wineName,
-        wineType: action.wineType,
-        wineBlurb: action.wineBlurb,
-        wineImage: action.wineImage,
-        wineVintages: action.wineVintages,
-        loading: false,
-      };   
-
+    //called when user clicks a favorite detail  
     case "setCurrentFav":
       return{
         ...state,
         currentFav: action.currentFav,
         loading: false, 
       }  
-
+    
+    //clears out the current selection after user is finished adding wine
     case "clearSelection":
       return{
         ...state,
@@ -84,10 +89,16 @@ const reducer = (state, action) => {
         wineBlurb: action.wineBlurb,
         wineImage: action.wineImage,
         wineVintages: action.wineVintages,
-        currentFav: action.currentFav,
         loading: false,
 
-      }  
+      }
+      
+    case "removeCurrentFav":
+      return{
+        ...state,
+        currentFav: action.currentFav,
+        loading: false,
+      };  
 
 
     case "loading":
