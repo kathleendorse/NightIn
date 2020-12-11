@@ -10,7 +10,7 @@ export default function Favorites() {
   //runs when component loads
   useEffect(() => {
     clearSelection();
-  }, []);
+  }, [state]);
 
   //clears out the users last selection from state (reset)
   //clears out the users current favorite selection
