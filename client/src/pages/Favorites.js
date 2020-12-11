@@ -10,12 +10,41 @@ export default function Favorites() {
   //runs when component loads
   useEffect(() => {
     clearSelection();
-  }, []);
+  });
 
   //clears out the users last selection from state (reset)
+  //clears out the users current favorite selection
   function clearSelection (){
+    // dispatch({
+    //   type: "updateRecipe",
+    //   selectionId: "" ,  
+    //   recipeId: "",
+    //   recipeName: "",
+    //   recipeType: "",
+    //   recipeImage: "",
+    //   recipeWine: "",
+    //   recipeSubWine: "",
+    //   recipeIngredients: "",
+    //   recipeDirections: "",
+    //   wineId: "",
+    //   wineName: "",
+    //   wineType: "",
+    //   wineBlurb: "",
+    //   wineImage: "",
+    //   wineVintages: "",  
+    // });
+    // dispatch({
+    //   type: "updateWine",
+    //   wineId: "",
+    //   wineName: "",
+    //   wineType: "",
+    //   wineBlurb: "",
+    //   wineImage: "",
+    //   wineSubWine: "",
+    //   wineVintages: "",
+    // });
     dispatch({
-      type: "updateRecipe",
+      type: "clearSelections",
       selectionId: "" ,  
       recipeId: "",
       recipeName: "",
@@ -30,25 +59,19 @@ export default function Favorites() {
       wineType: "",
       wineBlurb: "",
       wineImage: "",
-      wineVintages: "",  
-    });
-    dispatch({
-      type: "updateWine",
-      wineId: "",
-      wineName: "",
-      wineType: "",
-      wineBlurb: "",
-      wineImage: "",
-      wineSubWine: "",
       wineVintages: "",
+      currentFav: "",  
     });
+
   }
+
 
   //maps over state.favs and renders Favorite Item Component which uses these props.
   return (
     <Container fluid>
       {state.favs.map((fav) => (
         <FavoriteItem key={fav.id}
+        id={fav.id}
         recipeName={fav.recipeName}
         recipeImage={fav.recipeImage}
         wineName={fav.wineName}

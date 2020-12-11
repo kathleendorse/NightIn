@@ -1,3 +1,4 @@
+
 //bringing in our Collection from the model directory
 const db = require("../models");
 const bcrypt = require("bcryptjs");
@@ -65,6 +66,23 @@ module.exports = {
     .then((dbModel)=>{
       const newFav = dbModel.favs[dbModel.favs.length-1];
       res.json(newFav);
+    })
+    .catch((err)=> res.status(422).json(err));
+  },
+
+  findFav: function(req, res){
+    db.User.findOne({_id: mongojs.ObjectId(req.userId)})
+    .then((dbModel)=>{
+      const favs = dbModel.favs;
+      let selectedFav = {};
+      for (var i=0; i>favs.length; i++){
+        let current = favs[i]; 
+        if(current.id === favs[i].id){
+          selectedFav == current;
+        }
+      }
+      res.json({selectedFav});
+
     })
     .catch((err)=> res.status(422).json(err));
   },

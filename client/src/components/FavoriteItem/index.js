@@ -4,35 +4,29 @@ import React from "react";
 import { Row } from "./../Grid";
 //import Photo from "./../Photo";
 // import { Button, Card } from "react-bootstrap";
-import { Card } from "react-bootstrap";
+//import { Card } from "react-bootstrap";
+import Cord from "../Cord";
+import { Link } from "react-router-dom";
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
-export function FavoriteItem({recipeName, recipeImage, wineName, wineImage}) {
+export function FavoriteItem({id, recipeName, recipeImage, wineName, wineImage}) {
   return (
 
     <Row>
+      <Link to={"/favorites/" + id}>
       {/* <Col size="sm-4"> */}
-        <Card style={{ width: "10rem" }} className="text-center">
-          <Card.Img
-            className="rounded-circle"
-            variant="top"
-            src={recipeImage}
-            alt={recipeName}
+        <Cord 
+            image={recipeImage}
+            name={recipeName}
           />
-          <Card.Title>{recipeName}</Card.Title>
-        </Card>
       {/* </Col> */}
       {/* <Col size="sm-4"> */}
-        <Card style={{ width: "10rem" }}>
-          <Card.Img
-            className="rounded-circle"
-            variant="top"
-            src={wineImage}
-            alt={wineName}
+        <Cord 
+            image={wineImage}
+            name={wineName}
           />
-          <Card.Title>{wineName}</Card.Title>
-        </Card>
+
       {/* </Col> */}
       {/* <Col size="sm-4">
         <Button variant="outline-info" size="sm" href="#" role="button">
@@ -44,6 +38,7 @@ export function FavoriteItem({recipeName, recipeImage, wineName, wineImage}) {
           </Button>
         </p>
       </Col> */}
+      </Link>
     </Row>
     
   );

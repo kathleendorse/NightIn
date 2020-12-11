@@ -52,6 +52,37 @@ const reducer = (state, action) => {
         loading: false,
       };   
 
+    case "setCurrentFav":
+      return{
+        ...state,
+        currentFav: action.currentFav,
+        loading: false, 
+      }  
+
+    case "clearSelection":
+      return{
+        ...state,
+        selectionId: action.selectionId,
+        recipeId: action.recipeId,
+        recipeName: action.recipeName,
+        recipeType: action.recipeType,
+        recipeImage: action.recipeImage,
+        recipeWine: action.recipeWine,
+        recipeSubWine: action.recipeSubWine,
+        recipeIngredients: action.recipeIngredients,
+        recipeDirections: action.recipeDirections,
+        wineId: action.wineId,
+        wineName: action.wineName,
+        wineType: action.wineType,
+        wineBlurb: action.wineBlurb,
+        wineImage: action.wineImage,
+        wineVintages: action.wineVintages,
+        currentFav: action.currentFav,
+        loading: false,
+
+      }  
+
+
     case "loading":
       return {
         ...state,
@@ -69,6 +100,7 @@ const UserProvider = ({ value = [], ...props }) => {
    _id: "",
    email: "",
    favs: [],
+   currentFav: "",
    selectionId: "",
    recipeId: "",
    recipeName: "",

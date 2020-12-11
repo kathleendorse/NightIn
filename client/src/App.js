@@ -13,17 +13,11 @@ import Login from "./pages/Login";
 import Signup from "./pages/Register";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
+import FavoriteDetail from "./pages/FavoriteDetail";
 import Wine from "./pages/Wine";
 import WineDetail from "./pages/WineDetail";
 
 import { useUserContext } from "./utils/UserContext";
-
-// inside the router we render a nav component
-//for each route path we render a different component
-//the component will only be visible when that route is hit by some means
-//{["/", "/nightin"]} this is an either or for if the root route OR /nightin is hit
-//the NoMatch component will render if a route other than the ones listed is hit by some means
-
 
 
 function App() {
@@ -46,10 +40,13 @@ function App() {
             path="/login"
             render={() => <Login useremail={state.email} />}
           >
-            {/* {state.email ? <Redirect to="/recipe" /> : <Login />} */}
+            {/* {!state.email ? <Redirect to="/recipe" /> : <Login />} */}
           </Route>
           <Route exact path="/favorites">
             {!state.email ? <Redirect to="/login" /> : <Favorites />}
+          </Route>
+          <Route exact path="/favorites/:id">
+            {!state.email ? <Redirect to="/login" /> : <FavoriteDetail />}
           </Route>
           <Route exact path="/recipe">
             {!state.email ? <Redirect to="/login" /> : <Recipe />}
