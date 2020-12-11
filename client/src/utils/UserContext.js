@@ -11,6 +11,7 @@ const reducer = (state, action) => {
         _id: action._id,
         email: action.email,
         favs: action.favs,
+        shoppingList: action.shoppingList,
         loading: false,
       };
     

@@ -9,7 +9,7 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   //test
-  const [state, dispatch] = useUserContext();
+  const [state] = useUserContext();
   //----
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -17,6 +17,7 @@ export default function Register() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    console.log(state._id);
   }
   const register = () => {
     API.userRegister({

@@ -16,6 +16,7 @@ import Favorites from "./pages/Favorites";
 import FavoriteDetail from "./pages/FavoriteDetail";
 import Wine from "./pages/Wine";
 import WineDetail from "./pages/WineDetail";
+import ShoppingList from "./pages/ShoppingList";
 
 import { useUserContext } from "./utils/UserContext";
 
@@ -59,6 +60,9 @@ function App() {
           </Route>
           <Route exact path="/wine/:id">
             {!state.email ? <Redirect to="/login" /> : <WineDetail />}
+          </Route>
+          <Route exact path="/shoppinglist">
+            {!state.email ? <Redirect to="/login" /> : <ShoppingList />}
           </Route>
           <Route>
             <NoMatch />

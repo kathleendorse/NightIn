@@ -13,6 +13,7 @@ router.route("/login").post(passport.authenticate("local"), (req, res) => {
     _id: req.user.id,
     email: req.user.email,
     favs: req.user.favs,
+    shoppingList: req.user.shoppingList,
   });
 });
 

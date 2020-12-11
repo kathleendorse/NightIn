@@ -103,7 +103,6 @@ function FavoriteDetail(){
                             {ingredients.map((ingredient) => (
                             <ListItem key={ingredient.id}>
                               {ingredient.ing}
-                              <br></br>
                               <Butt
                                 type="secondary"
                                 className="input-md btn-md btn-outline-secondary"

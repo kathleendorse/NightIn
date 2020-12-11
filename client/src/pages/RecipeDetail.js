@@ -56,6 +56,7 @@ function RecipeDetail(props) {
       recipeIngredients: recipe.ingredients,
       recipeDirections: recipe.directions,  
     })
+    console.log("Selected: ", state.recipeName);
   }
 
   //calls multiple functions to get the updated user and state

@@ -15,34 +15,6 @@ export default function Favorites() {
   //clears out the users last selection from state (reset)
   //clears out the users current favorite selection
   function clearSelection (){
-    // dispatch({
-    //   type: "updateRecipe",
-    //   selectionId: "" ,  
-    //   recipeId: "",
-    //   recipeName: "",
-    //   recipeType: "",
-    //   recipeImage: "",
-    //   recipeWine: "",
-    //   recipeSubWine: "",
-    //   recipeIngredients: "",
-    //   recipeDirections: "",
-    //   wineId: "",
-    //   wineName: "",
-    //   wineType: "",
-    //   wineBlurb: "",
-    //   wineImage: "",
-    //   wineVintages: "",  
-    // });
-    // dispatch({
-    //   type: "updateWine",
-    //   wineId: "",
-    //   wineName: "",
-    //   wineType: "",
-    //   wineBlurb: "",
-    //   wineImage: "",
-    //   wineSubWine: "",
-    //   wineVintages: "",
-    // });
     dispatch({
       type: "clearSelections",
       selectionId: "" ,  

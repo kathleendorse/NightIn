@@ -15,6 +15,7 @@ passport.deserializeUser((id, cb) => {
       id: user._id,
       //added
       favs: user.favs,
+      shoppingList: user.shoppingList
     };
     cb(err, userInformation);
   });

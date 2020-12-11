@@ -38,6 +38,7 @@ module.exports = {
             _id: dbModel._id,
             email: dbModel.email,
             favs: dbModel.favs,
+            shoppingList: dbModel.shoppingList,
             recipeId: "",
             recipeName: "",
             recipeType: "",
@@ -136,15 +137,15 @@ module.exports = {
     .catch((err)=> res.status(422).json(err));
   },
 
-    //returns the last index of the favs array to add it to the favs array in state
-    findLatestIng: function (req, res){
-      db.User.findOne({ _id: mongojs.ObjectId(req.params.userId)})
-      .then((dbModel)=>{
-        const newIng = dbModel.shoppingList[dbModel.shoppingList.length-1];
-        res.json(newIng);
-      })
-      .catch((err)=> res.status(422).json(err));
-    },
+  //returns the last index of the favs array to add it to the favs array in state
+  findLatestIng: function (req, res){
+    db.User.findOne({ _id: mongojs.ObjectId(req.params.userId)})
+    .then((dbModel)=>{
+      const newIng = dbModel.shoppingList[dbModel.shoppingList.length-1];
+      res.json(newIng);
+    })
+    .catch((err)=> res.status(422).json(err));
+  },
 
 
   
