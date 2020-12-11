@@ -52,6 +52,13 @@ const reducer = (state, action) => {
         loading: false,
       };   
 
+    case "setCurrentFav":
+      return{
+        ...state,
+        currentFav: action.currentFav,
+        loading: false, 
+      }  
+
     case "loading":
       return {
         ...state,
@@ -69,6 +76,7 @@ const UserProvider = ({ value = [], ...props }) => {
    _id: "",
    email: "",
    favs: [],
+   currentFav: "",
    selectionId: "",
    recipeId: "",
    recipeName: "",
