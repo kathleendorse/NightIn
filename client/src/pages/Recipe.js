@@ -98,22 +98,24 @@ function Recipe() {
 
         <Row>
           <Col size="md-12 sm-12">
-            {/* ternary operator - show no results if the nightin state is empty*/}
-            {recipes.length ? (
-              <Carousel responsive={responsive}>
-                {/* maping over the array in nightin state. for each index we do the following*/}
-                {recipes.map((recipe) => (
-                  // create a list item with a key equal to the index's id **react requires a unique KEY to use for arrays indexes. here we assign it the id of the recipe object
-                  <div>
-                    <Link to={"/recipe/" + recipe._id}>
-                      <Cord name={recipe.name} image={recipe.image} />
-                    </Link>
-                  </div>
-                ))}
-              </Carousel>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
+            <Container className="justify-content-center">
+              {/* ternary operator - show no results if the nightin state is empty*/}
+              {recipes.length ? (
+                <Carousel responsive={responsive}>
+                  {/* maping over the array in nightin state. for each index we do the following*/}
+                  {recipes.map((recipe) => (
+                    // create a list item with a key equal to the index's id **react requires a unique KEY to use for arrays indexes. here we assign it the id of the recipe object
+                    <div>
+                      <Link to={"/recipe/" + recipe._id}>
+                        <Cord name={recipe.name} image={recipe.image} />
+                      </Link>
+                    </div>
+                  ))}
+                </Carousel>
+              ) : (
+                <h3>No Results to Display</h3>
+              )}
+            </Container>
           </Col>
         </Row>
       </Container>
