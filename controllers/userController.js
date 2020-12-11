@@ -2,8 +2,7 @@
 const db = require("../models");
 const bcrypt = require("bcryptjs");
 const mongojs = require("mongojs");
-//const User = require("../models/user");
-//const passport = require("../../passport");
+
 
 //this goes to API (userRegister)
 module.exports = {
@@ -30,12 +29,28 @@ module.exports = {
           email,
           password: hashedPassword,
         };
+        //this sets the state for the app when a user logs in
         db.User.create(newUser)
         .then(function(dbModel){
+          //used to create the userState
           const userObj = {
             _id: dbModel._id,
             email: dbModel.email,
             favs: dbModel.favs,
+            recipeId: "",
+            recipeName: "",
+            recipeType: "",
+            recipeImage: "",
+            recipeWine: "",
+            recipeSubWine: "",
+            recipeIngredients: [],
+            recipeDirections: [],
+            wineId: "",
+            wineName: "",
+            wineType: "",
+            wineBlurb: "",
+            wineImage: "",
+            wineVintages: []
           }
           res.json(userObj)
         })        
@@ -43,7 +58,9 @@ module.exports = {
       }
     })
   },
-  userFindById: function (req, res){
+  
+  //returns the last index of the favs array to add it to the favs array in state
+  findLatestFav: function (req, res){
     db.User.findOne({ _id: mongojs.ObjectId(req.params.userId)})
     .then((dbModel)=>{
       const newFav = dbModel.favs[dbModel.favs.length-1];
@@ -51,28 +68,36 @@ module.exports = {
     })
     .catch((err)=> res.status(422).json(err));
   },
-  addRecipe: function (req, res) {
+
+  //adds favorite object to favs array
+  addFavorite: function (req, res) {
     const {userId, favorite} = req.body;
     db.User.updateOne(
       { _id: mongojs.ObjectId(userId) },
-      {$push: {"favs": { 
-        favRecipe: favorite,
-        favWine: {test: "test"}
-      }} },
+      {$push: {"favs": 
+      { 
+        id: favorite.id,
+        recipeId: favorite.recipeId,
+        recipeName: favorite.recipeName,
+        recipeType: favorite.recipeType,
+        recipeWine: favorite.recipeWine,
+        recipeSubwine: favorite.recipeSubwine,
+        recipeIngredients: favorite.recipeIngredients,
+        recipeImage: favorite.recipeImage,
+        recipeDirections: favorite.recipeDirections,
+        wineId: favorite.wineId,
+        wineName: favorite.wineName,
+        wineType: favorite.wineType,
+        wineBlurb: favorite.wineBlurb,
+        wineImage: favorite.wineImage,
+        wineVintages: favorite.wineVintages, 
+      }
+    } },
       {new: true})
     .then(function(dbModel){
         res.json(dbModel)
     })
-  .catch((err)=> res.status(422).json(err));
-  },
-  addWine: function (req, res){
-    const {userId, favId, favorite} = req.body;
-    db.User.updateOne({_id: mongojs.ObjectId(userId), "favs._id": mongojs.ObjectId(favId)},
-      {$set: {"favs.$.favWine": favorite}})
-    .then(function(dbModel){
-        res.json(dbModel)
-    })
-  .catch((err)=> res.status(422).json(err));
+    .catch((err)=> res.status(422).json(err));
   },
 
   

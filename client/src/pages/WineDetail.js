@@ -32,22 +32,39 @@ function WineDetail(props) {
       .catch((err) => console.log(err));
   }
 
-  //adds wine to object in favs array
-  function addWine(){
-    API.addWine({
+  //adds favorite object to favs array in db
+  function addFavorite() {
+    let favObj = {
+      id: state.selectionId,
+      recipeId: state.recipeId,
+      recipeName: state.recipeName,
+      recipeType: state.recipeType,
+      recipeWine: state.recipeWine,
+      recipeSubwine: state.recipeSubWine,
+      recipeIngredients: state.recipeIngredients,
+      recipeImage: state.recipeImage,
+      recipeDirections: state.recipeDirections,
+      wineId: wine._id,
+      wineName: wine.name,
+      wineType: wine.type,
+      wineBlurb: wine.blurb,
+      wineImage: wine.image,
+      wineSubWine: wine.subwine,
+      wineVintages: wine.vintages,
+    };
+    API.addFav({
       userId: state._id,
-      favId: state.favs.pop()._id,
-      favorite: wine,
-  })
-  .then((res)=> {
-    console.log("Updated User Favorites: ",res.data);
-  })
-  .catch((err)=> console.log(err));
+      favorite: favObj,
+      })
+      .then((res) => {
+        console.log("Updated User Favorites: ", res.data);
+      })
+      .catch((err) => console.log(err));
   }
 
   //updates state.favs 
   function updatedUser() {
-    API.findUser(state._id)
+    API.getLatestFav(state._id)
     .then((res)=>{
       dispatch({
         type: "updateFavs",
@@ -57,9 +74,24 @@ function WineDetail(props) {
     .catch((err) => console.log(err));
   }
 
-  //this function calls multiple functions to get the updated user and state
+  //updates state selections with wine
+  function updatedSelection() {
+    dispatch({
+      type: "updateWine",
+      wineId: wine._id,
+      wineName: wine.name,
+      wineType: wine.type,
+      wineBlurb: wine.blurb,
+      wineImage: wine.image,
+      wineSubWine: wine.subwine,
+      wineVintages: wine.vintages,
+    })
+  }
+
+  //calls multiple functions to get the updated user and state
   function handleSubmit (){
-    addWine();
+    updatedSelection();
+    addFavorite();
     updatedUser();
   }
 

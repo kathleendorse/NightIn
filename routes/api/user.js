@@ -15,26 +15,12 @@ router.route("/login").post(passport.authenticate("local"), (req, res) => {
   });
 });
 
+//gets last index of fav array 
 router.route("/:userId")
-.get(userController.userFindById);
+.get(userController.findLatestFav);
 
-router.route("/addRecipe").put(userController.addRecipe);
-
-
-router.route("/addWine").put(userController.addWine);
-// router.route("/user").get((req, res) => {
-//   res.send(req.user);
-// });
-
- 
-
-// router.route("/logout").post((req, res) => {
-//   console.log("success logout");
-
-//   req.logout();
-//   res.send("logout success");
-//   console.log(res);
-// });
+//add favorite to favs array
+router.route("/addFav").put(userController.addFavorite);
 
 router.post("/logout", (req, res) => {
   //   console.log(req.user);

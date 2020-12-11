@@ -2,19 +2,14 @@ import React, { useState } from "react";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
-//importing multiple components from the same file
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Input from "../components/Input";
 import Butt from "../components/Butt";
 import { Card } from "react-bootstrap";
-// import { useUserContext } from "../utils/UserContext";
-// import Nav from "../components/Nav";
 
 function Recipe() {
-  // const [state, dispatch] = useUserContext();
 
-  // Using the useState hook [nameOfState, methodForUpdatingState] = useState( setInitalValueofState )
   //recipe results
   const [recipes, setRecipes] = useState([]);
   //search term
@@ -34,8 +29,6 @@ function Recipe() {
       .catch((err) => console.log(err));
   };
   return (
-    //Container & Col accepts props to use for their attributes
-    //Jumbotron uses props.children to have an h5 nested
 
     <div>
       <Container fluid>
@@ -72,7 +65,6 @@ function Recipe() {
                   />
                   <br></br>
                   <Butt
-                    //make the API call when the button is clicked
                     onClick={handleFormSubmit}
                     type="secondary"
                     className="input-md btn-md btn-outline-secondary"
@@ -100,7 +92,7 @@ function Recipe() {
                           className="rounded-circle"
                           variant="top"
                           src={recipe.image}
-                          alt={`photo of ${recipe.title}`}
+                          alt={`photo of ${recipe.name}`}
                         />
                         <Card.Title>{recipe.name}</Card.Title>
                       </Card>

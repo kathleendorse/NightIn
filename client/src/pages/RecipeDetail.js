@@ -42,35 +42,27 @@ function RecipeDetail(props) {
       .catch((err) => console.log(err));
   }
 
-  //adds an object to the user's favs array and returns a confirmation
-  function addRecipe() {
-    API.addRecipe({
-      userId: state._id,
-      favorite: recipe,
+  //updates the current Recipe Selections in state
+  function updateUserRecipeSelection() {
+    dispatch({
+      type: "updateRecipe",
+      selectionId: Math.floor(Math.random() * 10000).toString() ,  
+      recipeId: recipe._id,
+      recipeName: recipe.name,
+      recipeType: recipe.type,
+      recipeImage: recipe.image,
+      recipeWine: recipe.image,
+      recipeSubWine: recipe.subwine,
+      recipeIngredients: recipe.ingredients,
+      recipeDirections: recipe.directions,  
     })
-      .then((res) => {
-        console.log("Updated User Favorites: ", res.data);
-      })
-      .catch((err) => console.log(err));
-  }
-
-  //updates state.favs 
-  function updatedUser() {
-    API.findUser(state._id)
-    .then((res)=>{
-      dispatch({
-        type: "updateFavs",
-        favs: res.data,
-      });
-    })
-    .catch((err) => console.log(err));
   }
 
   //calls multiple functions to get the updated user and state
-  function handleSubmit (){
-    addRecipe();
-    updatedUser();
+  function handleSubmit(){
+    updateUserRecipeSelection();
   }
+
 
 
 
