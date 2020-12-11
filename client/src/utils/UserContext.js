@@ -22,6 +22,13 @@ const reducer = (state, action) => {
         loading: false,
       };
 
+    case "addToShoppingList":
+      return {
+        ...state,
+        shoppingList: [...state.shoppingList, action.shoppingList],
+        loading: false,
+      };
+
 
     //updates values for the user's current recipe Selection  
     case "updateRecipe":
@@ -116,6 +123,7 @@ const UserProvider = ({ value = [], ...props }) => {
    wineBlurb: "",
    wineImage: "",
    wineVintages: [],
+   shoppingList: [],
    loading: false,
  });
 
