@@ -6,7 +6,8 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import Input from "../components/Input";
 import Butt from "../components/Butt";
-import { Card } from "react-bootstrap";
+import Cord from "../components/Cord";
+
 
 function Recipe() {
 
@@ -87,15 +88,10 @@ function Recipe() {
                   // create a list item with a key equal to the index's id **react requires a unique KEY to use for arrays indexes. here we assign it the id of the recipe object
                   <ListItem key={recipe._id}>
                     <Link to={"/recipe/" + recipe._id}>
-                      <Card style={{ width: "10rem" }} className="text-center">
-                        <Card.Img
-                          className="rounded-circle"
-                          variant="top"
-                          src={recipe.image}
-                          alt={`photo of ${recipe.name}`}
-                        />
-                        <Card.Title>{recipe.name}</Card.Title>
-                      </Card>
+                      <Cord
+                      name= {recipe.name}
+                      image= {recipe.image}
+                      /> 
                     </Link>
                   </ListItem>
                 ))}
