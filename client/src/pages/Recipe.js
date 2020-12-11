@@ -70,25 +70,28 @@ function Recipe() {
             <Col size="md-12 sm-12">
               <form>
                 <Container fluid>
-                  <Input
-                    style={{
-                      backgroundColor: "#DCDCDC",
-                    }}
-                    name="RecipesSearch"
-                    //assigning the search term to the input value
-                    value={recipesSearch}
-                    //update the search term when the input changes
-                    onChange={handleInputChange}
-                    placeholder="Search For a Recipe"
-                  />
-                  <br></br>
-                  <Butt
-                    onClick={handleFormSubmit}
-                    type="secondary"
-                    className="input-md btn-md btn-outline-secondary"
-                  >
-                    Search
-                  </Butt>
+                  <div className="input-group">
+                    <Input
+                      style={{
+                        backgroundColor: "#DCDCDC",
+                        margin: "10px",
+                      }}
+                      name="RecipesSearch"
+                      //assigning the search term to the input value
+                      value={recipesSearch}
+                      //update the search term when the input changes
+                      onChange={handleInputChange}
+                      placeholder="Search For a Recipe"
+                    />
+
+                    <Butt
+                      onClick={handleFormSubmit}
+                      type="secondary"
+                      className="input-md btn-md btn-outline-secondary input-group-append"
+                    >
+                      Search
+                    </Butt>
+                  </div>
                 </Container>
               </form>
             </Col>
