@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 //importing multiple components from the same file
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Card } from "react-bootstrap";
+import Cord from "../components/Cord";
 // import { useUserContext } from "../utils/UserContext";
 
 function Wine() {
@@ -39,15 +39,10 @@ function Wine() {
                 {wines.map((wine) => (
                   <ListItem key={wine._id}>
                     <Link to={"/wine/" + wine._id}>
-                      <Card style={{ width: "10rem" }} className="text-center">
-                        <Card.Img
-                          className="rounded-circle"
-                          variant="top"
-                          src={wine.image}
-                          alt={`photo of ${wine.name}`}
-                        />
-                        <Card.Title>{wine.name}</Card.Title>
-                      </Card>
+                      <Cord
+                      name= {wine.name}
+                      image= {wine.image}
+                      />
                     </Link>
                   </ListItem>
                 ))}
