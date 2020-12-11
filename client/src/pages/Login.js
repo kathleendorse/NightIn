@@ -13,7 +13,7 @@ import { Redirect } from "react-router-dom";
 export default function Login({ useremail }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  console.log("useremail: ", useremail);
+  //console.log("useremail: ", useremail);
 
   //test
   const [state, dispatch] = useUserContext();

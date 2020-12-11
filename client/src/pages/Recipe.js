@@ -3,7 +3,6 @@ import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
 import Input from "../components/Input";
 import Butt from "../components/Butt";
 import Cord from "../components/Cord";
@@ -108,7 +107,7 @@ function Recipe() {
                   {/* maping over the array in nightin state. for each index we do the following*/}
                   {recipes.map((recipe) => (
                     // create a list item with a key equal to the index's id **react requires a unique KEY to use for arrays indexes. here we assign it the id of the recipe object
-                    <div>
+                    <div key={recipe._id}>
                       <Link to={"/recipe/" + recipe._id}>
                         <Cord name={recipe.name} image={recipe.image} />
                       </Link>

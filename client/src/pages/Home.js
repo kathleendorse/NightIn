@@ -8,7 +8,7 @@ import { useUserContext } from "../utils/UserContext";
 import { Redirect } from "react-router-dom";
 
 function Home({ email }) {
-  const [state, dispatch] = useUserContext();
+  const [state] = useUserContext();
 
   return (
     <Container fluid className="justify-content-center">
