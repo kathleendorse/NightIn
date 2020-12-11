@@ -7,10 +7,10 @@ import { List, ListItem } from "../components/List";
 import Input from "../components/Input";
 import Butt from "../components/Butt";
 import Cord from "../components/Cord";
-
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 function Recipe() {
-
   //recipe results
   const [recipes, setRecipes] = useState([]);
   //search term
@@ -29,8 +29,26 @@ function Recipe() {
       .then((res) => setRecipes(res.data))
       .catch((err) => console.log(err));
   };
-  return (
 
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 2,
+    },
+  };
+  return (
     <div>
       <Container fluid>
         <Jumbotron>
@@ -79,23 +97,20 @@ function Recipe() {
         </Jumbotron>
 
         <Row>
-          <Col size="md-6 sm-12">
+          <Col size="md-12 sm-12">
             {/* ternary operator - show no results if the nightin state is empty*/}
             {recipes.length ? (
-              <List>
+              <Carousel responsive={responsive}>
                 {/* maping over the array in nightin state. for each index we do the following*/}
                 {recipes.map((recipe) => (
                   // create a list item with a key equal to the index's id **react requires a unique KEY to use for arrays indexes. here we assign it the id of the recipe object
-                  <ListItem key={recipe._id}>
+                  <div>
                     <Link to={"/recipe/" + recipe._id}>
-                      <Cord
-                      name= {recipe.name}
-                      image= {recipe.image}
-                      /> 
+                      <Cord name={recipe.name} image={recipe.image} />
                     </Link>
-                  </ListItem>
+                  </div>
                 ))}
-              </List>
+              </Carousel>
             ) : (
               <h3>No Results to Display</h3>
             )}
