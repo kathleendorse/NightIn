@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useUserContext } from "../../utils/UserContext";
 import API from "../../utils/API";
-// import logo from "../../Images/twitter_header_photo_1.png";
+import logo from "../../Images/wine.png";
 
 function Nav() {
   const [state, dispatch] = useUserContext();
@@ -36,7 +36,12 @@ function Nav() {
 
       <nav className="navbar navbar-expand-md navbar-light bg-light">
         <Link to="#" className="navbar-brand">
-          Night In
+          <img
+            src={logo}
+            alt="Bulma: Free, open source, and modern CSS framework based on Flexbox"
+            width="80"
+            height="80"
+          />
         </Link>
         <button
           className="navbar-toggler"
@@ -79,12 +84,17 @@ function Nav() {
   } else {
     return (
       <nav className="navbar navbar-expand-md navbar-light bg-light">
-        <Link to="#" className="navbar-brand">
+        {/* <Link to="#" className="navbar-brand">
           Night In
-        </Link>
-        {/* <Link className="navbar-item" to="/">
-          <img src={logo} width="180" height="50" />
         </Link> */}
+        <Link to="#" className="navbar-brand">
+          <img
+            src={logo}
+            alt="Bulma: Free, open source, and modern CSS framework based on Flexbox"
+            width="60"
+            height="60"
+          />
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
