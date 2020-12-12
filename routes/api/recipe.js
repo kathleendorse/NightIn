@@ -7,9 +7,12 @@ const recipeController = require("../../controllers/recipeController");
   //GET, run the find query method
   //POST, run the create query method 
 router.route("/")
-//  .get(nightinController.findAll) //commented out for testing
-  .post(recipeController.recipeCreate)
+  .get(recipeController.recipeFindAll);
+
+router.route("/query")
   .get(recipeController.recipeFind); //added
+
+
 
 //if a route matching "/api/nightin/:id" is hit with a
   //GET, run the findById query method

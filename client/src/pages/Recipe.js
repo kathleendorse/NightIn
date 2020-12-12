@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
@@ -10,6 +10,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useUserContext } from "../utils/UserContext";
 
+
 function Recipe() {
   //recipe results
   const [recipes, setRecipes] = useState([]);
@@ -17,16 +18,31 @@ function Recipe() {
   const [recipesSearch, setRecipesSearch] = useState(""); //ADDED
   const [state, dispatch] = useUserContext();
 
+  //does a find all when page first loads
+  const loadRecipes = () => {
+    API.getRecipes()
+    .then((res) => setRecipes(res.data))
+    .catch((err) => console.log(err));
+  } 
+
+  useEffect(() => {
+    loadRecipes();
+  }, [recipes]);
+
+
+
   //when the input value changes we update the nightinSearch value
   const handleInputChange = (event) => {
     const { value } = event.target;
     setRecipesSearch(value);
   };
 
+
+
   //when the form is submitted we use the getNightin method from the API to find recipes and update the nightinState
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    API.getRecipes(recipesSearch)
+    API.getRecipesQuery(recipesSearch)
       .then((res) => setRecipes(res.data))
       .catch((err) => console.log(err));
   };
