@@ -19,8 +19,8 @@ function Wine() {
 
   function loadWines(type) {
     API.getWines(type)
-    .then((res) => setWines(res.data))
-    .catch((err) => console.log(err));
+      .then((res) => setWines(res.data))
+      .catch((err) => console.log(err));
   }
 
   const responsive = {
@@ -40,7 +40,7 @@ function Wine() {
       breakpoint: { max: 464, min: 0 },
       items: 2,
     },
-  };  
+  };
 
   return (
     <div>
@@ -50,13 +50,16 @@ function Wine() {
             {" "}
             <Col size="md-12 sm-12">
               <h4>
-                {state.recipeType} dishes generally pair well with {state.recipeWine} wines.
+                {state.recipeType} dishes generally pair well with{" "}
+                {state.recipeWine} wines.
               </h4>
               <h5>
-                For {state.recipeName} our experts recommend {state.recipeSubWine} .            
+                For {state.recipeName} our experts recommend{" "}
+                {state.recipeSubWine} .
               </h5>
-              <p className = "lead">
-                Click on a {state.recipeWine} wine to learn more and add to your pairing
+              <p className="lead">
+                Click on a {state.recipeWine} wine to learn more and add to your
+                pairing
               </p>
               <p></p>
             </Col>{" "}
@@ -65,20 +68,20 @@ function Wine() {
 
         <Row>
           <Col size="md-12 sm-12">
-          <Container className="justify-content-center">
-            {wines.length ? (
-              <Carousel responsive={responsive}>
-                {wines.map((wine) => (
-                  <div key={wine._id}>
-                    <Link to={"/wine/" + wine._id}>
-                      <Cord name= {wine.name} image= {wine.image} />
-                    </Link>
-                  </div>
-                ))}
-              </Carousel>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
+            <Container className="justify-content-center">
+              {wines.length ? (
+                <Carousel responsive={responsive}>
+                  {wines.map((wine) => (
+                    <div key={wine._id}>
+                      <Link to={"/wine/" + wine._id}>
+                        <Cord name={wine.name} image={wine.image} />
+                      </Link>
+                    </div>
+                  ))}
+                </Carousel>
+              ) : (
+                <h3>No Results to Display</h3>
+              )}
             </Container>
           </Col>
         </Row>

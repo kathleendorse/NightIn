@@ -8,12 +8,14 @@ import Butt from "../components/Butt";
 import Cord from "../components/Cord";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { useUserContext } from "../utils/UserContext";
 
 function Recipe() {
   //recipe results
   const [recipes, setRecipes] = useState([]);
   //search term
   const [recipesSearch, setRecipesSearch] = useState(""); //ADDED
+  const [state, dispatch] = useUserContext();
 
   //when the input value changes we update the nightinSearch value
   const handleInputChange = (event) => {
@@ -29,6 +31,22 @@ function Recipe() {
       .catch((err) => console.log(err));
   };
 
+  const checkLocal = () => {
+    let storageStatus = JSON.parse(localStorage.getItem("currentUser"));
+    if (storageStatus) {
+      if (storageStatus.email !== null && state.email === "") {
+        dispatch({
+          type: "setCurrentUser",
+          email: storageStatus.email,
+          _id: storageStatus._id,
+          favs: storageStatus.favs,
+          shoppingList: storageStatus.shoppingList,
+        });
+      }
+    }
+  };
+
+  checkLocal();
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },

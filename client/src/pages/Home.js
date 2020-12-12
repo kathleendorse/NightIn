@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import Jumbotron from "../components/Jumbotron";
 //import API from "../utils/API";
 import { Link } from "react-router-dom";
@@ -10,10 +10,10 @@ import { Redirect } from "react-router-dom";
 function Home({ email }) {
   const [state, dispatch] = useUserContext();
 
-  useEffect(()=> {
+  useEffect(() => {
     dispatch({
       type: "updateRecipe",
-      selectionId: "" ,  
+      selectionId: "",
       recipeId: "",
       recipeName: "",
       recipeType: "",
@@ -25,13 +25,11 @@ function Home({ email }) {
     });
   }, [dispatch]);
 
-
   return (
     <Container fluid className="justify-content-center">
       {!email && <Redirect to="/login" />}
       <Row className="justify-content-center">
         <Col size="md-12 sm-12">
-    
           <Jumbotron>
             <p className="lead">
               Welcome <span className="text-muted">{state.email}</span>!
@@ -41,7 +39,6 @@ function Home({ email }) {
               <Link to={"/recipe"}>Start Planning Your Night In</Link>
             </button>
           </Jumbotron>
-
         </Col>
       </Row>
     </Container>

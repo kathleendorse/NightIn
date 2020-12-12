@@ -10,7 +10,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 function WineDetail(props) {
-
   const [state, dispatch] = useUserContext();
   const [wine, setWine] = useState({});
   const [vintages, setVintages] = useState([]);
@@ -54,16 +53,16 @@ function WineDetail(props) {
       wineSubWine: wine.subwine,
       wineVintages: wine.vintages,
     };
-    
+
     API.addFav({
       userId: state._id,
       favorite: favObj,
-      })
+    })
       .then((res) => {
         console.log("Updated User Favorites: ", res.data);
         dispatch({
           type: "clearSelections",
-          selectionId: "" ,  
+          selectionId: "",
           recipeId: "",
           recipeName: "",
           recipeType: "",
@@ -83,20 +82,20 @@ function WineDetail(props) {
       .catch((err) => console.log(err));
   }
 
-  //updates state.favs 
+  //updates state.favs
   function updatedUser() {
     API.getLatestFav(state._id)
-    .then((res)=>{
-      dispatch({
-        type: "updateFavs",
-        favs: res.data,
-      });
-    })
-    .catch((err) => console.log(err));
+      .then((res) => {
+        dispatch({
+          type: "updateFavs",
+          favs: res.data,
+        });
+      })
+      .catch((err) => console.log(err));
   }
 
   //calls multiple functions to add the favorite and get the updated user and state
-  function handleSubmit (){
+  function handleSubmit() {
     addFavorite();
     updatedUser();
   }
@@ -128,7 +127,6 @@ function WineDetail(props) {
             <Row>
               <Link to="/wine">
                 <Butt
-
                   onClick={() => {}}
                   type="secondary"
                   className="input-md btn-md btn-outline-secondary"
@@ -154,7 +152,6 @@ function WineDetail(props) {
                 <h4>{wine.blurb}</h4>
               </Col>
             </Row>
-
 
             <Row>
               <Col size="md-12 sm-12">

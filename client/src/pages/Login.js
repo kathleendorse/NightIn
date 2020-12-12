@@ -26,6 +26,23 @@ export default function Login({ useremail }) {
   function handleSubmit(event) {
     event.preventDefault();
   }
+  const checkLocal = () => {
+    let storageStatus = JSON.parse(localStorage.getItem("currentUser"));
+    if (storageStatus) {
+      if (storageStatus.email !== null && state.email === "") {
+        dispatch({
+          type: "setCurrentUser",
+          email: storageStatus.email,
+          _id: storageStatus._id,
+          favs: storageStatus.favs,
+          shoppingList: storageStatus.shoppingList,
+        });
+      }
+      console.log(storageStatus.email);
+    }
+  };
+
+  checkLocal();
 
   const login = () => {
     API.userLogin({
@@ -40,14 +57,15 @@ export default function Login({ useremail }) {
             //   type: "setCurrentUser",
             //   user: res.data,
             // });
+            console.log(res.data);
             dispatch({
               type: "setCurrentUser",
               _id: res.data._id,
               email: res.data.email,
               favs: res.data.favs,
-              shoppingList: res.data.shoppingList
+              shoppingList: res.data.shoppingList,
             });
-
+            localStorage.setItem("currentUser", JSON.stringify(res.data));
             console.log(state._id);
             // const use = (res.data.id);
             // (window.location.href = `${use}/home`)
@@ -62,7 +80,7 @@ export default function Login({ useremail }) {
 
   return (
     <div className="Login">
-      {useremail && <Redirect to="/recipe" />}
+      {useremail && <Redirect to="/home" />}
       <Form onSubmit={handleSubmit}>
         <Form.Group size="md" controlId="email">
           <Form.Label>Email</Form.Label>

@@ -8,7 +8,6 @@ import { List, ListItem } from "../components/List";
 import { useUserContext } from "../utils/UserContext";
 //when this component is instantiated it will be passed a "prop"
 function RecipeDetail(props) {
-
   const [state, dispatch] = useUserContext();
   const [recipe, setRecipe] = useState({});
   const [ingredients, setIngredients] = useState([]);
@@ -35,7 +34,7 @@ function RecipeDetail(props) {
       .then((res) => setIngredients(res.data.ingredients))
       .catch((err) => console.log(err));
   }
-  
+
   function handleDirections(id) {
     API.getRecipe(id)
       .then((res) => setDirections(res.data.directions))
@@ -46,7 +45,7 @@ function RecipeDetail(props) {
   function updateUserRecipeSelection() {
     dispatch({
       type: "updateRecipe",
-      selectionId: Math.floor(Math.random() * 100000).toString() ,  
+      selectionId: Math.floor(Math.random() * 100000).toString(),
       recipeId: recipe._id,
       recipeName: recipe.name,
       recipeType: recipe.type,
@@ -54,18 +53,15 @@ function RecipeDetail(props) {
       recipeWine: recipe.wine,
       recipeSubWine: recipe.subwine,
       recipeIngredients: recipe.ingredients,
-      recipeDirections: recipe.directions,  
+      recipeDirections: recipe.directions,
     });
     console.log("Selected: ", state.recipeName);
   }
 
   //calls multiple functions to get the updated user and state
-  function handleSubmit(){
+  function handleSubmit() {
     updateUserRecipeSelection();
   }
-
-
-
 
   return (
     <Container fluid>

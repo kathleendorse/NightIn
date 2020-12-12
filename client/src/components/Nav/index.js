@@ -21,6 +21,7 @@ function Nav() {
         });
       })
       .then(() => {
+        localStorage.removeItem("currentUser");
         window.location.reload();
       });
   };
