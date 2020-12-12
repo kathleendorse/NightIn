@@ -68,14 +68,7 @@ function RecipeDetail(props) {
       <Row>
         <Col size="md-12">
           <br></br>
-          <h2
-            className="text-center"
-            style={{
-              paddingTop: 20,
-            }}
-          >
-            {recipe.name}
-          </h2>
+          <h2 className="text-center">{recipe.name}</h2>
         </Col>
       </Row>
       <Row>
@@ -100,12 +93,16 @@ function RecipeDetail(props) {
         <br></br>
       </Row>
       <Row>
-        <Col size="md-12">
-          <Photo src={recipe.image} alt={recipe.name}></Photo>
+        <Col size="md-12" className="justify-content-center">
+          <div className="text-center">
+            <Photo src={recipe.image} alt={recipe.name}></Photo>
+          </div>
           <br></br>
         </Col>
-        <Col size="md-6">
-          <h2>INGREDIENTS</h2>
+      </Row>
+      <Row>
+        <Col size="md-5">
+          <h3 className="text-center">INGREDIENTS</h3>
           {ingredients.length ? (
             <List>
               {ingredients.map((ingredient) => (
@@ -116,8 +113,8 @@ function RecipeDetail(props) {
             <h3>No Results to Display</h3>
           )}
         </Col>
-        <Col size="md-6">
-          <h2>INSTRUCTIONS</h2>
+        <Col size="md-5">
+          <h3 className="text-center">INSTRUCTIONS</h3>
           {directions.length ? (
             <List>
               {directions.map((direction) => (

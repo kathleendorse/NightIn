@@ -58,7 +58,7 @@ function Recipe() {
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 3,
+      items: 2,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
@@ -69,7 +69,7 @@ function Recipe() {
     <div>
       <Container fluid>
         <Jumbotron>
-          <Row className="justify-content-center">
+          <Row>
             {" "}
             <Col size="md-12 sm-12">
               <p className="lead">
@@ -118,7 +118,7 @@ function Recipe() {
 
         <Row>
           <Col size="md-12 sm-12">
-            <Container className="justify-content-center">
+            <Container>
               {/* ternary operator - show no results if the nightin state is empty*/}
               {recipes.length ? (
                 <Carousel responsive={responsive}>
@@ -127,7 +127,7 @@ function Recipe() {
                     // create a list item with a key equal to the index's id **react requires a unique KEY to use for arrays indexes. here we assign it the id of the recipe object
                     <div key={recipe._id} Container>
                       <Link to={"/recipe/" + recipe._id}>
-                        <Cord name={recipe.name} image={recipe.thumb} />
+                        <Cord name={recipe.name} image={recipe.image} />
                       </Link>
                     </div>
                   ))}

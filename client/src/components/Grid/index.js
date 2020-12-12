@@ -16,7 +16,7 @@ export function Container({ fluid, children }) {
 // This Row component lets us use a bootstrap row without having to think about class names
 export function Row({ fluid, children }) {
   return (
-    <div className={`row${fluid ? "-fluid" : ""} justify-content-center`}>
+    <div className={`row${fluid ? "-fluid" : ""} justify-content-center pt-3`}>
       {children}
     </div>
   );
