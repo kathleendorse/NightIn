@@ -4,7 +4,6 @@ import FavoriteItem from "../components/FavoriteItem";
 import { useUserContext } from "../utils/UserContext";
 import API from "../utils/API";
 
-
 export default function Favorites() {
   const [state, dispatch] = useUserContext();
   const [favs, setFavs] = useState([]);
@@ -13,7 +12,7 @@ export default function Favorites() {
   useEffect(() => {
     dispatch({
       type: "updateRecipe",
-      selectionId: "" ,  
+      selectionId: "",
       recipeId: "",
       recipeName: "",
       recipeType: "",
@@ -25,44 +24,39 @@ export default function Favorites() {
     });
     dispatch({
       type: "removeCurrentFav",
-      currentFav: ""
-    }) 
+      currentFav: "",
+    });
     setFavs(state.favs);
   }, [state.favs, dispatch]);
 
-
-
-  function removeFavorite (id){
+  function removeFavorite(id) {
     const userObj = {
       userId: state._id,
-      favId: id
+      favId: id,
     };
 
     API.deleteFav(userObj)
-    .then((res)=>console.log(res))
-    .catch((err)=> console.log(err)); 
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
     dispatch({
       type: "removeFav",
       id: id,
-    }); 
-
+    });
   }
-
 
   //maps over state.favs and renders Favorite Item Component which uses these props.
   return (
     <Container fluid>
       {favs.map((fav) => (
-
-        <FavoriteItem key={fav.id}
-        id={fav.id}
-        recipeName={fav.recipeName}
-        recipeImage={fav.recipeImage}
-        wineName={fav.wineName}
-        wineImage={fav.wineImage}
-        onClick= {()=>removeFavorite(fav.id)}
+        <FavoriteItem
+          key={fav.id}
+          id={fav.id}
+          recipeName={fav.recipeName}
+          recipeImage={fav.recipeImage}
+          wineName={fav.wineName}
+          wineImage={fav.wineImage}
+          onClick={() => removeFavorite(fav.id)}
         />
-
       ))}
     </Container>
   );
