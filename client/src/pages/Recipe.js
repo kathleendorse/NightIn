@@ -50,11 +50,11 @@ function Recipe() {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+      items: 6,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 4,
+      items: 5,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -62,7 +62,7 @@ function Recipe() {
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 2,
+      items: 1,
     },
   };
   return (
@@ -125,7 +125,7 @@ function Recipe() {
                   {/* maping over the array in nightin state. for each index we do the following*/}
                   {recipes.map((recipe) => (
                     // create a list item with a key equal to the index's id **react requires a unique KEY to use for arrays indexes. here we assign it the id of the recipe object
-                    <div key={recipe._id}>
+                    <div key={recipe._id} Container>
                       <Link to={"/recipe/" + recipe._id}>
                         <Cord name={recipe.name} image={recipe.image} />
                       </Link>

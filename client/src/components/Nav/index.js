@@ -28,20 +28,9 @@ function Nav() {
 
   if (state.email) {
     return (
-      // <nav className="navbar navbar-expand-lg navbar-dark">
-      //   <span className="nav-brand">
-      //     {/* <a className="navbar-brand" href="/"> */}
-      //     Night In
-      //   </span>
-
       <nav className="navbar navbar-expand-md navbar-light bg-light">
         <Link to="#" className="navbar-brand">
-          <img
-            src={logo}
-            alt="Bulma: Free, open source, and modern CSS framework based on Flexbox"
-            width="80"
-            height="80"
-          />
+          Night In
         </Link>
         <button
           className="navbar-toggler"
@@ -84,16 +73,8 @@ function Nav() {
   } else {
     return (
       <nav className="navbar navbar-expand-md navbar-light bg-light">
-        {/* <Link to="#" className="navbar-brand">
-          Night In
-        </Link> */}
         <Link to="#" className="navbar-brand">
-          <img
-            src={logo}
-            alt="Bulma: Free, open source, and modern CSS framework based on Flexbox"
-            width="60"
-            height="60"
-          />
+          Night In
         </Link>
         <button
           className="navbar-toggler"

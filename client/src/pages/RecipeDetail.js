@@ -64,11 +64,14 @@ function RecipeDetail(props) {
   }
 
   return (
-    <Container fluid>
+    <Container fluid className="justify-content-center">
       <Row>
-        <Col size="md-10 md-offset-1">
+        <Col size="md-12 md-offset-1">
           <article>
             <Row>
+              <Col size="md-12">
+                <h1>{recipe.name}</h1>
+              </Col>
               <Link to="/recipe">
                 <Butt
                   onClick={() => {}}
@@ -84,12 +87,12 @@ function RecipeDetail(props) {
                   className="input-md btn-md btn-outline-secondary"
                   onClick={handleSubmit}
                 >
-                  + Select Recipe
+                  + Add to Favorites
                 </Butt>
               </Link>
             </Row>
             <Row>
-              <Col size="md-10">
+              <Col size="md-12">
                 <Photo src={recipe.image} alt={recipe.name}></Photo>
                 <br></br>
                 <h1>{recipe.name}</h1>
