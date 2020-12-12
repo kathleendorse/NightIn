@@ -123,6 +123,12 @@ function WineDetail(props) {
     <div>
       <Container fluid>
         <Row>
+          <Col size="md-12">
+            <br></br>
+            <h2 className="text-center">{wine.name}</h2>
+          </Col>
+        </Row>
+        <Row>
           <Col size="md-10 md-offset-1">
             <Row>
               <Link to="/wine">
@@ -140,35 +146,40 @@ function WineDetail(props) {
                   type="secondary"
                   className="input-md btn-md btn-outline-secondary"
                 >
-                  + Select Wine
+                  + Add to Favorites
                 </Butt>
               </Link>
             </Row>
             <Row>
+              <Col size="md-12">
+                {/* <Photo src={wine.image} alt={wine.name}></Photo> */}
+              </Col>
+            </Row>
+
+            <Row>
               <Col size="md-10">
-                <Photo src={wine.image} alt={wine.name}></Photo>
-                <br></br>
-                <h1>{wine.name}</h1>
-                <h4>{wine.blurb}</h4>
+                <p>{wine.blurb}</p>
               </Col>
             </Row>
 
             <Row>
               <Col size="md-12 sm-12">
-                <Container className="justify-content-center">
-                  <h2>VINTAGES</h2>
-                  {vintages.length ? (
-                    <Carousel responsive={responsive}>
-                      {vintages.map((vintage) => (
-                        <div key={vintage.id}>
-                          <Cord name={vintage.vin} image={wine.image} />
-                        </div>
-                      ))}
-                    </Carousel>
-                  ) : (
-                    <p>No Results to Display</p>
-                  )}
-                </Container>
+                <h3 className="text-center">VINTAGES</h3>
+              </Col>
+            </Row>
+            <Row>
+              <Col size="md-12 sm-12">
+                {vintages.length ? (
+                  <Carousel responsive={responsive}>
+                    {vintages.map((vintage) => (
+                      <div key={vintage.id}>
+                        <Cord name={vintage.vin} image={wine.image} />
+                      </div>
+                    ))}
+                  </Carousel>
+                ) : (
+                  <p>No Results to Display</p>
+                )}
               </Col>
             </Row>
           </Col>
