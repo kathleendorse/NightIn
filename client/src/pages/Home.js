@@ -35,9 +35,11 @@ function Home({ email }) {
               Welcome <span className="text-muted">{state.email}</span>!
             </p>
             <br></br>
-            <button type="button" className="btn btn-secondary btn-lg">
-              <Link to={"/recipe"}>Start Planning Your Night In</Link>
-            </button>
+            <Link to={"/recipe"}>
+              <button type="button" className="btn btn-secondary btn-lg">
+                Start Planning Your Night In
+              </button>
+            </Link>
           </Jumbotron>
         </Col>
       </Row>

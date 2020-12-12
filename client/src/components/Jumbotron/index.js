@@ -1,12 +1,13 @@
 import React from "react";
+import { auto } from "@popperjs/core";
 
 function Jumbotron({ children }) {
   return (
     <div
       style={{
-        height: 350,
+        height: auto,
         clear: "both",
-        paddingTop: 120,
+        paddingTop: 100,
         textAlign: "center",
       }}
       className="jumbotron"
