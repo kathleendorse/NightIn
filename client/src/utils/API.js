@@ -31,8 +31,12 @@ export default {
     return axios.put("/api/user/addRecipe", userObj);
   },
   //Finds recipes with the provided query term
-  getRecipes: function (query) {
-    return axios.get("/api/recipe", { params: { q: query } });
+  getRecipesQuery: function (query) {
+    return axios.get("/api/recipe/query", { params: { q: query } });
+  },
+
+  getRecipes: function() {
+    return axios.get("/api/recipe");
   },
 
   getWines: function (query) {

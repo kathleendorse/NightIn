@@ -5,8 +5,7 @@ function Cord({ name, image }) {
   return (
     <Card
       style={{ width: "10rem", height: "20rem" }}
-      className="text-center"
-      className="shadow p-3 mb-5 bg-white rounded"
+      className="text-center shadow p-3 mb-5 bg-white rounded"
     >
       <Card.Img variant="top" src={image} alt={name} />
 
