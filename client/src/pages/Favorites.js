@@ -17,6 +17,7 @@ export default function Favorites() {
       recipeName: "",
       recipeType: "",
       recipeImage: "",
+      recipeThumb: "",
       recipeWine: "",
       recipeSubWine: "",
       recipeIngredients: "",
@@ -52,9 +53,9 @@ export default function Favorites() {
           key={fav.id}
           id={fav.id}
           recipeName={fav.recipeName}
-          recipeImage={fav.recipeImage}
+          recipeImage={fav.recipeThumb}
           wineName={fav.wineName}
-          wineImage={fav.wineImage}
+          wineImage={fav.wineThumb}
           onClick={() => removeFavorite(fav.id)}
         />
       ))}

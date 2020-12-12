@@ -44,12 +44,14 @@ function WineDetail(props) {
       recipeSubwine: state.recipeSubWine,
       recipeIngredients: state.recipeIngredients,
       recipeImage: state.recipeImage,
+      recipeThumb: state.recipeThumb,
       recipeDirections: state.recipeDirections,
       wineId: wine._id,
       wineName: wine.name,
       wineType: wine.type,
       wineBlurb: wine.blurb,
       wineImage: wine.image,
+      wineThumb: wine.thumb,
       wineSubWine: wine.subwine,
       wineVintages: wine.vintages,
     };
@@ -76,6 +78,7 @@ function WineDetail(props) {
           wineType: "",
           wineBlurb: "",
           wineImage: "",
+          wineThumb: "",
           wineVintages: "",
         });
       })

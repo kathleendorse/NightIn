@@ -18,6 +18,7 @@ function Home({ email }) {
       recipeName: "",
       recipeType: "",
       recipeImage: "",
+      recipeThumb: "",
       recipeWine: "",
       recipeSubWine: "",
       recipeIngredients: "",
