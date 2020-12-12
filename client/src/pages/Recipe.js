@@ -127,7 +127,7 @@ function Recipe() {
                     // create a list item with a key equal to the index's id **react requires a unique KEY to use for arrays indexes. here we assign it the id of the recipe object
                     <div key={recipe._id} Container>
                       <Link to={"/recipe/" + recipe._id}>
-                        <Cord name={recipe.name} image={recipe.image} />
+                        <Cord name={recipe.name} image={recipe.thumb} />
                       </Link>
                     </div>
                   ))}

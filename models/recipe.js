@@ -9,6 +9,7 @@ const recipeSchema = new Schema({
   subwine: { type: String, required: true },
   ingredients: { type: Array, required: true },
   image: { type: String, required: true },
+  thumb: { type: String, required: true },
   directions: { type: Array, required: true }
 });
 
