@@ -19,7 +19,7 @@ const recipeSeed = [
       {id: 5, ing: "pepper, to taste"},
       {id: 6, ing: "2 tablespoons of olive oil"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661151/Night%20In%20Images/new-york-strip-steak-44_t2rf7j.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661151/Night%20In%20Images/new-york-strip-steak-44_t2rf7j.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661151/Night%20In%20Images/new-york-strip-steak-44_t2rf7j.jpg",
     directions: [
       {id: 1, dir: "About 20 minutes before grilling, remove the steaks from the refrigerator and cover in olive oil and garlic salt and pepper. Let sit, covered, at room temperature."},
@@ -52,7 +52,7 @@ const recipeSeed = [
       {id: 12, ing: "15-ounce can of black beans, drained"},
       {id: 13, ing: "salt and pepper, to taste"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661195/Night%20In%20Images/Skirt-Steak-with-Spicy-Rice-and-Beans_MidPage-867x1024_y71rmd.png",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661195/Night%20In%20Images/Skirt-Steak-with-Spicy-Rice-and-Beans_MidPage-867x1024_y71rmd.png",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661195/Night%20In%20Images/Skirt-Steak-with-Spicy-Rice-and-Beans_MidPage-867x1024_y71rmd.png",
     directions: [
       {id: 1, dir: "In a wide pot, heat the oil over medium-high. Once hot, add the onion and jalapeño pepper and cook, stirring often, for 7-8 minutes until golden brown."},
@@ -80,7 +80,7 @@ const recipeSeed = [
       {id: 11, ing: "2 large baking potatoes, peeled and cut into ¾-inch cubes"},
       {id: 12, ing: "12 teaspoons salt"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661251/Night%20In%20Images/15COOKING-OLD-BEEF-STEW2-articleLarge_x68wmt.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661251/Night%20In%20Images/15COOKING-OLD-BEEF-STEW2-articleLarge_x68wmt.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661251/Night%20In%20Images/15COOKING-OLD-BEEF-STEW2-articleLarge_x68wmt.jpg",
     directions: [
       {id: 1, dir: "Combine the flour and pepper in a bowl, add the beef and toss to coat well. Heat 3 teaspoons of the oil in a large pot. Add the beef a few pieces at a time; do not overcrowd. Cook, turning the pieces until beef is browned on all sides, about 5 minutes per batch; add more oil as needed between batches."},
@@ -104,7 +104,7 @@ const recipeSeed = [
       {id: 8, ing: "½ teaspoon cracked black pepper"},
       {id: 9, ing: "2 sprigs fresh thyme"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661270/Night%20In%20Images/1171bec1-4480-41d0-b34a-4048263424c2_nhrpns.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661270/Night%20In%20Images/1171bec1-4480-41d0-b34a-4048263424c2_nhrpns.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661270/Night%20In%20Images/1171bec1-4480-41d0-b34a-4048263424c2_nhrpns.jpg",
     directions: [
       {id: 1, dir: "1. Pat medallions dry. Heat oil in pan over medium heat. Sear medallions, browning for 2 minutes on each side to develop a dark mahogany crust; remove from pan"},
@@ -126,7 +126,7 @@ const recipeSeed = [
       {id: 6, ing: "sprig of thyme, to taste"},
       {id: 7, ing: "sprig of rosemary, to taste"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661287/Night%20In%20Images/1522172643310_eaiymz.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661287/Night%20In%20Images/1522172643310_eaiymz.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661287/Night%20In%20Images/1522172643310_eaiymz.jpg",
     directions: [
       {id: 1, dir: "1. Let the steak rest at room temperature for 30 minutes."},
@@ -139,7 +139,7 @@ const recipeSeed = [
   // Ingredients - Array of objects
   {
     name: "Pork Tenderlion with Oven Roasted Potatoes",
-    type: "white meat (pork)",
+    type: "Pork",
     wine: "white",
     subwine: "Zinfandel",
     ingredients: [
@@ -150,7 +150,7 @@ const recipeSeed = [
       {id: 5, ing: "cooking twine"},
       {id: 6, ing: "salt and pepper, to taste"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/v1607661309/Night%20In%20Images/sheet-pan-pork-tenderloin-potatoes-3_g8tpfo.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661309/Night%20In%20Images/sheet-pan-pork-tenderloin-potatoes-3_g8tpfo.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/v1607661309/Night%20In%20Images/sheet-pan-pork-tenderloin-potatoes-3_g8tpfo.jpg",
     directions: [
       {id: 1, dir: "1. Cover tederloin liberably in rub. Set in fridge overnight."},
@@ -162,7 +162,7 @@ const recipeSeed = [
   },
   {
     name: "Honey Garlic Pork Chops",
-    type: "white meat (pork)",
+    type: "Pork",
     wine: "white",
     subwine: "Cabernet Sauvignon",
     ingredients: [
@@ -176,7 +176,7 @@ const recipeSeed = [
       {id: 8, ing: "¼ cup water (or chicken broth)"},
       {id: 9, ing: "2 tablespoons rice wine vinegar (or apple cider vinegar, or any white vinegar)"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661333/Night%20In%20Images/Easy-Honey-Garlic-Pork-Chops-IMAGE-6_wdqmda.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661333/Night%20In%20Images/Easy-Honey-Garlic-Pork-Chops-IMAGE-6_wdqmda.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661333/Night%20In%20Images/Easy-Honey-Garlic-Pork-Chops-IMAGE-6_wdqmda.jpg",
     directions: [
       {id: 1, dir: "1. Preheat oven broiler (or grill) on medium-high heat. Season chops with salt, pepper and garlic powder just before cooking."},
@@ -188,7 +188,7 @@ const recipeSeed = [
   },
   {
     name: "Pork and Fennel Ragout",
-    type: "white meat (pork)",
+    type: "Pork",
     wine: "red",
     subwine: "Resiling",
     ingredients: [
@@ -205,7 +205,7 @@ const recipeSeed = [
       {id: 11, ing: "10 ounces cremini mushrooms, sliced"},
       {id: 12, ing: "1 ½ cups red or white wine"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661444/Night%20In%20Images/1371589485637_x1ohyo.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661444/Night%20In%20Images/1371589485637_x1ohyo.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661444/Night%20In%20Images/1371589485637_x1ohyo.jpg",
     directions: [
       {id: 1, dir: "1. Grind the fennel seeds with 1 teaspoon salt and ½ teaspoon pepper in a spice grinder or chop with a knife. Transfer to a medium bowl; mix with the lemon juice and pork. Add the flour and toss to coat. In another bowl, mix the lemon zest with 2 tablespoons parsley."},
@@ -215,7 +215,7 @@ const recipeSeed = [
   },
   {
     name: "Oven Pork Ribs with BBQ Sauce",
-    type: "white meat (pork)",
+    type: "Pork",
     wine: "red",
     subwine: "Merlot",
     ingredients: [
@@ -225,7 +225,7 @@ const recipeSeed = [
       {id: 4, ing: "choice of pork rub"},
       {id: 5, ing: "choice of barbeque sauce"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661502/Night%20In%20Images/Oven-Pork-Ribs-with-Barbecue-Sauce_5_efeutd.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661502/Night%20In%20Images/Oven-Pork-Ribs-with-Barbecue-Sauce_5_efeutd.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661502/Night%20In%20Images/Oven-Pork-Ribs-with-Barbecue-Sauce_5_efeutd.jpg",
     directions: [
       {id: 1, dir: "1. Preheat oven to 160°C/320°F (all oven types). Combine the Rub ingredients and rub onto both sides of the ribs (most on meaty side). Set aside to marinate for 20 minutes (or overnight). Place ribs on a tray in a single layer. Pour apple cider underneath the ribs, cover with foil then bake for 1 hour 30 minutes or until the meat is pretty tender (Note 5)"},
@@ -236,7 +236,7 @@ const recipeSeed = [
   },
   {
     name: "Ginger Pork and Rice Bowl",
-    type: "white meat (pork)",
+    type: "Pork",
     wine: "white",
     subwine: "Zinfandel",
     ingredients: [
@@ -253,7 +253,7 @@ const recipeSeed = [
       {id: 11, ing: "1 lime, sliced, to serve"},
       {id: 12, ing: "Sesame seeds, garnish"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661530/Night%20In%20Images/pork-rice-bowls-Lead-00004_howpno.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661530/Night%20In%20Images/pork-rice-bowls-Lead-00004_howpno.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661530/Night%20In%20Images/pork-rice-bowls-Lead-00004_howpno.jpg",
     directions: [
       {id: 1, dir: "1. Add dried rice to a medium pot and rinse with cold water until the water runs clear. Fill the pot until water covers the rice by about ¼ inch. Place over high heat and bring to a simmer."},
@@ -283,7 +283,7 @@ const recipeSeed = [
       {id: 11, ing: "3 romaine hearts"},
       {id: 12, ing: "parmesan cheese"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661567/Night%20In%20Images/BA-best-classic-caeser-salad_hvsyri.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661567/Night%20In%20Images/BA-best-classic-caeser-salad_hvsyri.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661567/Night%20In%20Images/BA-best-classic-caeser-salad_hvsyri.jpg",
     directions: [
       {id: 1, dir: "1. Chop together anchovy fillets, garlic, and pinch of salt. Use the side of a knife blade to mash into a paste, then scrape into a medium bowl. Whisk in egg yolks, 2 Tbsp. lemon juice, and mustard. Adding drop by drop to start, gradually whisk in olive oil, then vegetable oil; whisk until dressing is thick and glossy. Whisk in Parmesan. Season with salt, pepper, and more lemon juice, if desired."},
@@ -314,7 +314,7 @@ const recipeSeed = [
       {id: 14, ing: "⅔ cup extra virgin olive oil"},
       {id: 15, ing: "½ cup finely grated Roquefort"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661621/Night%20In%20Images/cobb-salad-sally-horiz-b-1800_olymat.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661621/Night%20In%20Images/cobb-salad-sally-horiz-b-1800_olymat.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661621/Night%20In%20Images/cobb-salad-sally-horiz-b-1800_olymat.jpg",
     directions: [
       {id: 1, dir: "1. Cook the bacon in a skillet on medium heat until crisp on both sides. Remove from skillet and lay out on paper towels to absorb the excess fat. Allow the bacon to cool. Crumble the bacon and set aside."},
@@ -342,7 +342,7 @@ const recipeSeed = [
       {id: 10, ing: "1 cup pecan halves"},
       {id: 11, ing: "¼ cup thinly sliced red onion"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/v1607661666/Night%20In%20Images/Perfect-Winter-Salad_EXPS_HC17_42750_D01_20_7b-696x696_myvggc.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661666/Night%20In%20Images/Perfect-Winter-Salad_EXPS_HC17_42750_D01_20_7b-696x696_myvggc.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/v1607661666/Night%20In%20Images/Perfect-Winter-Salad_EXPS_HC17_42750_D01_20_7b-696x696_myvggc.jpg",
     directions: [
       {id: 1, dir: "1. In a small bowl, mix mayo, syrup, vinegar, shallots and sugar; gradually whisk in oil until blended. Refrigerate, covered, until serving."},
@@ -362,7 +362,7 @@ const recipeSeed = [
       {id: 5, ing: "3 cups baby spinach leaves"},
       {id: 6, ing: "3 cups baby mixed greens"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661700/Night%20In%20Images/Apple-Pear-Salad-001-800x1000_epy4zf.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661700/Night%20In%20Images/Apple-Pear-Salad-001-800x1000_epy4zf.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661700/Night%20In%20Images/Apple-Pear-Salad-001-800x1000_epy4zf.jpg",
     directions: [
       {id: 1, dir: "1. Make the Glazed Walnuts or Glazed Pecans. (While they cook, prep the rest of the salad. Or, you can make these ahead!)"},
@@ -387,7 +387,7 @@ const recipeSeed = [
       {id: 8, ing: "¼ cup almonds"},
       {id: 9, ing: "1 tablespoon sesame seeds"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661730/Night%20In%20Images/Asian-Salad-SpendWithPennies_cp4xac.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661730/Night%20In%20Images/Asian-Salad-SpendWithPennies_cp4xac.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661730/Night%20In%20Images/Asian-Salad-SpendWithPennies_cp4xac.jpg",
     directions: [
       {id: 1, dir: "1. Wash, prep and chop all vegetables"},
@@ -412,7 +412,7 @@ const recipeSeed = [
       {id: 7, ing: "½ teaspoon paprika"},
       {id: 8, ing: "4 Tablespoons oil"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661749/Night%20In%20Images/Pan-Fried-Fish-Pics_nygdg1.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661749/Night%20In%20Images/Pan-Fried-Fish-Pics_nygdg1.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661749/Night%20In%20Images/Pan-Fried-Fish-Pics_nygdg1.jpg",
     directions: [
       {id: 1, dir: "1. Lightly beat eggs in a dish"},
@@ -443,7 +443,7 @@ const recipeSeed = [
       {id: 11, ing: "2 tablespoons dry white wine (substitute with ¼ cup low-sodium chicken broth)"},
       {id: 12, ing: "1 lemon sliced to garnish "}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/v1607661772/Night%20In%20Images/Sheet-Pan-Baked-Salmon-Potatoes-Asparagus-4_u8jqjx.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661772/Night%20In%20Images/Sheet-Pan-Baked-Salmon-Potatoes-Asparagus-4_u8jqjx.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/v1607661772/Night%20In%20Images/Sheet-Pan-Baked-Salmon-Potatoes-Asparagus-4_u8jqjx.jpg",
     directions: [
       {id: 1, dir: "1. Heat oven to 400°F | 200°C. On a large rimmed baking sheet, toss together potatoes with the oil, ½ tablespoon of garlic, ½ teaspoon salt, and ¼ teaspoon pepper. Spread out in an even layer and roast for 15 minutes until they're just starting to soften and brown."},
@@ -467,7 +467,7 @@ const recipeSeed = [
       {id: 6, ing: "2 tablespoons butter, softened"},
       {id: 7, ing: "1 ½ teaspoons chopped fresh herbs (such as rosemary, thyme, basil, or parsley)"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661790/Night%20In%20Images/image_pnqpna.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661790/Night%20In%20Images/image_pnqpna.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661790/Night%20In%20Images/image_pnqpna.jpg",
     directions: [
       {id: 1, dir: "1. Preheat oven to 425. Cut 1 lemon into 8 slices. Place slices, in pairs, on a rimmed baking sheet coated with cooking spray. Grate remaining lemon to get 1 teaspoon lemon rind; set aside. Reserve lemon for another use."},
@@ -490,7 +490,7 @@ const recipeSeed = [
       {id: 6, ing: "2 lbs uncooked large shrimp (21-25 count), peeled and deveined"},
       {id: 7, ing: "12 medium wooden skewers"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661880/Night%20In%20Images/Grilled-Garlic-Cajun-Shrimp-Skewers-4-600x900_el4h1w.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661880/Night%20In%20Images/Grilled-Garlic-Cajun-Shrimp-Skewers-4-600x900_el4h1w.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661880/Night%20In%20Images/Grilled-Garlic-Cajun-Shrimp-Skewers-4-600x900_el4h1w.jpg",
     directions: [
       {id: 1, dir: "1. Soak wooden skewers in water 30 min (reduces burning of the sticks). Preheat Grill to med/high (400˚F)."},
@@ -511,7 +511,7 @@ const recipeSeed = [
       {id: 4, ing: "1 tablespoon olive oil"},
       {id: 5, ing: "2 tablespoons unsalted butter, melted"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661911/Night%20In%20Images/image_uiwsm4.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661911/Night%20In%20Images/image_uiwsm4.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661911/Night%20In%20Images/image_uiwsm4.jpg",
     directions: [
       {id: 1, dir: "1. Rinse tilapia fillets in cold water and pat dry with paper towels. Season both sides of each fillet with salt and pepper. Place the flour in a shallow dish; gently press each fillet into the flour to coat and shake off the excess flour."},
@@ -521,7 +521,7 @@ const recipeSeed = [
   // Chicken
   {
     name: "Stuffed Chicken Breast with Mozzarella and Spinach",
-    type: "white meat (chicken)",
+    type: "Chicken",
     wine: "white",
     subwine: "Riesling",
     ingredients: [
@@ -538,7 +538,7 @@ const recipeSeed = [
       {id: 11, ing: "Crushed red pepper flakes, to taste (optional)"},
       {id: 12, ing: "Salt and fresh cracked pepper"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661977/Night%20In%20Images/chicken-breast-recipes_wtqcdb.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607661977/Night%20In%20Images/chicken-breast-recipes_wtqcdb.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607661977/Night%20In%20Images/chicken-breast-recipes_wtqcdb.jpg",
     directions: [
       {id: 1, dir: "1. In a skillet, saute onion and 2 cloves minced garlic in a tablespoon olive oil for 3 – 4 minutes, until fragrant and translucent. Add tomato and chicken stock, bring to a boil and simmer over low-medium heat until the sauce reduces and starts to thicken, about 15 – 20 minutes. Stir in sugar and balsamic, adjust seasoning with salt and pepper, then set aside in a large bowl."},
@@ -549,7 +549,7 @@ const recipeSeed = [
   },
   {
     name: "Crispy Chicken Parmesean",
-    type: "white meat (chicken)",
+    type: "Chicken",
     wine: "red",
     subwine: "Merlot",
     ingredients: [
@@ -566,7 +566,7 @@ const recipeSeed = [
       {id: 11, ing: "¼ cup Parmesan cheese shredded"},
       {id: 12, ing: "basil & parsley fresh, chopped"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607662004/Night%20In%20Images/SpendWithPennies-Chicken-Parmesan-23_gs2m2z.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607662004/Night%20In%20Images/SpendWithPennies-Chicken-Parmesan-23_gs2m2z.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607662004/Night%20In%20Images/SpendWithPennies-Chicken-Parmesan-23_gs2m2z.jpg",
     directions: [
       {id: 1, dir: "1. Preheat an oven to 425°F."},
@@ -581,7 +581,7 @@ const recipeSeed = [
   },
   {
     name: "Summertime Blackened Chicken",
-    type: " white meat (chicken)",
+    type: "Chicken",
     wine: "white",
     subwine: "Riesling",
     ingredients: [
@@ -594,7 +594,7 @@ const recipeSeed = [
       {id: 7, ing: "⅛ teaspoon onion powder"},
       {id: 8, ing: "2 skinless, boneless chicken breast halves"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607662075/Night%20In%20Images/image_gd2doz.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607662075/Night%20In%20Images/image_gd2doz.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607662075/Night%20In%20Images/image_gd2doz.jpg",
     directions: [
       {id: 1, dir: "1. Preheat oven to 350 degrees F (175 degrees C). Lightly grease a baking sheet. Heat a cast iron skillet over high heat for 5 minutes until it is smoking hot."},
@@ -605,7 +605,7 @@ const recipeSeed = [
   },
   {
     name: "Crispy Cilantro Lime Chicken",
-    type: "white meat (chicken)",
+    type: "Chicken",
     wine: "white",
     subwine: "Rosé",
     ingredients: [
@@ -621,7 +621,7 @@ const recipeSeed = [
       {id: 10, ing: "1 cup mozzarella cheese shredded"},
       {id: 11, ing: "Fresh cilantro leaves to serve"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607662106/Night%20In%20Images/Crispy-Cilantro-Lime-Chicken-9_rmldn9.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607662106/Night%20In%20Images/Crispy-Cilantro-Lime-Chicken-9_rmldn9.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607662106/Night%20In%20Images/Crispy-Cilantro-Lime-Chicken-9_rmldn9.jpg",
     directions: [
       {id: 1, dir: "1. Preheat oven to 425°F (220°C)."},
@@ -634,7 +634,7 @@ const recipeSeed = [
   },
   {
     name: "Slow Cooked Barbeque Chicken",
-    type: "white meat (chicken)",
+    type: "Chicken",
     wine: "red",
     subwine: "Malbec",
     ingredients: [
@@ -645,7 +645,7 @@ const recipeSeed = [
       {id: 5, ing: "1 Tbsp Worcestershire sauce"},
       {id: 6, ing: "2 Tbsp brown sugar"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607662152/Night%20In%20Images/Crockpot-BBQ-Chicken-2-600x900_yxi94z.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607662152/Night%20In%20Images/Crockpot-BBQ-Chicken-2-600x900_yxi94z.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607662152/Night%20In%20Images/Crockpot-BBQ-Chicken-2-600x900_yxi94z.jpg",
     directions: [
       {id: 1, dir: "1. Stir together all sauce ingredients in a 5-6 qt slow cooker."},
@@ -669,7 +669,7 @@ const recipeSeed = [
       {id: 7, ing: "¼ teaspoon Pepper"},
       {id: 8, ing: "2 Tablespoons Italian Parsley (optional)"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/v1607662220/Night%20In%20Images/Homemade-Fettuccine-Alfredo-Recipe_tzvyyw.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607662220/Night%20In%20Images/Homemade-Fettuccine-Alfredo-Recipe_tzvyyw.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/v1607662220/Night%20In%20Images/Homemade-Fettuccine-Alfredo-Recipe_tzvyyw.jpg",
     directions: [
       {id: 1, dir: "1. In a large pot, heat water over high heat until boiling. Add salt to season the water. Once it is boiling, add fettuccine and cook according to package instructions."},
@@ -703,7 +703,7 @@ const recipeSeed = [
       {id: 15, ing: "1 clove garlic"},
       {id: 16, ing: "black pepper to taste"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607662267/Night%20In%20Images/0C4A8880_ltg7p4.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607662267/Night%20In%20Images/0C4A8880_ltg7p4.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607662267/Night%20In%20Images/0C4A8880_ltg7p4.jpg",
     directions: [
       {id: 1, dir: "1. In a large bowl combine pasta, sundried tomatoes, bell pepper, olives, spinach, basil, and parmesan cheese. Toss until combined."},
@@ -727,7 +727,7 @@ const recipeSeed = [
       {id: 8, ing: "2 sprigs fresh basil or oregano , plus more basil for garnish"},
       {id: 9, ing: "1 pound dried penne pasta , or other favorite pasta of your choice"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/v1607662313/Night%20In%20Images/Penne-Marinara-Sauce-foodiecrush.com-004-683x1024_wgbmvj.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607662313/Night%20In%20Images/Penne-Marinara-Sauce-foodiecrush.com-004-683x1024_wgbmvj.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/v1607662313/Night%20In%20Images/Penne-Marinara-Sauce-foodiecrush.com-004-683x1024_wgbmvj.jpg",
     directions: [
       {id: 1, dir: "1. Bring a large pot of water to a boil and season generously with kosher salt."},
@@ -753,7 +753,7 @@ const recipeSeed = [
       {id: 9, ing: "¾ c. grated Parmesan, plus more for garnish"},
       {id: 10, ing: "Sliced fresh basil, for serving"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/v1607662370/Night%20In%20Images/gallery-1458854366-delish-angel-hair-primavera_pnfls6.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607662370/Night%20In%20Images/gallery-1458854366-delish-angel-hair-primavera_pnfls6.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/v1607662370/Night%20In%20Images/gallery-1458854366-delish-angel-hair-primavera_pnfls6.jpg",
     directions: [
       {id: 1, dir: "1. Preheat oven to 400°. In a large pot of salted boiling water, cook pasta until al dente. Drain, reserving 1 cup pasta water, and return to pot."},
@@ -783,7 +783,7 @@ const recipeSeed = [
       {id: 13, ing: "1 cup shredded part-skim mozzarella cheese or a blend of mozzarella and provolone"},
       {id: 14, ing: "2 tablespoons chopped fresh basil thyme, or parsley"}
     ],
-    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607662475/Night%20In%20Images/Classic-Eggplant-Lasagna-Recipe-600x718_ilkrhc.jpg",
+    image: "https://res.cloudinary.com/mendozarwebdev/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1607662475/Night%20In%20Images/Classic-Eggplant-Lasagna-Recipe-600x718_ilkrhc.jpg",
     thumb: "https://res.cloudinary.com/mendozarwebdev/image/upload/c_thumb,w_200,g_face/v1607662475/Night%20In%20Images/Classic-Eggplant-Lasagna-Recipe-600x718_ilkrhc.jpg",
     directions: [
       {id: 1, dir: "1. Position racks in the upper and lower thirds of your oven. Preheat the oven to 400 degrees F. Lightly coat 2 rimmed baking sheets with nonstick spray. Coat a 9x13-inch baking dish with nonstick spray and set aside."},
