@@ -167,7 +167,7 @@ function WineDetail(props) {
 
             <Row>
               <Col size="md-12 sm-12">
-                <h3 className="text-center">VINTAGES</h3>
+                <h4 className="text-center">VINTAGES</h4>
               </Col>
             </Row>
             <Row>
