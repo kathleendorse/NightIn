@@ -7,6 +7,7 @@ const wineSchema = new Schema({
   type: { type: String, required: true },
   blurb: { type: String },
   image: { type: String},
+  thumb:  { type: String},
   vintages: { type: Array, required: true }
 });
 //creating a collection called Night that uses the nightSchema

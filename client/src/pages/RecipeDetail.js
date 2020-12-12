@@ -50,6 +50,7 @@ function RecipeDetail(props) {
       recipeName: recipe.name,
       recipeType: recipe.type,
       recipeImage: recipe.image,
+      recipeThumb: recipe.thumb,
       recipeWine: recipe.wine,
       recipeSubWine: recipe.subwine,
       recipeIngredients: recipe.ingredients,

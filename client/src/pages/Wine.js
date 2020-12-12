@@ -74,7 +74,7 @@ function Wine() {
                   {wines.map((wine) => (
                     <div key={wine._id}>
                       <Link to={"/wine/" + wine._id}>
-                        <Cord name={wine.name} image={wine.image} />
+                        <Cord name={wine.name} image={wine.thumb} />
                       </Link>
                     </div>
                   ))}

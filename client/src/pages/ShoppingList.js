@@ -23,6 +23,7 @@ export default function ShoppingList() {
       recipeName: "",
       recipeType: "",
       recipeImage: "",
+      recipeThumb: "",
       recipeWine: "",
       recipeSubWine: "",
       recipeIngredients: "",
