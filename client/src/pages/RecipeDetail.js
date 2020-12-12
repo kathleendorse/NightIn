@@ -64,65 +64,69 @@ function RecipeDetail(props) {
   }
 
   return (
-    <Container fluid className="justify-content-center">
+    <Container fluid>
       <Row>
-        <Col size="md-12 md-offset-1">
-          <article>
-            <Row>
-              <Col size="md-12">
-                <h1>{recipe.name}</h1>
-              </Col>
-              <Link to="/recipe">
-                <Butt
-                  onClick={() => {}}
-                  type="secondary"
-                  className="input-md btn-md btn-outline-secondary"
-                >
-                  ← Back
-                </Butt>
-              </Link>
-              <Link to="/wine">
-                <Butt
-                  type="secondary"
-                  className="input-md btn-md btn-outline-secondary"
-                  onClick={handleSubmit}
-                >
-                  + Add to Favorites
-                </Butt>
-              </Link>
-            </Row>
-            <Row>
-              <Col size="md-12">
-                <Photo src={recipe.image} alt={recipe.name}></Photo>
-                <br></br>
-                <h1>{recipe.name}</h1>
-              </Col>
-              <Col size="md-5">
-                <h2>INGREDIENTS</h2>
-                {ingredients.length ? (
-                  <List>
-                    {ingredients.map((ingredient) => (
-                      <ListItem key={ingredient.id}>{ingredient.ing}</ListItem>
-                    ))}
-                  </List>
-                ) : (
-                  <h3>No Results to Display</h3>
-                )}
-              </Col>
-              <Col size="md-5">
-                <h2>INSTRUCTIONS</h2>
-                {directions.length ? (
-                  <List>
-                    {directions.map((direction) => (
-                      <ListItem key={direction.id}>{direction.dir}</ListItem>
-                    ))}
-                  </List>
-                ) : (
-                  <h3>No Results to Display</h3>
-                )}
-              </Col>
-            </Row>
-          </article>
+        <Col size="md-12">
+          <br></br>
+          <h2
+            className="text-center"
+            style={{
+              paddingTop: 20,
+            }}
+          >
+            {recipe.name}
+          </h2>
+        </Col>
+      </Row>
+      <Row>
+        <Link to="/recipe">
+          <Butt
+            onClick={() => {}}
+            type="secondary"
+            className="input-md btn-md btn-outline-secondary"
+          >
+            ← Back
+          </Butt>
+        </Link>
+        <Link to="/wine">
+          <Butt
+            type="secondary"
+            className="input-md btn-md btn-outline-secondary"
+            onClick={handleSubmit}
+          >
+            + Add to Favorites
+          </Butt>
+        </Link>
+        <br></br>
+      </Row>
+      <Row>
+        <Col size="md-12">
+          <Photo src={recipe.image} alt={recipe.name}></Photo>
+          <br></br>
+        </Col>
+        <Col size="md-6">
+          <h2>INGREDIENTS</h2>
+          {ingredients.length ? (
+            <List>
+              {ingredients.map((ingredient) => (
+                <ListItem key={ingredient.id}>{ingredient.ing}</ListItem>
+              ))}
+            </List>
+          ) : (
+            <h3>No Results to Display</h3>
+          )}
+        </Col>
+        <Col size="md-6">
+          <h2>INSTRUCTIONS</h2>
+          {directions.length ? (
+            <List>
+              {directions.map((direction) => (
+                <ListItem key={direction.id}>{direction.dir}</ListItem>
+              ))}
+            </List>
+          ) : (
+            <h3>No Results to Display</h3>
+          )}
         </Col>
       </Row>
     </Container>

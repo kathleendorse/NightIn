@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useUserContext } from "../../utils/UserContext";
 import API from "../../utils/API";
-import logo from "../../Images/wine.png";
+// import logo from "../../Images/wine.png";
 
 function Nav() {
   const [state, dispatch] = useUserContext();
