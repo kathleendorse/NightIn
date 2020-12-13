@@ -96,7 +96,13 @@ function RecipeDetail(props) {
       <Row>
         <Col size="md-12" className="justify-content-center">
           <div className="text-center">
-            <Photo src={recipe.image} alt={recipe.name}></Photo>
+            <Photo src={recipe.image} 
+                  // srcset recipe.image for Desktop, recipe.imageMobile for Mobile
+                   
+                  //srcset={recipe.image} media="(min-width: 1000px)"
+                  //srcset={recipe.imageMobile} media="(max-width: 999px)"
+                   alt={recipe.name}>
+            </Photo>
           </div>
           <br></br>
         </Col>
