@@ -10,7 +10,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useUserContext } from "../utils/UserContext";
 
-
 function Recipe() {
   //recipe results
   const [recipes, setRecipes] = useState([]);
@@ -21,23 +20,19 @@ function Recipe() {
   //does a find all when page first loads
   const loadRecipes = () => {
     API.getRecipes()
-    .then((res) => setRecipes(res.data))
-    .catch((err) => console.log(err));
-  } 
+      .then((res) => setRecipes(res.data))
+      .catch((err) => console.log(err));
+  };
 
   useEffect(() => {
     loadRecipes();
   }, [recipes]);
-
-
 
   //when the input value changes we update the nightinSearch value
   const handleInputChange = (event) => {
     const { value } = event.target;
     setRecipesSearch(value);
   };
-
-
 
   //when the form is submitted we use the getNightin method from the API to find recipes and update the nightinState
   const handleFormSubmit = (event) => {
@@ -115,7 +110,7 @@ function Recipe() {
                       value={recipesSearch}
                       //update the search term when the input changes
                       onChange={handleInputChange}
-                      placeholder="Search For a Recipe"
+                      placeholder="Search for an ingredient .."
                     />
 
                     <Butt
@@ -141,7 +136,7 @@ function Recipe() {
                   {/* maping over the array in nightin state. for each index we do the following*/}
                   {recipes.map((recipe) => (
                     // create a list item with a key equal to the index's id **react requires a unique KEY to use for arrays indexes. here we assign it the id of the recipe object
-                    <div key={recipe._id} >
+                    <div key={recipe._id}>
                       <Link to={"/recipe/" + recipe._id}>
                         <Cord name={recipe.name} image={recipe.thumb} />
                       </Link>

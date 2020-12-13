@@ -3,11 +3,10 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Login.css";
 import API from "../utils/API";
-//added
 import { Link } from "react-router-dom";
 import { useUserContext } from "../utils/UserContext";
 import { Redirect } from "react-router-dom";
-
+import { Col, Row, Container } from "../components/Grid";
 //----
 
 export default function Login({ useremail }) {
@@ -53,10 +52,6 @@ export default function Login({ useremail }) {
         if (res.status === 200) {
           console.log(res);
           if (res.data.email === email) {
-            // dispatch({
-            //   type: "setCurrentUser",
-            //   user: res.data,
-            // });
             console.log(res.data);
             dispatch({
               type: "setCurrentUser",
@@ -67,8 +62,6 @@ export default function Login({ useremail }) {
             });
             localStorage.setItem("currentUser", JSON.stringify(res.data));
             console.log(state._id);
-            // const use = (res.data.id);
-            // (window.location.href = `${use}/home`)
           }
         }
       },
@@ -80,37 +73,39 @@ export default function Login({ useremail }) {
 
   return (
     <div className="Login">
-      {useremail && <Redirect to="/home" />}
-      <Form onSubmit={handleSubmit}>
-        <Form.Group size="md" controlId="email">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            autoFocus
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group size="md" controlId="password">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
-        <Link to="/home">
-          <Button
-            block
-            size="md"
-            type="submit"
-            disabled={!validateForm()}
-            onClick={login}
-          >
-            Login
-          </Button>
-        </Link>
-      </Form>
+      <Container className="Login">
+        {useremail && <Redirect to="/home" />}
+        <Form onSubmit={handleSubmit}>
+          <Form.Group size="md" controlId="email">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              autoFocus
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group size="md" controlId="password">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Form.Group>
+          <Link to="/home">
+            <Button
+              block
+              size="md"
+              type="submit"
+              disabled={!validateForm()}
+              onClick={login}
+            >
+              Login
+            </Button>
+          </Link>
+        </Form>
+      </Container>
     </div>
   );
 }

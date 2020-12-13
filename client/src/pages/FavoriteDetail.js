@@ -107,15 +107,22 @@ function FavoriteDetail() {
               </Butt>
             </Link>
           </Row>
-
+          <Row>
+            <Col size="md-12">
+              <br></br>
+              <h3 className="text-center">{fav.recipeName}</h3>
+            </Col>
+          </Row>
           <Row>
             <Col size="md-10">
-              <Photo src={fav.recipeImage} alt={fav.recipeName}></Photo>
+              <div className="text-center">
+                <Photo src={fav.recipeImage} alt={fav.recipeName}></Photo>
+              </div>
               <br></br>
-              <h1>{fav.recipeName}</h1>
             </Col>
             <Col size="md-5">
-              <h2>INGREDIENTS</h2>
+              <br></br>
+              <h4>INGREDIENTS</h4>
               {ingredients.length ? (
                 <List>
                   {ingredients.map((ingredient) => (
@@ -132,11 +139,12 @@ function FavoriteDetail() {
                   ))}
                 </List>
               ) : (
-                <h3>No Results to Display</h3>
+                <h4>No Results to Display</h4>
               )}
             </Col>
             <Col size="md-5">
-              <h2>INSTRUCTIONS</h2>
+              <br></br>
+              <h4>INSTRUCTIONS</h4>
               {directions.length ? (
                 <List>
                   {directions.map((direction) => (
@@ -148,19 +156,27 @@ function FavoriteDetail() {
               )}
             </Col>
           </Row>
-
+          <br></br>
           <Row>
             <Col size="md-10">
-              <Photo src={fav.wineImage} alt={fav.wineName}></Photo>
+              {/* <Photo src={fav.wineImage} alt={fav.wineName}></Photo> */}
               <br></br>
-              <h1>{fav.wineName}</h1>
-              <h4>{fav.wineBlurb}</h4>
+              <h3 className="text-center">{fav.wineName}</h3>
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-10">
+              <p>{fav.wineBlurb}</p>
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-12 sm-12">
+              <h5 className="text-center">VINTAGES</h5>
             </Col>
           </Row>
           <Row>
             <Col size="md-12 sm-12">
               <Container className="justify-content-center">
-                <h2>VINTAGES</h2>
                 {vintages.length ? (
                   <Carousel responsive={responsive}>
                     {vintages.map((vintage) => (

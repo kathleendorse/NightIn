@@ -11,55 +11,42 @@ import Butt from "../Butt";
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
-export function FavoriteItem({id, recipeName, recipeImage, wineName, wineImage, onClick}) {
+export function FavoriteItem({
+  id,
+  recipeName,
+  recipeImage,
+  wineName,
+  wineImage,
+  onClick,
+}) {
   return (
-
     <Row>
-      
       <Col size="sm-4">
-        <Cord 
-            image={recipeImage}
-            name={recipeName}
-          />
+        <Cord image={recipeImage} name={recipeName} />
       </Col>
       <Col size="sm-4">
-        <Cord 
-            image={wineImage}
-            name={wineName}
-          />
-
-
+        <Cord image={wineImage} name={wineName} />
       </Col>
       <Col size="sm-4">
-        <Link to= {"/favorites/"+ id}>
+        <Link to={"/favorites/" + id}>
           <Butt
             type="secondary"
             className="input-md btn-md btn-outline-secondary"
-            onClick={()=>{}}
+            onClick={() => {}}
           >
             View details &raquo;
           </Butt>
         </Link>
 
         <Butt
-           type="secondary"
-           className="input-md btn-md btn-outline-secondary"
-           onClick={onClick}
+          type="secondary"
+          className="input-md btn-md btn-outline-secondary"
+          onClick={onClick}
         >
           Delete
         </Butt>
-        {/* <Button variant="outline-info" size="sm" href="#" role="button">
-          View details &raquo;
-        </Button> */}
-        {/* <p>
-          <Button variant="outline-secondary" size="sm" href="#" role="button">
-            Add Note
-          </Button>
-        </p> */}
       </Col>
-
     </Row>
-    
   );
 }
 

@@ -103,6 +103,7 @@ function RecipeDetail(props) {
       </Row>
       <Row>
         <Col size="md-5">
+          <br></br>
           <h3 className="text-center">INGREDIENTS</h3>
           {ingredients.length ? (
             <List>
@@ -115,6 +116,7 @@ function RecipeDetail(props) {
           )}
         </Col>
         <Col size="md-5">
+          <br></br>
           <h3 className="text-center">INSTRUCTIONS</h3>
           {directions.length ? (
             <List>
