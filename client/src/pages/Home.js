@@ -18,6 +18,7 @@ function Home({ email }) {
       recipeName: "",
       recipeType: "",
       recipeImage: "",
+      recipeImageMobile: "",
       recipeThumb: "",
       recipeWine: "",
       recipeSubWine: "",
@@ -53,8 +54,12 @@ function Home({ email }) {
       <Row className="justify-content-center">
         <Col size="md-12 sm-12">
           <Jumbotron>
+            <h4>
+            Welcome <span className="text-muted">{state.email}</span>!
+            </h4>
+            <br></br>
             <p className="lead">
-              Welcome <span className="text-muted">{state.email}</span>!
+            Our mission is to help Wine and Food lovers alike curate perfectly matched meals.<br></br>Starting with a recipe of your choice, our proprietary recommendation engine will suggest a nice drink pairing with your dinner. <br></br>Store your pairings to favorites for future reference and get the night started with a built-in shopping list. 
             </p>
             <br></br>
             <Link to={"/recipe"}>

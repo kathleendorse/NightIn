@@ -73,6 +73,7 @@ function WineDetail() {
       recipeSubwine: state.recipeSubWine,
       recipeIngredients: state.recipeIngredients,
       recipeImage: state.recipeImage,
+      recipeImageMobile: state.recipeImageMobile,
       recipeThumb: state.recipeThumb,
       recipeDirections: state.recipeDirections,
       wineId: wine._id,
@@ -80,6 +81,7 @@ function WineDetail() {
       wineType: wine.type,
       wineBlurb: wine.blurb,
       wineImage: wine.image,
+      wineImageMobile: wine.imageMobile,
       wineThumb: wine.thumb,
       wineSubWine: wine.subwine,
       wineVintages: wine.vintages,
@@ -100,6 +102,7 @@ function WineDetail() {
           recipeName: "",
           recipeType: "",
           recipeImage: "",
+          recipeImageMobile: "",
           recipeWine: "",
           recipeSubWine: "",
           recipeIngredients: "",
@@ -109,6 +112,7 @@ function WineDetail() {
           wineType: "",
           wineBlurb: "",
           wineImage: "",
+          wineImageMobile: "",
           wineThumb: "",
           wineVintages: "",
         });
@@ -141,15 +145,15 @@ function WineDetail() {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+      items: 6,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 4,
+      items: 5,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 3,
+      items: 2,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
@@ -206,6 +210,7 @@ function WineDetail() {
             </Row>
             <Row>
               <Col size="md-12 sm-12">
+              <Container className="justify-content-center">
                 {vintages.length ? (
                   <Carousel responsive={responsive}>
                     {vintages.map((vintage) => (
@@ -217,6 +222,7 @@ function WineDetail() {
                 ) : (
                   <p>No Results to Display</p>
                 )}
+                </Container>
               </Col>
             </Row>
           </Col>

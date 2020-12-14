@@ -4,6 +4,10 @@ import FavoriteItem from "../components/FavoriteItem";
 import { useUserContext } from "../utils/UserContext";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
+import { Link } from "react-router-dom";
+import "./Favorite.css";
+
+
 
 export default function Favorites() {
   const [state, dispatch] = useUserContext();
@@ -40,6 +44,7 @@ export default function Favorites() {
       recipeName: "",
       recipeType: "",
       recipeImage: "",
+      recipeImageMobile: "",
       recipeThumb: "",
       recipeWine: "",
       recipeSubWine: "",
@@ -73,6 +78,8 @@ export default function Favorites() {
     localStorage.setItem("favs", JSON.stringify(arr));    
   }
 
+
+
   //maps over state.favs and renders Favorite Item Component which uses these props.
   return (
     
@@ -81,7 +88,7 @@ export default function Favorites() {
       <Row>
         <Col size="md-12 sm-12">
           <Jumbotron>
-            <h5>Favorites</h5>
+            <h1>Favorites</h1>
             <p>Add Items to Favorites from the home page</p>
           </Jumbotron>
         </Col>
@@ -103,8 +110,10 @@ export default function Favorites() {
             ))}
           </Container>
         ) : (
-          <Container>
-            <h3>Nothing Saved in Favorites</h3>
+          <Container fluid className = "justify-content-center">
+ 
+            <h4>Nothing Saved in Favorites yet! Click <span id="link"><Link to="/recipe">here</Link></span> to get started </h4>
+
           </Container>
         )}
           

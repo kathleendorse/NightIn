@@ -43,6 +43,7 @@ module.exports = {
             recipeName: "",
             recipeType: "",
             recipeImage: "",
+            recipeImageMobile: "",
             recipeThumb: "",
             recipeWine: "",
             recipeSubWine: "",
@@ -53,6 +54,7 @@ module.exports = {
             wineType: "",
             wineBlurb: "",
             wineImage: "",
+            wineImageMobile: "",
             wineVintages: []
           }
           res.json(userObj)
@@ -104,6 +106,7 @@ module.exports = {
         recipeSubwine: favorite.recipeSubwine,
         recipeIngredients: favorite.recipeIngredients,
         recipeImage: favorite.recipeImage,
+        recipeImageMobile: favorite.recipeImageMobile,
         recipeThumb: favorite.recipeThumb,
         recipeDirections: favorite.recipeDirections,
         wineId: favorite.wineId,
@@ -111,6 +114,8 @@ module.exports = {
         wineType: favorite.wineType,
         wineBlurb: favorite.wineBlurb,
         wineImage: favorite.wineImage,
+        wineImageMobile: favorite.wineImageMobile,
+        wineThumb: favorite.wineThumb,
         wineVintages: favorite.wineVintages, 
       }
     } },

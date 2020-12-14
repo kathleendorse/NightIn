@@ -77,23 +77,22 @@ function Recipe() {
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1,
+      items: 2,
     },
   };
   return (
     <div>
       <Container fluid>
         <Jumbotron>
-          <Row>
+        <Row>
             {" "}
             <Col size="md-12 sm-12">
+              <h4>
+                Search for a key word to filter recipes results
+              </h4>  
               <p className="lead">
-                TEMP TEXT: The name of our mongo database is nightindb. In this
-                version the data we are using is coming from a collection called
-                recipes.
+              Click on a recipe to see ingredients, directions and add to your pairing
               </p>
-              When the user enters a term and clicks the search button, recipes
-              containing that term appear below.
               <p></p>
             </Col>{" "}
           </Row>
@@ -126,7 +125,7 @@ function Recipe() {
 
         <Row>
           <Col size="md-12 sm-12">
-            <Container>
+          <Container className="justify-content-center">
               {/* ternary operator - show no results if the nightin state is empty*/}
               {recipes.length ? (
                 <Carousel responsive={responsive}>
@@ -141,9 +140,9 @@ function Recipe() {
                   ))}
                 </Carousel>
               ) : (
-                <h3>No Results to Display</h3>
+                <h3>No Results to Display Try Another Search</h3>
               )}
-            </Container>
+  </Container>
           </Col>
         </Row>
       </Container>

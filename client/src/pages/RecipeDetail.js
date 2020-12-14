@@ -25,11 +25,6 @@ function RecipeDetail() {
     })
     .catch((err) => console.log(err));
 
-
-    // handleRecipe(id);
-    // handleIngredients(id);
-    // handleDirections(id);
-
   //checks local storage to update state if state is empty
   let storageStatusId = JSON.parse(localStorage.getItem("_id"));
   let storageStatusEmail = JSON.parse(localStorage.getItem("email"));
@@ -49,26 +44,6 @@ function RecipeDetail() {
 
   }, [id, state._id, dispatch]);
 
-  // function handleRecipe(id) {
-  //   API.getRecipe(id)
-  //     .then((res) => {
-  //       setRecipe(res.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }
-
-  // function handleIngredients(id) {
-  //   API.getRecipe(id)
-  //     .then((res) => setIngredients(res.data.ingredients))
-  //     .catch((err) => console.log(err));
-  // }
-
-  // function handleDirections(id) {
-  //   API.getRecipe(id)
-  //     .then((res) => setDirections(res.data.directions))
-  //     .catch((err) => console.log(err));
-  // }
-
   //updates the current Recipe Selections in state
   function updateUserRecipeSelection() {
     dispatch({
@@ -78,6 +53,7 @@ function RecipeDetail() {
       recipeName: recipe.name,
       recipeType: recipe.type,
       recipeImage: recipe.image,
+      recipeImageMobile: recipe.imageMobile,
       recipeThumb: recipe.thumb,
       recipeWine: recipe.wine,
       recipeSubWine: recipe.subwine,

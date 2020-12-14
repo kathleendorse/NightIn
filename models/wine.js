@@ -7,6 +7,7 @@ const wineSchema = new Schema({
   type: { type: String, required: true },
   blurb: { type: String },
   image: { type: String},
+  imageMobile:  { type: String},
   thumb:  { type: String},
   vintages: { type: Array, required: true }
 });
