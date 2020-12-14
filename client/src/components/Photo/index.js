@@ -9,8 +9,8 @@ function Photo(props) {
           {...props} />;
 }
 
-const stile = {
+// const stile = {
 
-}
+// }
 
 export default Photo;

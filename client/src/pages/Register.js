@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Login.css";
@@ -8,16 +8,35 @@ import { useUserContext } from "../utils/UserContext";
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //test
   const [state, dispatch] = useUserContext();
-  //----
+
+  useEffect(()=>{
+    //checks local storage to update state if state is empty
+    let storageStatusId = JSON.parse(localStorage.getItem("_id"));
+    let storageStatusEmail = JSON.parse(localStorage.getItem("email"));
+    let storageStatusFavs = JSON.parse(localStorage.getItem("favs"));
+    let storageStatusShoppingList = JSON.parse(localStorage.getItem("shoppingList"));
+    if (state._id === "" && storageStatusId){
+      dispatch({
+        type: "setCurrentUser",
+        email: storageStatusEmail,
+        _id: storageStatusId,
+        favs: storageStatusFavs,
+        shoppingList: storageStatusShoppingList,
+      });
+    } else {
+      return;
+    }
+
+  },[state._id, dispatch]);
+
+
   function validateForm() {
     return email.length > 0 && password.length > 0;
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(state._id);
   }
 
   const register = () => {
@@ -32,14 +51,6 @@ export default function Register() {
           window.location = "/login";
         }
       })
-      // .then((res) => {
-      //   if (res.data.email === email) {
-      //     dispatch({
-      //       type: "setCurrentUser",
-      //       user: res.data,
-      //     });
-      //   }
-      // })
       .catch((err) => console.log(err));
   };
 

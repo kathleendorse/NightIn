@@ -10,12 +10,30 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 function Wine() {
-  const [state] = useUserContext();
+  const [state, dispatch] = useUserContext();
   const [wines, setWines] = useState([]);
 
   useEffect(() => {
     loadWines(state.recipeWine);
-  }, [state.recipeWine]);
+
+    //checks local storage to update state if state is empty
+    let storageStatusId = JSON.parse(localStorage.getItem("_id"));
+    let storageStatusEmail = JSON.parse(localStorage.getItem("email"));
+    let storageStatusFavs = JSON.parse(localStorage.getItem("favs"));
+    let storageStatusShoppingList = JSON.parse(localStorage.getItem("shoppingList"));
+    if (state._id === "" && storageStatusId){
+      dispatch({
+        type: "setCurrentUser",
+        email: storageStatusEmail,
+        _id: storageStatusId,
+        favs: storageStatusFavs,
+        shoppingList: storageStatusShoppingList,
+      });
+    } else {
+      return;
+    }
+
+  }, [state.recipeWine, state._id, dispatch]);
 
   function loadWines(type) {
     API.getWines(type)

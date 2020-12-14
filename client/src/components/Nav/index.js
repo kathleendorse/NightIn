@@ -13,18 +13,31 @@ function Nav() {
 
   const logout = () => {
     API.userLogout(state)
-      .then((e) => {
-        dispatch({
-          email: "",
-          faves: [],
-          _id: "",
-        });
-      })
-      .then(() => {
-        localStorage.removeItem("currentUser");
-        window.location.reload();
-      });
+    .then((e) => {
+      setLocal();
+      setState();
+    })
   };
+
+  const setLocal = () => {
+    localStorage.removeItem("_id");
+    localStorage.removeItem("email");
+    localStorage.removeItem("favs");
+    localStorage.removeItem("shoppingList");
+  }
+
+  const setState = () => {
+    dispatch({
+      type: "setCurrentUser",
+      email: "",
+      favs: "",
+      _id: "",
+      shoppingCart: "", 
+    });
+  };
+
+
+
 
   if (state.email) {
     return (

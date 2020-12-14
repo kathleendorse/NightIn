@@ -41,11 +41,29 @@ function FavoriteDetail() {
     setVintages(currentFav.wineVintages);
     setIngredients(currentFav.recipeIngredients);
     setDirections(currentFav.recipeDirections);
-  }, [currentFav, dispatch]);
+  
+    //checks local storage to update state if state is empty
+    let storageStatusId = JSON.parse(localStorage.getItem("_id"));
+    let storageStatusEmail = JSON.parse(localStorage.getItem("email"));
+    let storageStatusFavs = JSON.parse(localStorage.getItem("favs"));
+    let storageStatusShoppingList = JSON.parse(localStorage.getItem("shoppingList"));
+    if (state._id === "" && storageStatusId){
+      dispatch({
+        type: "setCurrentUser",
+        email: storageStatusEmail,
+        _id: storageStatusId,
+        favs: storageStatusFavs,
+        shoppingList: storageStatusShoppingList,
+      });
+    } else {
+      return;
+    }
+  }, [currentFav, dispatch, state._id]);
 
   function addIngredient(ing) {
+    
     const ingObj = {
-      id: `${currentFav.id}${Math.floor(Math.random() * 100000).toString()}`,
+      id: `${currentFav.id}${Math.floor(Math.random() * 1000000).toString()}`,
       ing: ing.ing,
     };
 
@@ -128,6 +146,7 @@ function FavoriteDetail() {
                   {ingredients.map((ingredient) => (
                     <ListItem key={ingredient.id}>
                       {ingredient.ing}
+                      <br></br>
                       <Butt
                         type="secondary"
                         className="input-md btn-md btn-outline-secondary"
@@ -181,7 +200,7 @@ function FavoriteDetail() {
                   <Carousel responsive={responsive}>
                     {vintages.map((vintage) => (
                       <div key={vintage.id}>
-                        <Cord name={vintage.vin} image={fav.wineImage} />
+                        <Cord name={vintage.vin} image={vintage.img} />
                       </div>
                     ))}
                   </Carousel>

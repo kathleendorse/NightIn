@@ -4,3 +4,9 @@
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+.center {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
