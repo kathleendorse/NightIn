@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Butt from "../components/Butt";
-import Photo from "../components/Photo";
+//import Photo from "../components/Photo";
 import API from "../utils/API";
 import { useUserContext } from "../utils/UserContext";
 import Cord from "../components/Cord";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-function WineDetail(props) {
+function WineDetail() {
   const [state, dispatch] = useUserContext();
   const [wine, setWine] = useState({});
   const [vintages, setVintages] = useState([]);
@@ -17,21 +17,50 @@ function WineDetail(props) {
   const { id } = useParams();
 
   useEffect(() => {
-    handleWine(id);
-    handleVintages(id);
-  }, [id]);
 
-  function handleWine(id) {
-    API.getWine(id)
-      .then((res) => setWine(res.data))
-      .catch((err) => console.log(err));
-  }
+//    handleWine(id);
+//    handleVintages(id);
 
-  function handleVintages(id) {
-    API.getWine(id)
-      .then((res) => setVintages(res.data.vintages))
-      .catch((err) => console.log(err));
-  }
+  API.getWine(id)
+    .then((res) => {
+      setWine(res.data)
+      setVintages(res.data.vintages)
+    })
+    .catch((err) => console.log(err));
+
+
+
+    
+    //checks local storage to update state if state is empty
+    let storageStatusId = JSON.parse(localStorage.getItem("_id"));
+    let storageStatusEmail = JSON.parse(localStorage.getItem("email"));
+    let storageStatusFavs = JSON.parse(localStorage.getItem("favs"));
+    let storageStatusShoppingList = JSON.parse(localStorage.getItem("shoppingList"));
+    if (state._id === "" && storageStatusId){
+      dispatch({
+        type: "setCurrentUser",
+        email: storageStatusEmail,
+        _id: storageStatusId,
+        favs: storageStatusFavs,
+        shoppingList: storageStatusShoppingList,
+      });
+    } else {
+      return;
+    }
+
+  }, [id, state._id, dispatch]);
+
+  // function handleWine(id) {
+  //   API.getWine(id)
+  //     .then((res) => setWine(res.data))
+  //     .catch((err) => console.log(err));
+  // }
+
+  // function handleVintages(id) {
+  //   API.getWine(id)
+  //     .then((res) => setVintages(res.data.vintages))
+  //     .catch((err) => console.log(err));
+  // }
 
   //adds favorite object to favs array in db
   function addFavorite() {
@@ -56,12 +85,14 @@ function WineDetail(props) {
       wineVintages: wine.vintages,
     };
 
+
     API.addFav({
       userId: state._id,
       favorite: favObj,
     })
       .then((res) => {
         console.log("Updated User Favorites: ", res.data);
+
         dispatch({
           type: "clearSelections",
           selectionId: "",
@@ -85,6 +116,9 @@ function WineDetail(props) {
       .catch((err) => console.log(err));
   }
 
+
+
+
   //updates state.favs
   function updatedUser() {
     API.getLatestFav(state._id)
@@ -102,6 +136,7 @@ function WineDetail(props) {
     addFavorite();
     updatedUser();
   }
+
 
   const responsive = {
     superLargeDesktop: {
@@ -123,7 +158,6 @@ function WineDetail(props) {
   };
 
   return (
-    <div>
       <Container fluid>
         <Row>
           <Col size="md-12">
@@ -176,7 +210,7 @@ function WineDetail(props) {
                   <Carousel responsive={responsive}>
                     {vintages.map((vintage) => (
                       <div key={vintage.id}>
-                        <Cord name={vintage.vin} image={wine.image} />
+                        <Cord name={vintage.vin} image={vintage.img} />
                       </div>
                     ))}
                   </Carousel>
@@ -188,7 +222,7 @@ function WineDetail(props) {
           </Col>
         </Row>
       </Container>
-    </div>
+
   );
 }
 

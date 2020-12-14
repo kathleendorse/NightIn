@@ -4,11 +4,12 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Input from "../components/Input";
-import Butt from "../components/Butt";
+//import Butt from "../components/Butt";
 import Cord from "../components/Cord";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useUserContext } from "../utils/UserContext";
+import "./Recipe.css";
 
 function Recipe() {
   //recipe results
@@ -17,16 +18,43 @@ function Recipe() {
   const [recipesSearch, setRecipesSearch] = useState(""); //ADDED
   const [state, dispatch] = useUserContext();
 
-  //does a find all when page first loads
-  const loadRecipes = () => {
+
+  useEffect(() => {
+
+    //evaluates if there is input to findall or find specific
+    if (recipesSearch){
+      API.getRecipesQuery(recipesSearch)
+      .then((res) => setRecipes(res.data))
+      .catch((err) => console.log(err));
+    }
+    else{
     API.getRecipes()
       .then((res) => setRecipes(res.data))
       .catch((err) => console.log(err));
-  };
+    }
 
-  useEffect(() => {
-    loadRecipes();
-  }, [recipes]);
+
+    //checks local storage to update state if state is empty
+    let storageStatusId = JSON.parse(localStorage.getItem("_id"));
+    let storageStatusEmail = JSON.parse(localStorage.getItem("email"));
+    let storageStatusFavs = JSON.parse(localStorage.getItem("favs"));
+    let storageStatusShoppingList = JSON.parse(localStorage.getItem("shoppingList"));
+    if (state._id === "" && storageStatusId){
+      dispatch({
+        type: "setCurrentUser",
+        email: storageStatusEmail,
+        _id: storageStatusId,
+        favs: storageStatusFavs,
+        shoppingList: storageStatusShoppingList,
+      });
+    } else {
+      return;
+    }
+
+  
+
+  },[state._id, recipesSearch, dispatch]);
+
 
   //when the input value changes we update the nightinSearch value
   const handleInputChange = (event) => {
@@ -34,30 +62,6 @@ function Recipe() {
     setRecipesSearch(value);
   };
 
-  //when the form is submitted we use the getNightin method from the API to find recipes and update the nightinState
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    API.getRecipesQuery(recipesSearch)
-      .then((res) => setRecipes(res.data))
-      .catch((err) => console.log(err));
-  };
-
-  const checkLocal = () => {
-    let storageStatus = JSON.parse(localStorage.getItem("currentUser"));
-    if (storageStatus) {
-      if (storageStatus.email !== null && state.email === "") {
-        dispatch({
-          type: "setCurrentUser",
-          email: storageStatus.email,
-          _id: storageStatus._id,
-          favs: storageStatus.favs,
-          shoppingList: storageStatus.shoppingList,
-        });
-      }
-    }
-  };
-
-  checkLocal();
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -99,12 +103,13 @@ function Recipe() {
             <Col size="md-12 sm-12">
               <form>
                 <Container fluid>
-                  <div className="input-group">
+                  <div className="input-group justify-content-center">
                     <Input
                       style={{
                         backgroundColor: "#DCDCDC",
                         margin: "10px",
                       }}
+                      id = "search"
                       name="RecipesSearch"
                       //assigning the search term to the input value
                       value={recipesSearch}
@@ -112,14 +117,6 @@ function Recipe() {
                       onChange={handleInputChange}
                       placeholder="Search for an ingredient .."
                     />
-
-                    <Butt
-                      onClick={handleFormSubmit}
-                      type="secondary"
-                      className="input-md btn-md btn-outline-secondary input-group-append"
-                    >
-                      Search
-                    </Butt>
                   </div>
                 </Container>
               </form>

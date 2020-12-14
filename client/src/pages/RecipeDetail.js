@@ -7,7 +7,7 @@ import API from "../utils/API";
 import { List, ListItem } from "../components/List";
 import { useUserContext } from "../utils/UserContext";
 //when this component is instantiated it will be passed a "prop"
-function RecipeDetail(props) {
+function RecipeDetail() {
   const [state, dispatch] = useUserContext();
   const [recipe, setRecipe] = useState({});
   const [ingredients, setIngredients] = useState([]);
@@ -16,30 +16,58 @@ function RecipeDetail(props) {
   const { id } = useParams();
 
   useEffect(() => {
-    handleRecipe(id);
-    handleIngredients(id);
-    handleDirections(id);
-  }, [id]);
 
-  function handleRecipe(id) {
     API.getRecipe(id)
-      .then((res) => {
-        setRecipe(res.data);
-      })
-      .catch((err) => console.log(err));
+    .then((res) => {
+      setRecipe(res.data);
+      setIngredients(res.data.ingredients);
+      setDirections(res.data.directions);
+    })
+    .catch((err) => console.log(err));
+
+
+    // handleRecipe(id);
+    // handleIngredients(id);
+    // handleDirections(id);
+
+  //checks local storage to update state if state is empty
+  let storageStatusId = JSON.parse(localStorage.getItem("_id"));
+  let storageStatusEmail = JSON.parse(localStorage.getItem("email"));
+  let storageStatusFavs = JSON.parse(localStorage.getItem("favs"));
+  let storageStatusShoppingList = JSON.parse(localStorage.getItem("shoppingList"));
+  if (state._id === "" && storageStatusId){
+    dispatch({
+      type: "setCurrentUser",
+      email: storageStatusEmail,
+      _id: storageStatusId,
+      favs: storageStatusFavs,
+      shoppingList: storageStatusShoppingList,
+    });
+  } else {
+    return;
   }
 
-  function handleIngredients(id) {
-    API.getRecipe(id)
-      .then((res) => setIngredients(res.data.ingredients))
-      .catch((err) => console.log(err));
-  }
+  }, [id, state._id, dispatch]);
 
-  function handleDirections(id) {
-    API.getRecipe(id)
-      .then((res) => setDirections(res.data.directions))
-      .catch((err) => console.log(err));
-  }
+  // function handleRecipe(id) {
+  //   API.getRecipe(id)
+  //     .then((res) => {
+  //       setRecipe(res.data);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }
+
+  // function handleIngredients(id) {
+  //   API.getRecipe(id)
+  //     .then((res) => setIngredients(res.data.ingredients))
+  //     .catch((err) => console.log(err));
+  // }
+
+  // function handleDirections(id) {
+  //   API.getRecipe(id)
+  //     .then((res) => setDirections(res.data.directions))
+  //     .catch((err) => console.log(err));
+  // }
 
   //updates the current Recipe Selections in state
   function updateUserRecipeSelection() {

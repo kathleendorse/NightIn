@@ -21,7 +21,10 @@ import ShoppingList from "./pages/ShoppingList";
 import { useUserContext } from "./utils/UserContext";
 
 function App() {
+  
+  // eslint-disable-next-line
   const [state, dispatch] = useUserContext();
+
 
   return (
     <Router>

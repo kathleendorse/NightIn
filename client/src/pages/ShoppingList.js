@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react";
-//import React from "react";
 import Jumbotron from "../components/Jumbotron";
-//import API from "../utils/API";
-//import { Link } from "react-router-dom";
-//importing multiple components from the same file
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-//import Cord from "../components/Cord";
 import { useUserContext } from "../utils/UserContext";
 import Butt from "../components/Butt";
 import API from "../utils/API";
@@ -16,6 +11,7 @@ export default function ShoppingList() {
   const [shoppingList, setShoppingList] = useState([]);
 
   useEffect(() => {
+
     dispatch({
       type: "updateRecipe",
       selectionId: "",
@@ -29,9 +25,33 @@ export default function ShoppingList() {
       recipeIngredients: "",
       recipeDirections: "",
     });
-    setShoppingList(state.shoppingList);
-  }, [state.shoppingList, dispatch]);
 
+
+    setShoppingList(state.shoppingList);
+    setLocal(shoppingList);
+
+    //checks local storage to update state if state is empty
+    let storageStatusId = JSON.parse(localStorage.getItem("_id"));
+    let storageStatusEmail = JSON.parse(localStorage.getItem("email"));
+    let storageStatusFavs = JSON.parse(localStorage.getItem("favs"));
+    let storageStatusShoppingList = JSON.parse(localStorage.getItem("shoppingList"));
+    if (state._id === "" && storageStatusId){
+      dispatch({
+        type: "setCurrentUser",
+        email: storageStatusEmail,
+        _id: storageStatusId,
+        favs: storageStatusFavs,
+        shoppingList: storageStatusShoppingList,
+      });
+    } else {
+      return;
+    }
+
+  }, [state.shoppingList, dispatch, shoppingList, state._id]);
+
+
+
+  
   function removeIng(ing) {
     const userObj = {
       userId: state._id,
@@ -46,11 +66,15 @@ export default function ShoppingList() {
     });
   }
 
+  function setLocal (arr){
+    localStorage.setItem("shoppingList", JSON.stringify(arr));
+  }
+
   return (
-    <div>
+  
       <Container fluid>
         <Row>
-          <Col size="md-6 sm-12">
+          <Col size="md-12 sm-12">
             <Jumbotron>
               <h5>Shopping List</h5>
               <p>Select Ingredients from your Favorites</p>
@@ -58,13 +82,13 @@ export default function ShoppingList() {
           </Col>
         </Row>
         <Row>
-          {/* <p>hi</p> */}
-          <Col size="md-6 sm-12">
+          <Col size="md-12 sm-12">
             {shoppingList.length ? (
               <List>
                 {shoppingList.map((ingredient) => (
-                  <ListItem key={ingredient.id}>
+                  <ListItem key={Math.floor(Math.random() * 1000000).toString()}>
                     {ingredient.ing}
+                    <br></br>
                     <Butt
                       type="secondary"
                       className="input-md btn-md btn-outline-secondary"
@@ -76,11 +100,13 @@ export default function ShoppingList() {
                 ))}
               </List>
             ) : (
-              <h3>No Items in Shopping List</h3>
+              <Container Fluid>
+                <h3>Nothing Saved in Shopping List</h3>
+              </Container>
             )}
           </Col>
         </Row>
       </Container>
-    </div>
+
   );
 }

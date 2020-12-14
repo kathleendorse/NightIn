@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Login.css";
@@ -6,17 +6,33 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { useUserContext } from "../utils/UserContext";
 import { Redirect } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-//----
+import { Container } from "../components/Grid";
 
 export default function Login({ useremail }) {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //console.log("useremail: ", useremail);
-
-  //test
   const [state, dispatch] = useUserContext();
-  //----
+
+  useEffect(()=>{
+    //checks local storage to update state if state is empty
+    let storageStatusId = JSON.parse(localStorage.getItem("_id"));
+    let storageStatusEmail = JSON.parse(localStorage.getItem("email"));
+    let storageStatusFavs = JSON.parse(localStorage.getItem("favs"));
+    let storageStatusShoppingList = JSON.parse(localStorage.getItem("shoppingList"));
+    if (state._id === "" && storageStatusId){
+      dispatch({
+        type: "setCurrentUser",
+        email: storageStatusEmail,
+        _id: storageStatusId,
+        favs: storageStatusFavs,
+        shoppingList: storageStatusShoppingList,
+      });
+    } else {
+      return;
+    }
+  },[state._id, dispatch]);
+
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -24,25 +40,58 @@ export default function Login({ useremail }) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    console.log(state._email);
   }
-  const checkLocal = () => {
-    let storageStatus = JSON.parse(localStorage.getItem("currentUser"));
-    if (storageStatus) {
-      if (storageStatus.email !== null && state.email === "") {
-        dispatch({
-          type: "setCurrentUser",
-          email: storageStatus.email,
-          _id: storageStatus._id,
-          favs: storageStatus.favs,
-          shoppingList: storageStatus.shoppingList,
-        });
-      }
-      console.log(storageStatus.email);
+
+  //sets local storage
+  const setLocal = (data) => {
+
+    if (data.favs.length && data.shoppingList.length){
+        localStorage.setItem("_id", JSON.stringify(data._id));
+        localStorage.setItem("email", JSON.stringify(data.email));
+        localStorage.setItem("favs", JSON.stringify(data.favs));  
+        localStorage.setItem("shoppingList", JSON.stringify(data.shoppingList));      
     }
+    else if(data.favs.length && !data.shoppingList.length){
+      localStorage.setItem("_id", JSON.stringify(data._id));
+      localStorage.setItem("email", JSON.stringify(data.email));
+      localStorage.setItem("favs", JSON.stringify(data.favs));  
+      localStorage.setItem("shoppingList", JSON.stringify([]));
+    }
+    else if(!data.favs.length && data.shoppingList.length){
+      localStorage.setItem("_id", JSON.stringify(data._id));
+      localStorage.setItem("email", JSON.stringify(data.email));
+      localStorage.setItem("favs", JSON.stringify([]));  
+      localStorage.setItem("shoppingList", JSON.stringify(data.shoppingList));
+    }
+    else{
+      localStorage.setItem("_id", JSON.stringify(data._id));
+      localStorage.setItem("email", JSON.stringify(data.email));
+      localStorage.setItem("favs", JSON.stringify([]));  
+      localStorage.setItem("shoppingList", JSON.stringify([]));
+    }
+
   };
 
-  checkLocal();
+  //sets state
+  const setState = () => {
 
+    let _id= JSON.parse(localStorage.getItem("_id"));
+    let email= JSON.parse(localStorage.getItem("email"));
+    let favs= JSON.parse(localStorage.getItem("favs"));
+    let shoppingList= JSON.parse(localStorage.getItem("shoppingList"));
+
+    dispatch({
+      type: "setCurrentUser",   
+      _id: _id,
+      email: email,
+      favs: favs,
+      shoppingList: shoppingList,
+    });
+
+  }  
+
+  //logs user in, invokes setStorage and setState
   const login = () => {
     API.userLogin({
       email: email,
@@ -50,18 +99,9 @@ export default function Login({ useremail }) {
     }).then(
       (res) => {
         if (res.status === 200) {
-          console.log(res);
           if (res.data.email === email) {
-            console.log(res.data);
-            dispatch({
-              type: "setCurrentUser",
-              _id: res.data._id,
-              email: res.data.email,
-              favs: res.data.favs,
-              shoppingList: res.data.shoppingList,
-            });
-            localStorage.setItem("currentUser", JSON.stringify(res.data));
-            console.log(state._id);
+            setLocal(res.data);
+            setState();
           }
         }
       },
@@ -70,6 +110,7 @@ export default function Login({ useremail }) {
       }
     );
   };
+
 
   return (
     <div className="Login">
