@@ -9,6 +9,7 @@ import Cord from "../components/Cord";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useUserContext } from "../utils/UserContext";
+import "./Recipe.css";
 
 function Recipe() {
   //recipe results
@@ -102,12 +103,13 @@ function Recipe() {
             <Col size="md-12 sm-12">
               <form>
                 <Container fluid>
-                  <div className="input-group">
+                  <div className="input-group justify-content-center">
                     <Input
                       style={{
                         backgroundColor: "#DCDCDC",
                         margin: "10px",
                       }}
+                      id = "search"
                       name="RecipesSearch"
                       //assigning the search term to the input value
                       value={recipesSearch}

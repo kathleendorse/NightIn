@@ -1,0 +1,13 @@
+@media all and (min-width: 300px) {
+    #search{
+        margin: 0 auto;
+        max-width: 500px;
+        padding: auto;
+  
+    }
+  
+    /* .Login form {
+      margin: 0 auto;
+      max-width: 320px;
+    } */
+  }
