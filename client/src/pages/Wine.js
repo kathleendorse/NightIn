@@ -8,6 +8,7 @@ import Cord from "../components/Cord";
 import { useUserContext } from "../utils/UserContext";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import "./Wine.css";
 
 function Wine() {
   const [state, dispatch] = useUserContext();
@@ -56,7 +57,7 @@ function Wine() {
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1,
+      items: 2,
     },
   };
 
@@ -73,7 +74,7 @@ function Wine() {
               </h4>
               <h5>
                 For {state.recipeName} our experts recommend{" "}
-                {state.recipeSubWine} .
+                <span id="wineType">{state.recipeSubWine}</span> .
               </h5>
               <p className="lead">
                 Click on a {state.recipeWine} wine to learn more and add to your

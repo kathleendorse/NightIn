@@ -5,6 +5,7 @@ import { List, ListItem } from "../components/List";
 import { useUserContext } from "../utils/UserContext";
 import Butt from "../components/Butt";
 import API from "../utils/API";
+import { Link } from "react-router-dom";
 
 export default function ShoppingList() {
   const [state, dispatch] = useUserContext();
@@ -19,6 +20,7 @@ export default function ShoppingList() {
       recipeName: "",
       recipeType: "",
       recipeImage: "",
+      recipeImageMobile: "",
       recipeThumb: "",
       recipeWine: "",
       recipeSubWine: "",
@@ -76,7 +78,7 @@ export default function ShoppingList() {
         <Row>
           <Col size="md-12 sm-12">
             <Jumbotron>
-              <h5>Shopping List</h5>
+              <h1>Shopping List</h1>
               <p>Select Ingredients from your Favorites</p>
             </Jumbotron>
           </Col>
@@ -100,8 +102,8 @@ export default function ShoppingList() {
                 ))}
               </List>
             ) : (
-              <Container Fluid>
-                <h3>Nothing Saved in Shopping List</h3>
+              <Container fluid className = "justify-content-center">
+                <h4>Nothing Saved in Shopping List yet! Click <Link to="/favorites"><span id="link">here</span></Link> to add ingredients from your favorite recipes.</h4>
               </Container>
             )}
           </Col>
