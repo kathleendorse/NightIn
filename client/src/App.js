@@ -35,7 +35,7 @@ function App() {
             {/* {!state.email ? <Redirect to="/login" /> : <Home />} */}
           </Route>
           <Route exact path={["/", "/register"]}>
-            {state.email ? <Redirect to="/recipe" /> : <Signup />}
+            {state.email ? <Redirect to="/home" /> : <Signup />}
           </Route>
           <Route
             exact
