@@ -40,7 +40,7 @@ Night In is a food and drink application that helps Wine and Food lovers alike c
 
 ## App Flow Chart
 
-![Flow Chart]("./Images/flow-chart.png")
+![Flow Chart](./Images/flow-chart.png)
 
 ## Visualization of App Interface
 
@@ -52,20 +52,20 @@ Please submit [bugs and feature requests](https://github.com/kathleendorse/Night
 
 ### Authors
 
-[Kathleen Dorse]("https://github.com/kathleendorse")
-![Github profile pic]("https://avatars2.githubusercontent.com/kathleendorse")
+[Kathleen Dorse](https://github.com/kathleendorse)
+![Github profile pic](https://avatars2.githubusercontent.com/kathleendorse)
 
 ---
 
 [Negin Rouhanizadeh](https://github.com/nrouhanizdeh)
-![Github profile pic]("https://avatars2.githubusercontent.com/nrouhanizdeh")
+![Github profile pic](https://avatars2.githubusercontent.com/nrouhanizdeh)
 
 ---
 
-[Rudy Mendoza]("https://github.com/mendozar")
-![Github profile pic]("https://avatars2.githubusercontent.com/mendozar")
+[Rudy Mendoza](https://github.com/mendozar)
+![Github profile pic](https://avatars2.githubusercontent.com/mendozar)
 
 ---
 
-[Tom Simon]("https://github.com/tomone")
-![Github profile pic]("https://avatars2.githubusercontent.com/tomone")
+[Tom Simon](https://github.com/tomone)
+![Github profile pic](https://avatars2.githubusercontent.com/tomone)
