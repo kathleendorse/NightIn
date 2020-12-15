@@ -4,12 +4,12 @@
 
 ### Table of Contents
 
-- [About NightIn](###about-NightIn)
-- [Usage](###usage)
-- [App Flow Chart](###app-flow-chart)
-- [Visualization of App Interface](###visualization-of-app-interface)
-- [Contribute](###contribute)
-- [Authors](###authors)
+- [About NightIn](#about-NightIn)
+- [Usage](#usage)
+- [App Flow Chart](#app-flow-chart)
+- [Visualization of App Interface](#visualization-of-app-interface)
+- [Contribute](#contribute)
+- [Authors](#authors)
 
 ---
 
