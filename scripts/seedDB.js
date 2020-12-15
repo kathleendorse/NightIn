@@ -880,7 +880,7 @@ const wineSeed = [
   {
     name: "Syrah",
     type: "red",
-    blurb: "Malbec is a dry red wine that appeals to the masses due to its affordability and approachable, juicy fruit flavors. While its popularity has surged over the past two decades, in reality, Malbec has been used as a blending grape in France for over a century. But it’s the Argentine expression (which people are most familiar with) that enjoys worldwide popularity.",
+    blurb: "Syrah is a dark-skinned grape variety grown throughout the world and used primarily to produce red wine. Aroma characters can range from violets to berries (usually dark as opposed to red), chocolate, and black pepper. No one aroma can be called typical though blackberry, coffee and pepper are often noticed.",
     image: sharpen + "Night%20In%20Images/Riedel-Veritas-Old-World-Syrah_-Set-of-2-644900041_gxdhc4.jpg",
     imageMobile: sharpenMobile + "Night%20In%20Images/Riedel-Veritas-Old-World-Syrah_-Set-of-2-644900041_gxdhc4.jpg",
     thumb: thumb + "Night%20In%20Images/Riedel-Veritas-Old-World-Syrah_-Set-of-2-644900041_gxdhc4.jpg",
@@ -895,6 +895,7 @@ const wineSeed = [
   {
     name: "Malbec",
     type: "red",
+    blurb: "Malbec is a purple grape variety used in making red wine. The grapes tend to have an inky dark color and robust tannins, and are known as one of the six grapes allowed in the blend of red Bordeaux wine.",
     image: sharpen + "Night%20In%20Images/124249393_zgqdep.jpg",
     imageMobile: sharpenMobile + "Night%20In%20Images/124249393_zgqdep.jpg",
     thumb: thumb + "Night%20In%20Images/124249393_zgqdep.jpg",
