@@ -44,6 +44,7 @@ Night In is a food and drink application that helps Wine and Food lovers alike c
 
 ## Visualization of App Interface
 
+![NightIn visualization](./Images/NightIn.gif)
 ​
 
 ## Contribute
