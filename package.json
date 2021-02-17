@@ -37,6 +37,6 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "react-bootstrap": "^1.4.0",
-    "react-multi-carousel": "^2.5.5"
+    "react-multi-carousel": "^2.6.1"
   }
 }
